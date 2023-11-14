@@ -103,6 +103,11 @@ tr:nth-child(even) {
     background-color: #333; /* Color de fondo oscuro */
     overflow: hidden;
     font-family: Arial, sans-serif; /* Puedes cambiar la fuente si lo deseas */
+    border-radius: 10px; /* Esquinas redondeadas */
+    width: auto; /* Ancho automático según el contenido */
+    max-width: 80%; /* Máximo ancho permitido */
+    margin: 0 auto; /* Centrar la barra de navegación */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Sombra para un efecto elevado */
 }
 
 .navbar a {
