@@ -23,6 +23,11 @@ if (!isset($_SESSION['user_id'])) {
         <!-- Agrega aquí más enlaces según necesites -->
     </div>
 
+
+    <div class="logout-button">
+        <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
+    </div>
+    
     <!-- Aquí puedes incluir el resto del contenido de tu página -->
 
     <?php
@@ -45,8 +50,5 @@ if (!isset($_SESSION['user_id'])) {
     echo "</table>";
     ?>
 
-    <div class="logout-button">
-        <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
-    </div>
 </body>
 </html>
