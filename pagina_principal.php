@@ -34,27 +34,30 @@ if (!isset($_SESSION['user_id'])) {
         <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
     </div>
 
-    <!-- Aquí puedes incluir el resto del contenido de tu página -->
+   <!-- Aquí empieza el contenido de la página -->
+   <div>
+        <?php
+        try {
+            $sql = "SELECT * FROM proveedores";
+            $stmt = $db->query($sql);
 
-    <?php
-    require("data/conexion.php");
+            echo "<table class='center'>";
+            echo "<tr><th>ID</th><th>Nombre</th><th>Plataforma</th></tr>";
 
-    $sql = "SELECT * FROM proveedores";
-    $result = mysqli_query($conexion, $sql);
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['plataforma']) . "</td>";
+                echo "</tr>";
+            }
 
-    echo "<table border='1'>";
-    echo "<tr><th>ID</th><th>Nombre</th><th>Plataforma</th></tr>";
-
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr>";
-        echo "<td>" . $row['id'] . "</td>";
-        echo "<td>" . $row['nombre'] . "</td>";
-        echo "<td>" . $row['plataforma'] . "</td>";
-        echo "</tr>";
-    }
-
-    echo "</table>";
-    ?>
+            echo "</table>";
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
+        }
+        ?>
+    </div>
 
 </body>
 </html>
