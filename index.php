@@ -20,6 +20,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    // Inicio de sesión de prueba para username y password 'pp'
+    if ($username === 'pp' && $password === 'pp') {
+        // Usuario de prueba autenticado correctamente
+        $_SESSION['user_id'] = 'test_id'; // ID de prueba
+        $_SESSION['username'] = 'pp';
+
+        // Redirigir a la página principal
+        header("Location: pagina_principal.php");
+        exit;
+    }
+
     // Consulta preparada para evitar inyecciones SQL
     $sql = "SELECT * FROM Usuarios WHERE username = ?";
     $stmt = $conn->prepare($sql);
@@ -33,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['username'] = $username;
 
-        // Redirigir a otra página, por ejemplo, un perfil de usuario
+        // Redirigir a la página principal
         header("Location: pagina_principal.php");
         exit;
     } else {
@@ -46,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <body>
-    <h1 align="center"> BIBLIOTECA DE VIDEOJUEGOS Y PELICULAS</h1>
+    <h1 align="center"> VLOKVASTER</h1>
     <p style="text-align:center;">En esta plataforma podrás encontrar todas las películas y juegos que desees en distintos proveedores</p>
 
     <?php if ($error): ?>
