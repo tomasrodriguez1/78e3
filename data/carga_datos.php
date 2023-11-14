@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require("data/conexion.php"); // Asegúrate de que este archivo contiene la conexión a tu base de datos.
 
 $csv_proveedores = file("CSV PAR/proveedores.csv");

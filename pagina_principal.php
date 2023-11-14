@@ -1,4 +1,10 @@
+
+
 <?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include('./templates/header.html'); 
 require("data/conexion.php");
 
@@ -27,7 +33,7 @@ if (!isset($_SESSION['user_id'])) {
     <div class="logout-button">
         <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
     </div>
-    
+
     <!-- Aquí puedes incluir el resto del contenido de tu página -->
 
     <?php
