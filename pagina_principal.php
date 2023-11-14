@@ -25,5 +25,8 @@ if (!isset($_SESSION['user_id'])) {
 
     <!-- Aquí puedes incluir el resto del contenido de tu página -->
 
+    <div class="logout-button">
+        <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
+    </div>
 </body>
 </html>
