@@ -1,9 +1,19 @@
-/* Este archivo no es necesario. Solo es para cambiar las propiedades de los objetos HTML
-Es mucho más fácil implementar una plantilla de Bootstrap que cambiar estas cosas a mano */
+/* Este archivo cambia las propiedades de los objetos HTML para implementar un estilo oscuro */
+
+body {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro para mayor legibilidad en modo oscuro */
+}
 
 input {
     width: 10%;
     height: 20px;
+    background-color: #2C2C2C; /* Fondo de input oscuro */
+    color: white; /* Texto claro */
+    border: 1px solid #444; /* Borde sutil para los input */
 }
 
 input[type=text] {
@@ -11,10 +21,10 @@ input[type=text] {
 }
 
 input[type=submit] {
-    width: 14em;  /* Ancho del botón */
-    height: 2.5em;  /* Altura reducida del botón */
-    font-size: 30px;  /* Tamaño de fuente aumentado */
-    background-color: green;
+    width: 10em;
+    height: 2.5em;
+    font-size: 30px;
+    background-color: #005f73; /* Color oscuro para el botón */
     color: white;
     border: none;
     border-radius: 5px;
@@ -22,64 +32,57 @@ input[type=submit] {
 }
 
 button {
-    background-color: green;
+    background-color: #003049; /* Color de fondo oscuro para botones */
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 25px;
-    padding: 4px 10px;  /* Padding reducido para disminuir la altura */
+    padding: 4px 10px;
     cursor: pointer;
 }
 
 h1 {
-    color: #8B4513; /* Color café para el título */
-    font-size: 35px; /* Tamaño del título aumentado */
+    color: #FFB703; /* Color claro para el título */
+    font-size: 35px;
 }
 
-h2,
-h3,
-h4 {
-    color: #8B4513;
+h2, h3, h4 {
+    color: #FFB703;
     font-size: 25px;
     text-align: center;
-}
-
-body {
-    width: 100%;
-    font-size: 20px;
-    text-align: center;
-    background-color: #FAEACB; /* Color beige más claro */
 }
 
 table.center {
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid black;
+    border: 1px solid #444;
     width: 90%;
     text-align: center;
-    font-size: 25px; /* Aumenta el tamaño de fuente según lo necesites */
+    font-size: 25px;
+    background-color: #242424; /* Fondo de la tabla oscuro */
+    color: #e0e0e0; /* Texto claro */
 }
 
 table.center td {
-    width: 50%; /* Ajusta el ancho según lo necesites */
-    padding: 10px; /* Añade un poco de espacio alrededor del contenido de cada celda */
+    width: 50%;
+    padding: 10px;
 }
 
 table.center tr {
-    height: 50px; /* Ajusta la altura según lo necesites */
+    height: 50px;
 }
 
 th {
-    background-color: #4CAF50;
+    background-color: #005f73;
     color: white;
 }
 
 tr:hover {
-    background-color: #f5f5f5;
+    background-color: #333333; /* Color más oscuro al pasar el ratón */
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #2C2C2C; /* Alternancia de color en filas */
 }
 
 /* Estilos para la tabla desplazable */
@@ -90,7 +93,7 @@ tr:nth-child(even) {
 }
 
 .scrollable-table {
-    height: 400px; /* o el valor que prefieras */
+    height: 400px;
     overflow-y: auto;
     display: block;
 }

@@ -1,6 +1,6 @@
 <?php 
 include('./templates/header.html'); 
-require("config/conexion.php");
+require("data/conexion.php");
 
 session_start();
 
