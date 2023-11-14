@@ -25,6 +25,26 @@ if (!isset($_SESSION['user_id'])) {
 
     <!-- Aquí puedes incluir el resto del contenido de tu página -->
 
+    <?php
+    require("data/conexion.php");
+
+    $sql = "SELECT * FROM proveedores";
+    $result = mysqli_query($conexion, $sql);
+
+    echo "<table border='1'>";
+    echo "<tr><th>ID</th><th>Nombre</th><th>Plataforma</th></tr>";
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>" . $row['id'] . "</td>";
+        echo "<td>" . $row['nombre'] . "</td>";
+        echo "<td>" . $row['plataforma'] . "</td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+    ?>
+
     <div class="logout-button">
         <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
     </div>
