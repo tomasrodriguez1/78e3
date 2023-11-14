@@ -1,8 +1,8 @@
 <?php include('./templates/header.html'); ?>
 
 <body>
-    <h1 align="center">BIBLIOTECA DE VIDEOJUEGOS</h1>
-    <p style="text-align:center;">Se podrá encontrar información acerca de los videos juegos, sus proveedores y plataformas.</p>
+    <h1 align="center"> BIBLIOTECA DE VIDEOJUEGOS Y PELICULAS</h1>
+    <p style="text-align:center;"> En esta plataforma podrás encontrar todas las películas y juegos que desees en distintios proveedores</p>
 
     <br>
 
