@@ -33,7 +33,8 @@ if (!isset($_SESSION['user_id'])) {
     <div class="logout-button">
         <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
     </div>
-
+    <br>
+    <br>
    <!-- Aquí empieza el contenido de la página -->
    <div>
         <?php
