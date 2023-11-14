@@ -2,7 +2,7 @@
 
 <body>
     <h1 align="center"> BIBLIOTECA DE VIDEOJUEGOS Y PELICULAS</h1>
-    <p style="text-align:center;"> En esta plataforma podrás encontrar todas las películas y juegos que desees en distintios proveedores y distintos proveedores</p>
+    <p style="text-align:center;"> En esta plataforma podrás encontrar todas las películas y juegos que desees en distintios proveedores</p>
 
     <br>
 
