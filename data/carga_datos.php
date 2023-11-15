@@ -14,6 +14,7 @@ foreach ($csv_proveedores as $linea) {
         $stmt->bindParam(':nombre', $linea[1]);
         $stmt->bindParam(':plataforma', $linea[2]);
         $stmt->execute();
+        echo "Datos cargados proveedores";
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -28,6 +29,7 @@ foreach ($csv_genero_subgenero as $linea) {
         $stmt->bindParam(':genero', $linea[0]);
         $stmt->bindParam(':subgenero', $linea[1]);
         $stmt->execute();
+        echo "Datos cargados genero_subgenero";
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -47,6 +49,7 @@ foreach ($csv_pago_no_subscripcion as $linea) {
         $stmt->bindParam(':id_proveedor', $linea[5]);
         $stmt->bindParam(':id_videojuego', $linea[6]);
         $stmt->execute();
+        echo "Datos cargados pago_no_subscripcion";
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -64,6 +67,7 @@ foreach ($csv_pago_subscripcion as $linea) {
         $stmt->bindParam(':id_usuario', $linea[3]);
         $stmt->bindParam(':subs_id', $linea[4]);
         $stmt->execute();
+        echo "Datos cargados pago_subscripcion";
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -80,6 +84,7 @@ foreach ($csv_proveeores_videojuegos_pre as $linea) {
         $stmt->bindParam(':precio', $linea[2]);
         $stmt->bindParam(':precio_preorden', $linea[3]);
         $stmt->execute();
+        echo "Datos cargados proveeores_videojuegos_pre";
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -97,14 +102,15 @@ foreach ($csv_proveeores_videojuegos as $linea) {
         $stmt->bindParam(':id_videojuego', $linea[3]);
         $stmt->bindParam(':precio', $linea[4]);
         $stmt->execute();
+        echo "Datos cargados proveeores_videojuegos";
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
 }
-$csv_subscripciones = file("CSV PAR/subscripciones.csv");
-foreach ($csv_subscripciones as $linea) {
+$csv_suscripciones = file("CSV PAR/suscripciones.csv");
+foreach ($csv_suscripciones as $linea) {
     $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO subscripciones (id, estado, fecha_inicio, id_usuario, fecha_termino, id_videojuego, mensualidad) VALUES (:id, :estado, :fecha_inicio, :id_usuario, :fecha_termino, :id_videojuego, :mensualidad)";
+    $sql = "INSERT INTO suscripciones (id, estado, fecha_inicio, id_usuario, fecha_termino, id_videojuego, mensualidad) VALUES (:id, :estado, :fecha_inicio, :id_usuario, :fecha_termino, :id_videojuego, :mensualidad)";
     try {
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':id', $linea[0]);
@@ -115,6 +121,7 @@ foreach ($csv_subscripciones as $linea) {
         $stmt->bindParam(':id_videojuego', $linea[5]);
         $stmt->bindParam(':mensualidad', $linea[6]);
         $stmt->execute();
+        echo "Datos cargados suscripciones";
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -132,6 +139,7 @@ foreach ($csv_videojuegos as $linea){
         $stmt->bindParam(':clasificion', $linea[3]);
         $stmt->bindParam(':fecha_de_lanzamiento', $linea[4]);
         $stmt->execute();
+        echo "Datos cargados videojuegos";
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -146,6 +154,7 @@ foreach ($csv_videojuego_genero as $linea){
         $stmt->bindParam(':id_videojuego', $linea[0]);
         $stmt->bindParam(':nombre', $linea[1]);
         $stmt->execute();
+        echo "Datos cargados videojuego_genero";
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -160,6 +169,7 @@ foreach ($csv_videojuego_mensualidad as $linea){
         $stmt->bindParam(':id_videojuego', $linea[0]);
         $stmt->bindParam(':mensualidad', $linea[1]);
         $stmt->execute();
+        echo "Datos cargados videojuego_mensualidad";
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -175,6 +185,7 @@ foreach ($csv_videojuego_preorden as $linea){
         $stmt->bindParam(':id_videojuego', $linea[0]);
         $stmt->bindParam(':beneficio_preorden', $linea[1]);
         $stmt->execute();
+        echo "Datos cargados videojuego_preorden.";
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
