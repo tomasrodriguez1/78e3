@@ -19,6 +19,31 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 
 <body>
+      <!-- Modal para detalles del proveedor -->
+      <div id="modalProveedor" style="display:none;">
+        <div id="detallesProveedor"></div>
+        <button onclick="cerrarModal()">Cerrar</button>
+    </div>
+    <!-- Código JavaScript -->
+    <script>
+    // Event listener para los clics en los nombres de los proveedores
+    document.querySelectorAll('.proveedor').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            var proveedorId = this.getAttribute('data-id');
+            // Aquí puedes hacer una solicitud AJAX para obtener los detalles del proveedor
+            // Por ahora, simplemente mostraremos el ID
+            document.getElementById('detallesProveedor').innerHTML = 'Detalles del proveedor con ID: ' + proveedorId;
+            document.getElementById('modalProveedor').style.display = 'block';
+        });
+    });
+
+    function cerrarModal() {
+        document.getElementById('modalProveedor').style.display = 'none';
+    }
+    </script>
+
+    <!-- INICIO DE LA PAGINA -->
 
     <!-- Barra de Navegación -->
     <div class="navbar">
@@ -59,29 +84,7 @@ if (!isset($_SESSION['user_id'])) {
 
 
     <!-- FIN DE LA PAGINA -->
-    
-    <!-- Modal para detalles del proveedor -->
-    <div id="modalProveedor" style="display:none;">
-        <div id="detallesProveedor"></div>
-        <button onclick="cerrarModal()">Cerrar</button>
-    </div>
-    <!-- Código JavaScript -->
-    <script>
-    // Event listener para los clics en los nombres de los proveedores
-    document.querySelectorAll('.proveedor').forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
-            var proveedorId = this.getAttribute('data-id');
-            // Aquí puedes hacer una solicitud AJAX para obtener los detalles del proveedor
-            // Por ahora, simplemente mostraremos el ID
-            document.getElementById('detallesProveedor').innerHTML = 'Detalles del proveedor con ID: ' + proveedorId;
-            document.getElementById('modalProveedor').style.display = 'block';
-        });
-    });
 
-    function cerrarModal() {
-        document.getElementById('modalProveedor').style.display = 'none';
-    }
-    </script>
+
 </body>
 </html>
