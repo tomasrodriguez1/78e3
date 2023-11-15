@@ -10,22 +10,23 @@ function eliminarBOM($valor) {
     }
     return $valor;
 }
-
 try {
     // Iniciar transacción para proveedores
     $db->beginTransaction();
 
     $csv_proveedores = file("CSV PAR/proveedores.csv");
     foreach ($csv_proveedores as $index => $linea) {
-        // Saltar el encabezado
-        if ($index === 0) {
+        if ($index === 0) { // Saltar el encabezado
             continue;
         }
 
         $linea = str_getcsv($linea, ";");
         $idLimpio = filter_var(trim($linea[0]), FILTER_SANITIZE_NUMBER_INT);
-        if (!is_numeric($idLimpio)) {
-            throw new Exception("El valor de ID no es un número válido: " . $linea[0]);
+
+        // Verificar si los campos críticos están vacíos
+        if (!is_numeric($idLimpio) || trim($linea[1]) == '' || trim($linea[2]) == '') {
+            echo "Advertencia: Línea con datos insuficientes en la línea " . ($index + 1) . ". Esta línea será omitida.\n";
+            continue;
         }
 
         // Verificar si el proveedor ya existe
@@ -56,6 +57,7 @@ try {
     $db->rollBack();
     echo "Error durante la carga de datos de proveedores: " . $e->getMessage();
 }
+
 
 try {
     // Iniciar transacción para genero_subgenero
