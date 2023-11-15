@@ -78,4 +78,68 @@ try {
     $db->rollBack();
     echo "Error durante la carga de datos de genero_subgenero: " . $e->getMessage();
 }
+
+## TABLA VIDEOJUEGOS
+try {
+    $db->beginTransaction();
+    $csv_videojuegos = file("CSV PAR/videojuego.csv");
+    foreach ($csv_videojuegos as $linea) {
+        $linea = str_getcsv($linea, ";");
+        if (!verificarCampos($linea, [0, 1, 2, 3, 4])) {
+            continue;
+        }
+        $sqlVerificar = "SELECT COUNT(*) FROM videojuegos WHERE id_videojuego = :id_videojuego" ; # Porque esta linea
+        $stmtVerificar = $db->prepare($sqlVerificar);
+        $stmtVerificar->bindParam(':id_videojuego', $linea[0]);
+        $stmtVerificar->execute();
+        if ($stmtVerificar->fetchColumn() > 0) {
+            continue;
+        }
+        $sql = "INSERT INTO videojuegos (id_videojuego, titulo, puntuacion, clasificacion, fecha_de_lanzamiento) VALUES (:id_videojuego, :titulo, :puntuacion, :clasificacion, :fecha_de_lanzamiento)";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id_videojuego', $linea[0]);
+        $stmt->bindParam(':titulo', $linea[1]);
+        $stmt->bindParam(':puntuacion', $linea[2]);
+        $stmt->bindParam(':clasificacion', $linea[3]);
+        $stmt->bindParam(':fecha_de_lanzamiento', $linea[4]);
+        $stmt->execute();
+        echo "Datos cargados videojuegos\n";
+
+    }
+    $db->commit();
+} catch (Exception $e) {
+    $db->rollBack();
+    echo "Error durante la carga de datos de videojuegos: " . $e->getMessage();
+}
+
+## TABLA VIDEOJUEGOS_GENERO
+try {
+    $db->beginTransaction();
+    $csv_videojuegos_genero = file("CSV PAR/videojuego_genero.csv");
+    foreach ($csv_videojuegos_genero as $linea) {
+        $linea = str_getcsv($linea, ";");
+        if (!verificarCampos($linea, [0, 1])) {
+            continue;
+        }
+        $sqlVerificar = "SELECT COUNT(*) FROM videojuegos_genero WHERE id_videojuego = :id_videojuego AND nombre = :nombre"; # No permite los duplicados si coinciden en id y genero?
+        $stmtVerificar = $db->prepare($sqlVerificar);
+        $stmtVerificar->bindParam(':id_videojuego', $linea[0]);
+        $stmtVerificar->bindParam(':nombre', $linea[1]);
+        $stmtVerificar->execute();
+        if ($stmtVerificar->fetchColumn() > 0) {
+            continue;
+        }
+        $sql = "INSERT INTO videojuego_genero (id_videojuego, nombre) VALUES (:id_videojuego, :nombre)";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id_videojuego', $linea[0]);
+        $stmt->bindParam(':nombre', $linea[1]);
+        $stmt->execute();
+        echo "Datos cargados videojuegos_genero\n";
+    }
+    $db->commit();
+} catch (Exception $e) {
+    $db->rollBack();
+    echo "Error durante la carga de datos de videojuegos_genero: " . $e->getMessage();
+}
+
 ?>
