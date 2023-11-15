@@ -13,9 +13,9 @@ function verificarCampos($linea, $indicesCampos) {
     return true;
 }
 
+## TABLA PROVEEDORES
 try {
     $db->beginTransaction();
-
     $csv_proveedores = file("CSV PAR/proveedores.csv");
     foreach ($csv_proveedores as $index => $linea) {
         if ($index === 0) continue;
@@ -24,7 +24,6 @@ try {
         if (!verificarCampos($linea, [0, 1, 2])) {
             continue;
         }
-
         $idLimpio = filter_var(trim($linea[0]), FILTER_SANITIZE_NUMBER_INT);
         $sqlVerificar = "SELECT COUNT(*) FROM proveedores WHERE id = :id OR nombre = :nombre";
         $stmtVerificar = $db->prepare($sqlVerificar);
@@ -35,23 +34,21 @@ try {
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
         }
-
         $sql = "INSERT INTO proveedores (id, nombre, plataforma) VALUES (:id, :nombre, :plataforma)";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':id', $idLimpio, PDO::PARAM_INT);
         $stmt->bindParam(':nombre', $linea[1]);
         $stmt->bindParam(':plataforma', $linea[2]);
         $stmt->execute();
-
         echo "Datos cargados proveedores\n";
     }
-
     $db->commit();
 } catch (Exception $e) {
     $db->rollBack();
     echo "Error durante la carga de datos de proveedores: " . $e->getMessage();
 }
 
+## TABLA GENERO - SUBGENERO
 try {
     $db->beginTransaction();
     $csv_genero_subgenero = file("CSV PAR/genero.csv");
@@ -65,17 +62,14 @@ try {
         $stmtVerificar->bindParam(':genero', $linea[0]);
         $stmtVerificar->bindParam(':subgenero', $linea[1]);
         $stmtVerificar->execute();
-
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
         }
-
         $sql = "INSERT INTO genero_subgenero (genero, subgenero) VALUES (:genero, :subgenero)";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':genero', $linea[0]);
         $stmt->bindParam(':subgenero', $linea[1]);
         $stmt->execute();
-
         echo "Datos cargados genero_subgenero\n";
     }
 
