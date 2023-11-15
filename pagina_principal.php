@@ -41,17 +41,14 @@ if (!isset($_SESSION['user_id'])) {
    <!-- Aquí empieza el contenido de la página -->
    <h1 class="titulo-suscripciones">Suscripciones</h1>
 
-   <div>
+   <div class="proveedores-container">
         <?php
         try {
             $sql = "SELECT * FROM proveedores";
             $stmt = $db->query($sql);
-            echo "<ul>";
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo "<li><a href='#' class='proveedor' data-id='" . htmlspecialchars($row['id']) . "'>" . htmlspecialchars($row['nombre']) . "</a></li>";
+                echo "<div class='proveedor-bloque' data-id='" . htmlspecialchars($row['id']) . "'>" . htmlspecialchars($row['nombre']) . "</div>";
             }
-            
-            echo "</ul>";
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
         }
@@ -59,31 +56,31 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 
 
-    <!-- FIN DE LA PAGINA -->
+<!-- FIN DE LA PAGINA -->
 
-          <!-- Modal para detalles del proveedor -->
-    <div id="modalProveedor" style="display:none;">
-        <div id="detallesProveedor"></div>
-        <button onclick="cerrarModal()">Cerrar</button>
-    </div>
-    <!-- Código JavaScript -->
-    <script>
-    // Event listener para los clics en los nombres de los proveedores
-    document.querySelectorAll('.proveedor').forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
-            var proveedorId = this.getAttribute('data-id');
-            // Aquí puedes hacer una solicitud AJAX para obtener los detalles del proveedor
-            // Por ahora, simplemente mostraremos el ID
-            document.getElementById('detallesProveedor').innerHTML = 'Detalles del proveedor con ID: ' + proveedorId;
-            document.getElementById('modalProveedor').style.display = 'block';
+<!-- Modal para detalles del proveedor -->
+<div id="modalProveedor" style="display:none;">
+    <div id="detallesProveedor"></div>
+    <button onclick="cerrarModal()">Cerrar</button>
+</div>
+
+<!-- Código JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('.proveedor-bloque').forEach(item => {
+            item.addEventListener('click', function(e) {
+                var proveedorId = this.getAttribute('data-id');
+                document.getElementById('detallesProveedor').innerHTML = 'Detalles del proveedor con ID: ' + proveedorId;
+                document.getElementById('modalProveedor').style.display = 'block';
+            });
         });
     });
 
     function cerrarModal() {
         document.getElementById('modalProveedor').style.display = 'none';
     }
-    </script>
+</script>
+
 
 </body>
 </html>
