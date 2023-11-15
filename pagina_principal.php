@@ -53,6 +53,10 @@ if (!isset($_SESSION['user_id'])) {
 
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <div class="logout-button">
         <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
