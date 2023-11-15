@@ -22,7 +22,6 @@ try {
 
         $linea = str_getcsv($linea, ";");
         if (!verificarCampos($linea, [0, 1, 2])) {
-            echo "Línea omitida en proveedores: " . ($index + 1) . "\n";
             continue;
         }
 
@@ -34,7 +33,6 @@ try {
         $stmtVerificar->execute();
 
         if ($stmtVerificar->fetchColumn() > 0) {
-            echo "Proveedor ya cargado: " . $linea[1] . "\n";
             continue;
         }
 
@@ -56,15 +54,12 @@ try {
 
 try {
     $db->beginTransaction();
-
     $csv_genero_subgenero = file("CSV PAR/genero.csv");
     foreach ($csv_genero_subgenero as $linea) {
         $linea = str_getcsv($linea, ";");
         if (!verificarCampos($linea, [0, 1])) {
-            echo "Línea omitida en género/subgénero: " . ($index + 1) . "\n";
             continue;
         }
-
         $sqlVerificar = "SELECT COUNT(*) FROM genero_subgenero WHERE genero = :genero AND subgenero = :subgenero";
         $stmtVerificar = $db->prepare($sqlVerificar);
         $stmtVerificar->bindParam(':genero', $linea[0]);
@@ -72,7 +67,6 @@ try {
         $stmtVerificar->execute();
 
         if ($stmtVerificar->fetchColumn() > 0) {
-            echo "Genero y subgenero ya cargados: " . $linea[0] . ", " . $linea[1] . "\n";
             continue;
         }
 
