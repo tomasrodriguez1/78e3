@@ -36,7 +36,24 @@ if (!isset($_SESSION['user_id'])) {
     <br>
    <!-- Aquí empieza el contenido de la página -->
    <h1 class="titulo-suscripciones">Suscripciones de Videojuegos</h1>
+    <!-- Formulario de Búsqueda -->
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+            <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
+            <input type="text" name="nombre_videojuego" placeholder="Nombre del Videojuego">
+            <input type="submit" value="Buscar">
+    </form>
 
+    <!-- Mostrar Resultados de la Búsqueda -->
+    <?php
+    foreach ($resultados as $row) {
+        // Mostrar cada resultado
+        echo "<div>";
+        echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
+        echo " - Videojuego: " . htmlspecialchars($row['nombre_videojuego']);
+        echo " - Precio: " . htmlspecialchars($row['precio']);
+        echo "</div>";
+    }
+    ?>
    <div class="proveedores-container">
         <?php
         try {
