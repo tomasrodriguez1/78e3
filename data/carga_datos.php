@@ -65,6 +65,12 @@ try {
     foreach ($csv_genero_subgenero as $linea) {
         $linea = str_getcsv($linea, ";");
 
+        // Verificar si el campo subgenero está vacío
+        if (trim($linea[1]) == '') {
+            echo "Advertencia: Subgénero vacío para el género " . $linea[0] . ". Esta línea será omitida.\n";
+            continue;
+        }
+
         // Verificar si el genero_subgenero ya existe
         $sqlVerificar = "SELECT COUNT(*) FROM genero_subgenero WHERE genero = :genero AND subgenero = :subgenero";
         $stmtVerificar = $db->prepare($sqlVerificar);
@@ -92,5 +98,7 @@ try {
     $db->rollBack();
     echo "Error durante la carga de datos de genero_subgenero: " . $e->getMessage();
 }
+
+
 
 ?>
