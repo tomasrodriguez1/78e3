@@ -35,7 +35,7 @@ foreach ($csv_genero_subgenero as $linea) {
     }
 }
 
-$csv_pago_no_subscripcion = file("CSV PAR/pago_no_subscripcion.csv");
+$csv_pago_no_subscripcion = file("CSV PAR/pago_no_suscripcion.csv");
 foreach ($csv_pago_no_subscripcion as $linea) {
     $linea = str_getcsv($linea, ";");
     $sql = "INSERT INTO pago_no_subscripcion (pago_id, monto, fecha, id_usuario, preorden, id_proveedor, id_videojuego) VALUES (:pago_id, :monto, :fecha, :id_usuario, :preorden, :id_proveedor, :id_videojuego)";
@@ -55,10 +55,10 @@ foreach ($csv_pago_no_subscripcion as $linea) {
     }
 }
 
-$csv_pago_subscripcion = file("CSV PAR/pago_subscripcion.csv");
-foreach ($csv_pago_subscripcion as $linea) {
+$csv_pago_suscripcion = file("CSV PAR/pago_suscripcion.csv");
+foreach ($csv_pago_suscripcion as $linea) {
     $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO pago_subscripcion (pago_id, monto, fecha, id_usuario, subs_id) VALUES (:pago_id, :monto, :fecha, :id_usuario, :subs_id)";
+    $sql = "INSERT INTO pago_suscripcion (pago_id, monto, fecha, id_usuario, subs_id) VALUES (:pago_id, :monto, :fecha, :id_usuario, :subs_id)";
     try {
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':pago_id', $linea[0]);
