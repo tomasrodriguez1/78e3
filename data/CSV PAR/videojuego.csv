@@ -1,0 +1,215 @@
+﻿id_videojuego;titulo;puntuacion;clasificacion;fecha_de_lanzamiento;beneficio_preorden;mensualidad;nombre
+15;Fallout 3;86.43;Eighteen;27-10-08;ninguno;;Supervivencia
+15;Fallout 3;86.43;Eighteen;27-10-08;ninguno;;Accion
+15;Fallout 3;86.43;Eighteen;27-10-08;ninguno;;Supervivencia
+15;Fallout 3;86.43;Eighteen;27-10-08;ninguno;;Accion
+16;Fallout: New Vegas;84.59;M;18-10-10;ninguno;;Accion
+18;Max Payne;80.2;M;22-07-01;;5000;Accion
+20;BioShock;89.99;M;20-08-07;;8000;Historicos
+20;BioShock;89.99;M;20-08-07;;8000;RPG
+20;BioShock;89.99;M;20-08-07;;8000;Historicos
+20;BioShock;89.99;M;20-08-07;;8000;RPG
+21;BioShock 2;83.96;Eighteen;02-08-10;contenido adicional exclusivo;;Aventura
+21;BioShock 2;83.96;Eighteen;02-08-10;contenido adicional exclusivo;;Ciencia Ficcion
+21;BioShock 2;83.96;Eighteen;02-08-10;contenido adicional exclusivo;;Aventura
+21;BioShock 2;83.96;Eighteen;02-08-10;contenido adicional exclusivo;;Ciencia Ficcion
+37;Dead Space;86.76;Eighteen;13-10-08;ninguno;;FPS
+38;Dead Space 2;88.22;Eighteen;24-01-11;ninguno;;Supervivencia
+39;Mafia;75.4;Eighteen;27-08-02;ninguno;;FPS
+39;Mafia;75.4;Eighteen;27-08-02;ninguno;;Open world
+39;Mafia;75.4;Eighteen;27-08-02;ninguno;;FPS
+39;Mafia;75.4;Eighteen;27-08-02;ninguno;;Open world
+40;Mafia II;77.12;Eighteen;23-08-10;ninguno;;Fantasia
+40;Mafia II;77.12;Eighteen;23-08-10;ninguno;;Historicos
+40;Mafia II;77.12;Eighteen;23-08-10;ninguno;;Fantasia
+40;Mafia II;77.12;Eighteen;23-08-10;ninguno;;Historicos
+43;Deus Ex: Human Revolution;88.26;M;22-08-11;ninguno;;Sigilo
+59;The Elder Scrolls IV: Oblivion;89.85;M;19-03-06;elementos visuales;;Accion
+71;Portal;83.49;T;10-09-07;ninguno;;Platforma
+72;Portal 2;92.05;E10;18-04-11;ninguno;;FPS
+73;Mass Effect;87.48;M;19-11-07;ninguno;;Ciencia Ficcion
+74;Mass Effect 2;93.56;Eighteen;25-01-10;;4000;Simulador
+75;Mass Effect 3;88.56;M;03-05-12;contenido adicional exclusivo;;Ciencia Ficcion
+76;Dragon Age: Origins;88.57;M;11-02-09;;9500;RPG
+109;L.A. Noire;86.32;Eighteen;16-05-11;contenido adicional exclusivo;;Thriller
+109;L.A. Noire;86.32;Eighteen;16-05-11;contenido adicional exclusivo;;Open world
+109;L.A. Noire;86.32;Eighteen;16-05-11;contenido adicional exclusivo;;Thriller
+109;L.A. Noire;86.32;Eighteen;16-05-11;contenido adicional exclusivo;;Open world
+113;Assassin's Creed: Brotherhood;83.27;M;15-11-10;ninguno;;Sandbox
+113;Assassin's Creed: Brotherhood;83.27;M;15-11-10;ninguno;;Ciencia Ficcion
+113;Assassin's Creed: Brotherhood;83.27;M;15-11-10;ninguno;;Sandbox
+113;Assassin's Creed: Brotherhood;83.27;M;15-11-10;ninguno;;Ciencia Ficcion
+116;Star Wars: Knights of the Old Republic;92.14;T;14-07-03;ninguno;;RPG
+121;Minecraft;84.35;Seven;17-11-11;ninguno;;Simulador
+124;Left 4 Dead 2;85.45;Eighteen;16-11-09;ninguno;;Supervivencia
+126;Diablo II;89.32;M;28-06-00;;6500;Hack and slash/Beat 'em up
+127;Assassin's Creed II;88.69;M;16-11-09;contenido adicional exclusivo;;Sigilo
+128;Assassin's Creed;77.19;M;11-12-07;ninguno;;Aventura
+132;Warcraft III: Reign of Chaos;90.6;Twelve;07-02-02;ninguno;;Guerra
+230;StarCraft;89.37;T;30-03-98;;7500;Real Time Strategy (RTS)
+231;Half-Life;84.64;M;26-11-98;elementos visuales;;FPS
+231;Half-Life;84.64;M;26-11-98;elementos visuales;;Thriller
+231;Half-Life;84.64;M;26-11-98;elementos visuales;;FPS
+231;Half-Life;84.64;M;26-11-98;elementos visuales;;Thriller
+233;Half-Life 2;90.95;M;15-11-04;ninguno;;Accion
+239;StarCraft II: Wings of Liberty;88.27;T;26-07-10;;5000;Guerra
+247;Half-Life 2: Episode Two;78.9;M;10-08-07;ninguno;;Ciencia Ficcion
+327;Age of Empires II: The Age of Kings;83.22;T;29-09-99;ninguno;;Historicos
+343;Battlefield 3;82.82;M;24-10-11;ninguno;;Accion
+358;Super Mario Bros.;83.86;E;09-12-85;ninguno;;Accion
+375;Metal Gear Solid;85.45;M;09-02-98;;9500;Sigilo
+375;Metal Gear Solid;85.45;M;09-02-98;;9500;Estrategia
+375;Metal Gear Solid;85.45;M;09-02-98;;9500;Sigilo
+375;Metal Gear Solid;85.45;M;09-02-98;;9500;Estrategia
+379;Metal Gear Solid 3: Snake Eater;89.24;M;16-11-04;contenido adicional exclusivo;;Drama
+379;Metal Gear Solid 3: Snake Eater;89.24;M;16-11-04;contenido adicional exclusivo;;FPS
+379;Metal Gear Solid 3: Snake Eater;89.24;M;16-11-04;contenido adicional exclusivo;;Drama
+379;Metal Gear Solid 3: Snake Eater;89.24;M;16-11-04;contenido adicional exclusivo;;FPS
+427;Final Fantasy VII;87.72;T;30-01-97;ninguno;;Aventura
+431;Uncharted: Drake's Fortune;83.57;T;15-11-07;ninguno;;Aventura
+431;Uncharted: Drake's Fortune;83.57;T;15-11-07;ninguno;;Fantasia
+431;Uncharted: Drake's Fortune;83.57;T;15-11-07;ninguno;;Aventura
+431;Uncharted: Drake's Fortune;83.57;T;15-11-07;ninguno;;Fantasia
+434;Red Dead Redemption;90.75;M;17-05-10;logro;;Open world
+472;The Elder Scrolls V: Skyrim;91.89;M;11-09-11;elementos visuales;;Aventura
+478;The Witcher 2: Assassins of Kings;85.29;Eighteen;16-05-11;ninguno;;Aventura
+493;Heavy Rain;81.65;M;17-02-10;;8000;Misterio
+498;Borderlands;80.2;M;19-10-09;;5000;Ciencia Ficcion
+500;Batman: Arkham Asylum;87.99;T;24-08-09;ninguno;;Accion
+501;Batman: Arkham City;89.35;T;17-10-11;ninguno;;Sigilo
+512;Uncharted 3: Drake's Deception;89.36;T;31-10-11;ninguno;;Platforma
+512;Uncharted 3: Drake's Deception;89.36;T;31-10-11;ninguno;;Fantasia
+512;Uncharted 3: Drake's Deception;89.36;T;31-10-11;ninguno;;Platforma
+512;Uncharted 3: Drake's Deception;89.36;T;31-10-11;ninguno;;Fantasia
+529;Far Cry 3;86.67;M;27-11-12;contenido adicional exclusivo;;Open world
+533;Dishonored;87.7;M;10-08-12;ninguno;;Sigilo
+537;Assassin's Creed: Revelations;79.23;M;13-11-11;ninguno;;Fantasia
+538;Bioshock Infinite;89.55;M;25-02-13;ninguno;;Drama
+538;Bioshock Infinite;89.55;M;25-02-13;ninguno;;Accion
+538;Bioshock Infinite;89.55;M;25-02-13;ninguno;;Drama
+538;Bioshock Infinite;89.55;M;25-02-13;ninguno;;Accion
+545;Call of Duty: Black Ops;80.44;M;11-08-10;ninguno;;Historicos
+545;Call of Duty: Black Ops;80.44;M;11-08-10;ninguno;;FPS
+545;Call of Duty: Black Ops;80.44;M;11-08-10;ninguno;;Historicos
+545;Call of Duty: Black Ops;80.44;M;11-08-10;ninguno;;FPS
+549;God of War;89.09;M;21-03-05;;4000;Historicos
+551;God of War II;89.78;M;03-12-07;ninguno;;Fantasia
+559;Call of Duty: Modern Warfare 2;88.03;M;11-09-09;ninguno;;Sigilo
+565;Uncharted 2: Among Thieves;92.64;T;10-12-09;ninguno;;Historicos
+622;Call of Duty 2;84.49;T;24-10-05;logro;;FPS
+623;Call of Duty 4: Modern Warfare;86.21;M;11-04-07;ninguno;;Accion
+673;DOOM;82.38;M;12-09-93;elementos visuales;;Accion
+730;Grand Theft Auto III;90.11;M;21-10-01;ninguno;;Open world
+730;Grand Theft Auto III;90.11;M;21-10-01;ninguno;;FPS
+730;Grand Theft Auto III;90.11;M;21-10-01;ninguno;;Open world
+730;Grand Theft Auto III;90.11;M;21-10-01;ninguno;;FPS
+731;Grand Theft Auto IV;85.53;Eighteen;28-04-08;;9500;Accion
+732;Grand Theft Auto: San Andreas;91.63;M;25-10-04;ninguno;;Open world
+733;Grand Theft Auto: Vice City;90.78;Eighteen;26-10-02;contenido adicional exclusivo;;Comedia
+733;Grand Theft Auto: Vice City;90.78;Eighteen;26-10-02;contenido adicional exclusivo;;Open world
+733;Grand Theft Auto: Vice City;90.78;Eighteen;26-10-02;contenido adicional exclusivo;;Comedia
+733;Grand Theft Auto: Vice City;90.78;Eighteen;26-10-02;contenido adicional exclusivo;;Open world
+866;Sid Meier's Civilization V;86.11;Twelve;20-09-10;ninguno;;Estrategia
+866;Sid Meier's Civilization V;86.11;Twelve;20-09-10;ninguno;;Turn-based strategy (TBS)
+866;Sid Meier's Civilization V;86.11;Twelve;20-09-10;ninguno;;Estrategia
+866;Sid Meier's Civilization V;86.11;Twelve;20-09-10;ninguno;;Turn-based strategy (TBS)
+960;Max Payne 3;85.77;M;14-05-12;ninguno;;Thriller
+974;Resident Evil 4;84.47;Eighteen;01-10-05;ninguno;;Horror
+979;Call of Duty: Modern Warfare 3;80.9;M;11-07-11;ninguno;;Accion
+1009;The Last of Us;92.6;M;13-06-13;ninguno;;Sigilo
+1011;Borderlands 2;83.01;M;17-09-12;ninguno;;Accion
+1011;Borderlands 2;83.01;M;17-09-12;ninguno;;FPS
+1011;Borderlands 2;83.01;M;17-09-12;ninguno;;Accion
+1011;Borderlands 2;83.01;M;17-09-12;ninguno;;FPS
+1020;Grand Theft Auto V;93.17;Eighteen;16-09-13;ninguno;;Aventura
+1026;The Legend of Zelda: A Link to the Past;96.14;Seven;20-11-91;ninguno;;Accion
+1029;The Legend of Zelda: Ocarina of Time;91.95;Twelve;20-11-98;ninguno;;Aventura
+1029;The Legend of Zelda: Ocarina of Time;91.95;Twelve;20-11-98;ninguno;;Fantasia
+1029;The Legend of Zelda: Ocarina of Time;91.95;Twelve;20-11-98;ninguno;;Aventura
+1029;The Legend of Zelda: Ocarina of Time;91.95;Twelve;20-11-98;ninguno;;Fantasia
+1068;Super Mario Bros. 3;89.13;E;22-10-88;;6500;Accion
+1070;Super Mario World;96.44;E;20-11-90;;5500;Platforma
+1074;Super Mario 64;89.6;E;22-06-96;;8500;Accion
+1121;Watch_Dogs;77.25;Eighteen;26-05-14;ninguno;;Sigilo
+1121;Watch_Dogs;77.25;Eighteen;26-05-14;ninguno;;Accion
+1121;Watch_Dogs;77.25;Eighteen;26-05-14;ninguno;;Sigilo
+1121;Watch_Dogs;77.25;Eighteen;26-05-14;ninguno;;Accion
+1164;Tomb Raider;83.66;M;03-03-13;ninguno;;Platforma
+1164;Tomb Raider;83.66;M;03-03-13;ninguno;;Aventura
+1164;Tomb Raider;83.66;M;03-03-13;ninguno;;Platforma
+1164;Tomb Raider;83.66;M;03-03-13;ninguno;;Aventura
+1262;South Park: The Stick of Truth;82.54;M;03-03-14;ninguno;;Estrategia
+1262;South Park: The Stick of Truth;82.54;M;03-03-14;ninguno;;Fantasia
+1262;South Park: The Stick of Truth;82.54;M;03-03-14;ninguno;;Estrategia
+1262;South Park: The Stick of Truth;82.54;M;03-03-14;ninguno;;Fantasia
+1266;Assassin's Creed III;77.11;M;29-10-12;ninguno;;Open world
+1331;Limbo;82.73;Sixteen;20-07-10;ninguno;;Indie
+1352;Journey;90.27;E;03-12-12;contenido adicional exclusivo;;Fantasia
+1372;Counter-Strike: Global Offensive;81.55;M;20-08-12;ninguno;;Accion
+1384;Hotline Miami;84.99;M;22-10-12;;6500;FPS
+1802;Chrono Trigger;92.69;E10;03-10-95;elementos visuales;;Ciencia Ficcion
+1871;The Walking Dead: Season One;85.12;M;23-04-12;ninguno;;Aventura
+1887;Dragon Age: Inquisition;85.77;M;17-11-14;ninguno;;Aventura
+1942;The Witcher 3: Wild Hunt;93.58;M;18-05-15;ninguno;;Fantasia
+1970;Assassin's Creed IV: Black Flag;83.6;M;28-10-13;ninguno;;Accion
+1985;Metal Gear Solid V: The Phantom Pain;90.66;M;31-08-15;ninguno;;Aventura
+1985;Metal Gear Solid V: The Phantom Pain;90.66;M;31-08-15;ninguno;;Tactical
+1985;Metal Gear Solid V: The Phantom Pain;90.66;M;31-08-15;ninguno;;Aventura
+1985;Metal Gear Solid V: The Phantom Pain;90.66;M;31-08-15;ninguno;;Tactical
+2031;Wolfenstein: The New Order;79.75;M;19-05-14;;5000;FPS
+2155;Dark Souls;88.65;M;21-09-11;ninguno;;Accion
+2207;Shadow of the Colossus;89.44;T;17-10-05;contenido adicional exclusivo;;Fantasia
+2207;Shadow of the Colossus;89.44;T;17-10-05;contenido adicional exclusivo;;Puzzle
+2207;Shadow of the Colossus;89.44;T;17-10-05;contenido adicional exclusivo;;Fantasia
+2207;Shadow of the Colossus;89.44;T;17-10-05;contenido adicional exclusivo;;Puzzle
+2993;The Wolf Among Us;81.78;Eighteen;10-10-13;ninguno;;Drama
+3025;Middle-earth: Shadow of Mordor;82.14;M;29-09-14;ninguno;;Sigilo
+5503;Batman: Arkham Knight;88.46;M;22-06-15;;5000;Open world
+6036;The Last of Us Remastered;96;Eighteen;28-07-14;;3500;Aventura
+6036;The Last of Us Remastered;96;Eighteen;28-07-14;;3500;Supervivencia
+6036;The Last of Us Remastered;96;Eighteen;28-07-14;;3500;Aventura
+6036;The Last of Us Remastered;96;Eighteen;28-07-14;;3500;Supervivencia
+6801;Far Cry 4;81.23;Eighteen;17-11-14;ninguno;;FPS
+6801;Far Cry 4;81.23;Eighteen;17-11-14;ninguno;;Historicos
+6801;Far Cry 4;81.23;Eighteen;17-11-14;ninguno;;FPS
+6801;Far Cry 4;81.23;Eighteen;17-11-14;ninguno;;Historicos
+7323;Rise of the Tomb Raider;84.54;M;11-09-15;ninguno;;Aventura
+7323;Rise of the Tomb Raider;84.54;M;11-09-15;ninguno;;Horror
+7323;Rise of the Tomb Raider;84.54;M;11-09-15;ninguno;;Aventura
+7323;Rise of the Tomb Raider;84.54;M;11-09-15;ninguno;;Horror
+7331;Uncharted 4: A Thief's End;92.62;Sixteen;05-09-16;ninguno;;Aventura
+7334;Bloodborne;91.08;M;23-03-15;;4500;Fantasia
+7342;INSIDE;89.59;M;28-06-16;contenido adicional exclusivo;;Accion
+7342;INSIDE;89.59;M;28-06-16;contenido adicional exclusivo;;Horror
+7342;INSIDE;89.59;M;28-06-16;contenido adicional exclusivo;;Accion
+7342;INSIDE;89.59;M;28-06-16;contenido adicional exclusivo;;Horror
+7344;Ori and the Blind Forest;88.62;E;03-10-15;ninguno;;Indie
+7346;The Legend of Zelda: Breath of the Wild;94.91;E10;03-02-17;ninguno;;Sandbox
+7346;The Legend of Zelda: Breath of the Wild;94.91;E10;03-02-17;ninguno;;Fantasia
+7346;The Legend of Zelda: Breath of the Wild;94.91;E10;03-02-17;ninguno;;Sandbox
+7346;The Legend of Zelda: Breath of the Wild;94.91;E10;03-02-17;ninguno;;Fantasia
+7351;DOOM;86.68;M;05-11-16;ninguno;;Ciencia Ficcion
+7599;Life is Strange;81.13;Sixteen;28-01-15;ninguno;;Accion
+8173;Overwatch;86.02;T;23-05-16;ninguno;;FPS
+9630;Fallout 4;82.39;M;11-09-15;;5000;Accion
+9630;Fallout 4;82.39;M;11-09-15;;5000;Supervivencia
+9630;Fallout 4;82.39;M;11-09-15;;5000;Accion
+9630;Fallout 4;82.39;M;11-09-15;;5000;Supervivencia
+9730;Firewatch;79.6;M;02-08-16;;6500;Open world
+11133;Dark Souls III;86.55;M;23-03-16;contenido adicional exclusivo;;Open world
+11156;Horizon Zero Dawn;89.89;T;27-02-17;ninguno;;Ciencia Ficcion
+11198;Rocket League;86.24;E;07-06-15;ninguno;;Indie
+11208;NieR: Automata;90.34;M;22-02-17;;3000;Hack and slash/Beat 'em up
+12517;Undertale;92.11;E10;14-09-15;ninguno;;Aventura
+12517;Undertale;92.11;E10;14-09-15;ninguno;;RPG
+12517;Undertale;92.11;E10;14-09-15;ninguno;;Aventura
+12517;Undertale;92.11;E10;14-09-15;ninguno;;RPG
+14593;Hollow Knight;91.65;Seven;23-02-17;ninguno;;Aventura
+17000;Stardew Valley;89.11;E10;25-02-16;;5500;Negocio
+17000;Stardew Valley;89.11;E10;25-02-16;;5500;RPG
+17000;Stardew Valley;89.11;E10;25-02-16;;5500;Negocio
+17000;Stardew Valley;89.11;E10;25-02-16;;5500;RPG
+19560;God of War;95.98;M;19-04-18;ninguno;;Aventura
+19565;Marvel's Spider-Man;88.84;T;09-06-18;elementos visuales;;Drama
+25076;Red Dead Redemption 2;93.39;M;25-10-18;ninguno;;FPS
+26758;Super Mario Odyssey;93.26;E10;26-10-17;;7000;Sandbox
