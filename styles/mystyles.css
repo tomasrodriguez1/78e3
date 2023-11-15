@@ -159,3 +159,15 @@ table.center tr:hover {
     font-weight: bold;
     color: #e0e0e0;
 }
+
+#modalProveedor {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    z-index: 1000;
+    display: none;
+}

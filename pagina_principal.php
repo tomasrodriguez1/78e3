@@ -44,24 +44,44 @@ if (!isset($_SESSION['user_id'])) {
         try {
             $sql = "SELECT * FROM proveedores";
             $stmt = $db->query($sql);
-
-            echo "<table class='center'>";
-            echo "<tr><th>ID</th><th>Nombre</th><th>Plataforma</th></tr>";
+            echo "<ul>";
 
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo "<tr>";
-                echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['plataforma']) . "</td>";
-                echo "</tr>";
+                echo "<li><a href='#' class='proveedor' data-id='" . $row['id'] . "'>" . htmlspecialchars($row['nombre']) . "</a></li>";
             }
 
-            echo "</table>";
+            echo "</ul>";
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
         }
         ?>
     </div>
 
+
+    <!-- FIN DE LA PAGINA -->
+    
+    <!-- Modal para detalles del proveedor -->
+    <div id="modalProveedor" style="display:none;">
+        <div id="detallesProveedor"></div>
+        <button onclick="cerrarModal()">Cerrar</button>
+    </div>
+    <!-- Código JavaScript -->
+    <script>
+    // Event listener para los clics en los nombres de los proveedores
+    document.querySelectorAll('.proveedor').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            var proveedorId = this.getAttribute('data-id');
+            // Aquí puedes hacer una solicitud AJAX para obtener los detalles del proveedor
+            // Por ahora, simplemente mostraremos el ID
+            document.getElementById('detallesProveedor').innerHTML = 'Detalles del proveedor con ID: ' + proveedorId;
+            document.getElementById('modalProveedor').style.display = 'block';
+        });
+    });
+
+    function cerrarModal() {
+        document.getElementById('modalProveedor').style.display = 'none';
+    }
+    </script>
 </body>
 </html>
