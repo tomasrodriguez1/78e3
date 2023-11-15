@@ -22,7 +22,7 @@ if (!isset($_SESSION['user_id'])) {
 
     <!-- INICIO DE LA PAGINA -->
 
-    <!-- Barra de Navegación -->
+    <!-- SECCION: Barra de Navegación -->
     <div style="text-align: center;"> <!-- Contenedor para centralizar -->
         <div class="navbar">
             <a href="perfil_usuario.php">Mi Perfil</a>
@@ -34,7 +34,7 @@ if (!isset($_SESSION['user_id'])) {
 
     <br>
     <br>
-   <!-- Aquí empieza el contenido de la página -->
+   <!-- SECCION: Suscripciones de Videojuegos -->
    <h1 class="titulo-suscripciones">Suscripciones de Videojuegos</h1>
     <!-- Formulario de Búsqueda -->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
@@ -54,6 +54,7 @@ if (!isset($_SESSION['user_id'])) {
         echo "</div>";
     }
     ?>
+    <!-- Mostrar cada proveedor en su rectangulo -->
    <div class="proveedores-container">
         <?php
         try {
