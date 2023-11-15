@@ -4,191 +4,93 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require("conexion.php");
 
-$csv_proveedores = file("CSV PAR/proveedores.csv");
-foreach ($csv_proveedores as $linea) {
-    $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO proveedores (id, nombre, plataforma) VALUES (:id, :nombre, :plataforma)";
-    try {
+function eliminarBOM($valor) {
+    if (substr($valor, 0, 3) == pack('CCC', 0xef, 0xbb, 0xbf)) {
+        $valor = substr($valor, 3);
+    }
+    return $valor;
+}
+
+try {
+    // Iniciar transacción para proveedores
+    $db->beginTransaction();
+
+    $csv_proveedores = file("CSV PAR/proveedores.csv");
+    foreach ($csv_proveedores as $index => $linea) {
+        // Saltar el encabezado
+        if ($index === 0) {
+            continue;
+        }
+
+        $linea = str_getcsv($linea, ";");
+        $idLimpio = filter_var(trim($linea[0]), FILTER_SANITIZE_NUMBER_INT);
+        if (!is_numeric($idLimpio)) {
+            throw new Exception("El valor de ID no es un número válido: " . $linea[0]);
+        }
+
+        // Verificar si el proveedor ya existe
+        $sqlVerificar = "SELECT COUNT(*) FROM proveedores WHERE id = :id OR nombre = :nombre";
+        $stmtVerificar = $db->prepare($sqlVerificar);
+        $stmtVerificar->bindParam(':id', $idLimpio, PDO::PARAM_INT);
+        $stmtVerificar->bindParam(':nombre', $linea[1]);
+        $stmtVerificar->execute();
+        if ($stmtVerificar->fetchColumn() > 0) {
+            echo "Proveedor ya cargado: " . $linea[1] . "\n";
+            continue;
+        }
+
+        // Insertar el proveedor si no existe
+        $sql = "INSERT INTO proveedores (id, nombre, plataforma) VALUES (:id, :nombre, :plataforma)";
         $stmt = $db->prepare($sql);
-        $stmt->bindParam(':id', $linea[0]);
+        $stmt->bindParam(':id', $idLimpio, PDO::PARAM_INT);
         $stmt->bindParam(':nombre', $linea[1]);
         $stmt->bindParam(':plataforma', $linea[2]);
         $stmt->execute();
-        echo "Datos cargados proveedores";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+        echo "Datos cargados proveedores\n";
     }
+
+    // Confirmar la transacción para proveedores
+    $db->commit();
+} catch (Exception $e) {
+    // Revertir la transacción si hay un error
+    $db->rollBack();
+    echo "Error durante la carga de datos de proveedores: " . $e->getMessage();
 }
 
-$csv_genero_subgenero = file("CSV PAR/genero_subgenero.csv");
-foreach ($csv_genero_subgenero as $linea) {
-    $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO genero_subgenero (genero, subgenero) VALUES (:genero, :subgenero)";
-    try {
+try {
+    // Iniciar transacción para genero_subgenero
+    $db->beginTransaction();
+
+    $csv_genero_subgenero = file("CSV PAR/genero_subgenero.csv");
+    foreach ($csv_genero_subgenero as $linea) {
+        $linea = str_getcsv($linea, ";");
+
+        // Verificar si el genero_subgenero ya existe
+        $sqlVerificar = "SELECT COUNT(*) FROM genero_subgenero WHERE genero = :genero AND subgenero = :subgenero";
+        $stmtVerificar = $db->prepare($sqlVerificar);
+        $stmtVerificar->bindParam(':genero', $linea[0]);
+        $stmtVerificar->bindParam(':subgenero', $linea[1]);
+        $stmtVerificar->execute();
+        if ($stmtVerificar->fetchColumn() > 0) {
+            echo "Genero y subgenero ya cargados: " . $linea[0] . ", " . $linea[1] . "\n";
+            continue;
+        }
+
+        // Insertar genero_subgenero si no existe
+        $sql = "INSERT INTO genero_subgenero (genero, subgenero) VALUES (:genero, :subgenero)";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':genero', $linea[0]);
         $stmt->bindParam(':subgenero', $linea[1]);
         $stmt->execute();
-        echo "Datos cargados genero_subgenero";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+        echo "Datos cargados genero_subgenero\n";
     }
+
+    // Confirmar la transacción para genero_subgenero
+    $db->commit();
+} catch (Exception $e) {
+    // Revertir la transacción si hay un error
+    $db->rollBack();
+    echo "Error durante la carga de datos de genero_subgenero: " . $e->getMessage();
 }
 
-$csv_pago_no_subscripcion = file("CSV PAR/pago_no_suscripcion.csv");
-foreach ($csv_pago_no_subscripcion as $linea) {
-    $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO pago_no_subscripcion (pago_id, monto, fecha, id_usuario, preorden, id_proveedor, id_videojuego) VALUES (:pago_id, :monto, :fecha, :id_usuario, :preorden, :id_proveedor, :id_videojuego)";
-    try {
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':pago_id', $linea[0]);
-        $stmt->bindParam(':monto', $linea[1]);
-        $stmt->bindParam(':fecha', $linea[2]);
-        $stmt->bindParam(':id_usuario', $linea[3]);
-        $stmt->bindParam(':preorden', $linea[4]);
-        $stmt->bindParam(':id_proveedor', $linea[5]);
-        $stmt->bindParam(':id_videojuego', $linea[6]);
-        $stmt->execute();
-        echo "Datos cargados pago_no_subscripcion";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
-    }
-}
-
-$csv_pago_suscripcion = file("CSV PAR/pago_suscripcion.csv");
-foreach ($csv_pago_suscripcion as $linea) {
-    $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO pago_suscripcion (pago_id, monto, fecha, id_usuario, subs_id) VALUES (:pago_id, :monto, :fecha, :id_usuario, :subs_id)";
-    try {
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':pago_id', $linea[0]);
-        $stmt->bindParam(':monto', $linea[1]);
-        $stmt->bindParam(':fecha', $linea[2]);
-        $stmt->bindParam(':id_usuario', $linea[3]);
-        $stmt->bindParam(':subs_id', $linea[4]);
-        $stmt->execute();
-        echo "Datos cargados pago_subscripcion";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
-    }
-}
-
-$csv_proveeores_videojuegos_pre = file("CSV PAR/proveedores_videojuegos_pre.csv");
-foreach ($csv_proveeores_videojuegos_pre as $linea) {
-    $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO proveedores_videojuegos_pre (id, id_videojuego, precio, precio_preorden) VALUES (:id, :id_videojuego, :precio, :precio_preorden)";
-    try {
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':id', $linea[0]);
-        $stmt->bindParam(':id_videojuego', $linea[1]);
-        $stmt->bindParam(':precio', $linea[2]);
-        $stmt->bindParam(':precio_preorden', $linea[3]);
-        $stmt->execute();
-        echo "Datos cargados proveeores_videojuegos_pre";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
-    }
-}
-
-$csv_proveeores_videojuegos = file("CSV PAR/proveedores_videojuegos.csv");
-foreach ($csv_proveeores_videojuegos as $linea) {
-    $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO proveedores_videojuegos (id, nombre, plataforma, id_videojuego, precio) VALUES (:id, :nombre, :plataforma, :id_videojuego, :precio)";
-    try {
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':id', $linea[0]);
-        $stmt->bindParam(':nombre', $linea[1]);
-        $stmt->bindParam(':plataforma', $linea[2]);
-        $stmt->bindParam(':id_videojuego', $linea[3]);
-        $stmt->bindParam(':precio', $linea[4]);
-        $stmt->execute();
-        echo "Datos cargados proveeores_videojuegos";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
-    }
-}
-$csv_suscripciones = file("CSV PAR/suscripciones.csv");
-foreach ($csv_suscripciones as $linea) {
-    $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO suscripciones (id, estado, fecha_inicio, id_usuario, fecha_termino, id_videojuego, mensualidad) VALUES (:id, :estado, :fecha_inicio, :id_usuario, :fecha_termino, :id_videojuego, :mensualidad)";
-    try {
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':id', $linea[0]);
-        $stmt->bindParam(':estado', $linea[1]);
-        $stmt->bindParam(':fecha_inicio', $linea[2]);
-        $stmt->bindParam(':id_usuario', $linea[3]);
-        $stmt->bindParam(':fecha_termino', $linea[4]);
-        $stmt->bindParam(':id_videojuego', $linea[5]);
-        $stmt->bindParam(':mensualidad', $linea[6]);
-        $stmt->execute();
-        echo "Datos cargados suscripciones";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
-    }
-}
-
-$csv_videojuegos = file("CSV PAR/videojuegos.csv");
-foreach ($csv_videojuegos as $linea){
-    $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO videojuegos (id_videojuego, titulo, puntuacion,clasificion, fecha_de_lanzamiento) VALUES (:id_videojuego, :titulo, :puntuacion, :clasificion, :fecha_de_lanzamiento)";
-    try {
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':id_videojuego', $linea[0]);
-        $stmt->bindParam(':titulo', $linea[1]);
-        $stmt->bindParam(':puntuacion', $linea[2]);
-        $stmt->bindParam(':clasificion', $linea[3]);
-        $stmt->bindParam(':fecha_de_lanzamiento', $linea[4]);
-        $stmt->execute();
-        echo "Datos cargados videojuegos";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
-    }
-}
-
-$csv_videojuego_genero = file("CSV PAR/videojuego_genero.csv");
-foreach ($csv_videojuego_genero as $linea){
-    $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO videojuego_genero (id_videojuego, nombre) VALUES (:id_videojuego, :nombre)";
-    try {
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':id_videojuego', $linea[0]);
-        $stmt->bindParam(':nombre', $linea[1]);
-        $stmt->execute();
-        echo "Datos cargados videojuego_genero";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
-    }
-}
-
-$csv_videojuego_mensualidad = file("CSV PAR/videojuego_mensualidad.csv");
-foreach ($csv_videojuego_mensualidad as $linea){
-    $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO videojuego_mensualidad (id_videojuego, mensualidad) VALUES (:id_videojuego, :mensualidad)";
-    try {
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':id_videojuego', $linea[0]);
-        $stmt->bindParam(':mensualidad', $linea[1]);
-        $stmt->execute();
-        echo "Datos cargados videojuego_mensualidad";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
-    }
-}
-
-
-$csv_videojuego_preorden = file("CSV PAR/videojuego_preorden.csv");
-foreach ($csv_videojuego_preorden as $linea){
-    $linea = str_getcsv($linea, ";");
-    $sql = "INSERT INTO videojuego_preorden (id_videojuego, beneficio_preorden) VALUES (:id_videojuego, :beneficio_preorden)";
-    try {
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':id_videojuego', $linea[0]);
-        $stmt->bindParam(':beneficio_preorden', $linea[1]);
-        $stmt->execute();
-        echo "Datos cargados videojuego_preorden.";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
-    }
-}
-echo "Datos cargados con éxito.";
 ?>
