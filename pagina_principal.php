@@ -23,19 +23,15 @@ if (!isset($_SESSION['user_id'])) {
     <!-- INICIO DE LA PAGINA -->
 
     <!-- Barra de Navegación -->
-    <div class="navbar">
-        <a href="perfil_usuario.php">Mi Perfil</a>
-        <a href="one_time_purchase.php">One Time Purchases</a>
-        <a href="consulta_inestructurada.php">Consulta Inestructurada</a>
-        <!-- Agrega aquí más enlaces según necesites -->
+    <div style="text-align: center;"> <!-- Contenedor para centralizar -->
+        <div class="navbar">
+            <a href="perfil_usuario.php">Mi Perfil</a>
+            <a href="one_time_purchase.php">One Time Purchases</a>
+            <a href="consulta_inestructurada.php">Consulta Inestructurada</a>
+            <!-- Agrega aquí más enlaces según necesites -->
+        </div>
     </div>
 
-    <br>
-    <br>
-
-    <div class="logout-button">
-        <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
-    </div>
     <br>
     <br>
    <!-- Aquí empieza el contenido de la página -->
@@ -55,12 +51,18 @@ if (!isset($_SESSION['user_id'])) {
         ?>
     </div>
 
+    <br>
+    <br>
 
+    <div class="logout-button">
+        <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
+    </div>
 <!-- FIN DE LA PAGINA -->
 
 <!-- Modal para detalles del proveedor -->
 <div id="modalProveedor" style="display:none;">
     <div id="detallesProveedor"></div>
+    <br>
     <button onclick="cerrarModal()">Cerrar</button>
 </div>
 

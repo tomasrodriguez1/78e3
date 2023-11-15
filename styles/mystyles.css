@@ -96,20 +96,19 @@ table.center tr:hover {
 
 /* Estilos para la barra de navegación */
 .navbar {
-    background-color: #333; /* Color de fondo oscuro */
+    background-color: #333;
     overflow: hidden;
-    font-family: Arial, sans-serif; /* Puedes cambiar la fuente si lo deseas */
-    border-radius: 10px; /* Esquinas redondeadas */
-    width: auto; /* Ancho automático según el contenido */
-    max-width: 80%; /* Máximo ancho permitido */
-    margin: 0 auto; /* Centrar la barra de navegación */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Sombra para un efecto elevado */
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    text-align: center; /* Centrar el contenido */
+    display: inline-block; /* Ajustar al contenido */
 }
 
 .navbar a {
-    float: left;
-    display: block;
-    color: white; /* Color del texto */
+    display: inline-block; /* Centrar elementos de la barra de navegación */
+    color: white;
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
@@ -165,7 +164,7 @@ table.center tr:hover {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: #333;
     padding: 20px;
     border: 1px solid #FFB703;;
     z-index: 1000;
