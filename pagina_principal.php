@@ -39,7 +39,7 @@ if (!isset($_SESSION['user_id'])) {
     <br>
     <br>
    <!-- Aquí empieza el contenido de la página -->
-   <h1 class="titulo-suscripciones">Suscripciones</h1>
+   <h1 class="titulo-suscripciones">Suscripciones de Videojuegos</h1>
 
    <div class="proveedores-container">
         <?php
