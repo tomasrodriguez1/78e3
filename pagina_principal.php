@@ -70,11 +70,9 @@ if (!isset($_SESSION['user_id'])) {
             $sql = "SELECT * FROM proveedores";
             $stmt = $db->query($sql);
             echo "<ul>";
-
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo "<li><a href='#' class='proveedor' data-id='" . $row['id'] . "'>" . htmlspecialchars($row['nombre']) . "</a></li>";
+                echo "<li>" . htmlspecialchars($row['nombre']) . "</li>";
             }
-
             echo "</ul>";
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
