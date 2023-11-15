@@ -23,7 +23,6 @@ if (!isset($_SESSION['user_id'])) {
     <!-- Barra de Navegación -->
     <div class="navbar">
         <a href="perfil_usuario.php">Mi Perfil</a>
-        <a href="pagina_suscripciones.php">Página de Suscripciones</a>
         <a href="one_time_purchase.php">One Time Purchases</a>
         <a href="consulta_inestructurada.php">Consulta Inestructurada</a>
         <!-- Agrega aquí más enlaces según necesites -->
@@ -38,6 +37,8 @@ if (!isset($_SESSION['user_id'])) {
     <br>
     <br>
    <!-- Aquí empieza el contenido de la página -->
+   <h1 class="titulo-suscripciones">Suscripciones</h1>
+
    <div>
         <?php
         try {

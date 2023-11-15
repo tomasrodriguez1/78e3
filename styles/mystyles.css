@@ -152,3 +152,10 @@ table.center tr:hover {
 .btn-logout:hover {
     background-color: #005f73; /* Color ligeramente más claro al pasar el ratón */
 }
+.titulo-suscripciones {
+    text-align: left;
+    margin-left: 50px; /* Ajusta este valor según sea necesario */
+    font-size: 24px; /* Ajusta el tamaño de la fuente según tus preferencias */
+    font-weight: bold;
+    color: #e0e0e0;
+}
