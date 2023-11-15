@@ -71,8 +71,9 @@ if (!isset($_SESSION['user_id'])) {
             $stmt = $db->query($sql);
             echo "<ul>";
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo "<li>" . htmlspecialchars($row['nombre']) . "</li>";
+                echo "<li><a href='#' class='proveedor' data-id='" . htmlspecialchars($row['id']) . "'>" . htmlspecialchars($row['nombre']) . "</a></li>";
             }
+            
             echo "</ul>";
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
