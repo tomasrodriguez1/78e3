@@ -167,7 +167,7 @@ table.center tr:hover {
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #FFB703;;
     z-index: 1000;
     display: none;
 }
