@@ -394,10 +394,14 @@ try {
 try {
     $db->beginTransaction();
     $csv_pago_suscripcion = file("CSV PAR/pagos.csv");
+
     foreach($csv_pago_suscripcion as $index => $linea) {
-        if ($index === 0) continue;
+        if ($index === 0) continue; // Salta la primera línea (encabezados)
+
         $linea = str_getcsv($linea, ";");
-        if (verificarCampos($linea, [0, 1, 2, 3, 7])) {
+        
+        // Asegúrate de que los campos requeridos existan y que subs_id no sea nulo
+        if (verificarCampos($linea, [0, 1, 2, 3, 7]) || is_null($linea[7]) || $linea[7] === '') {
             continue;
         }
         $sqlVerificar = "SELECT COUNT(*) FROM pago_suscripcion WHERE pago_id = :pago_id";
