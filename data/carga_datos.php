@@ -5,8 +5,11 @@ error_reporting(E_ALL);
 require("conexion.php");
 
 function verificarCampos($linea, $indicesCampos) {
+    if (is_null($linea)) {
+        return false;
+    }
     foreach ($indicesCampos as $indice) {
-        if (!isset($linea[$indice]) || trim($linea[$indice]) === '') {
+        if (!isset($linea[$indice]) || trim($linea[$indice]) === '' ) {
             return false;
         }
     }
@@ -450,21 +453,16 @@ try {
 try {
     $db->beginTransaction();
     $csv_pago_suscripcion = file("CSV PAR/pagos.csv");
-
     foreach($csv_pago_suscripcion as $index => $linea) {
-        if ($index === 0) continue; // Salta la primera línea (encabezados)
-
+        if ($index === 0) continue;
         $linea = str_getcsv($linea, ";");
-        
-        // Asegúrate de que los campos requeridos existan y que subs_id no sea nulo
-        if (verificarCampos($linea, [0, 1, 2, 3, 7]) || is_null($linea[7]) || $linea[7] === '') {
+        if (verificarCampos($linea, [0, 1, 2, 3, 7])) {
             continue;
         }
         $sqlVerificar = "SELECT COUNT(*) FROM pago_suscripcion WHERE pago_id = :pago_id";
         $stmtVerificar = $db->prepare($sqlVerificar);
         $stmtVerificar->bindParam(':pago_id', $linea[0]);
         $stmtVerificar->execute();
-
         if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[3])) {
             echo "Saltandonde esta linea porque el usuario".$linea[3]. "no existe \n";
             continue;
@@ -472,7 +470,6 @@ try {
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
         }
-
         $sql = "INSERT INTO pago_suscripcion (pago_id, monto, fecha, id_usuario, subs_id) VALUES (:pago_id, :monto, :fecha, :id_usuario, :subs_id)";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':pago_id', $linea[0]);
@@ -488,7 +485,7 @@ try {
 } catch (Exception $e) {
     $db->rollBack();
     echo "Error durante la carga de datos de pago_suscripcion: " . $e->getMessage();
-} 
+}
 ## Tabla suscripciones
 try {
     $db->beginTransaction();
@@ -535,7 +532,18 @@ try {
     echo "Error durante la carga de datos de suscripciones: " . $e->getMessage();
 }
 
+try {
+    $sql = "SELECT * FROM pago_suscripcion";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
 
+    echo "Contenido de la tabla pago_suscripcion:\n";
+    while ($fila = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo "Pago ID: " . $fila['pago_id'] . ", Monto: " . $fila['monto'] . ", Fecha: " . $fila['fecha'] . ", ID Usuario: " . $fila['id_usuario'] . ", Subs ID: " . $fila['subs_id'] . "\n";
+    }
+} catch (PDOException $e) {
+    echo "Error al imprimir datos de la tabla: " . $e->getMessage();
+}
 ?>
 
 
