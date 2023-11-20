@@ -12,6 +12,15 @@ function verificarCampos($linea, $indicesCampos) {
     }
     return true;
 }
+function existeEnTabla($db, $tabla, $columna, $valor) {
+    $sql = "SELECT COUNT(*) FROM $tabla WHERE $columna = :valor";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':valor', $valor);
+    $stmt->execute();
+
+    return $stmt->fetchColumn() > 0;
+}
+
 
 ## TABLA PROVEEDORES
 try {
