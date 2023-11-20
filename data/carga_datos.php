@@ -340,13 +340,13 @@ try {
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
         }
-        #$sql = "INSERT INTO usuario_horas (id_usuario, id_videojuego, cantidad) VALUES (:id_usuario, :id_videojuego, :cantidad)";
-        #$stmt = $db->prepare($sql);
-        #$stmt->bindParam(':id_usuario', $linea[0]);
-        #$stmt->bindParam(':id_videojuego', $linea[5]);
-        #$stmt->bindParam(':cantidad', $linea[7]);
-        #$stmt->execute();
-        #echo "Datos cargados usuario_horas\n";
+        $sql = "INSERT INTO usuario_horas (id_usuario, id_videojuego, cantidad) VALUES (:id_usuario, :id_videojuego, :cantidad)";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id_usuario', $linea[0]);
+        $stmt->bindParam(':id_videojuego', $linea[5]);
+        $stmt->bindParam(':cantidad', $linea[7]);
+        $stmt->execute();
+        echo "Datos cargados usuario_horas\n";
     }
     $db->commit();
 } catch (Exception $e) {
