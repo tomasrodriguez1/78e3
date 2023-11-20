@@ -424,7 +424,47 @@ try {
 } catch (Exception $e) {
     $db->rollBack();
     echo "Error durante la carga de datos de pago_suscripcion: " . $e->getMessage();
-}   
+} 
+## Tabla suscripciones
+try {
+    $db->beginTransaction();
+    $csv_suscripciones = file("CSV PAR/suscripciones.csv");
+    foreach($csv_suscripciones as $index => $linea) {
+        if ($index === 0) continue;
+        $linea = str_getcsv($linea, ";");
+        if (verificarCampos($linea, [0, 1, 2, 3, 4, 5, 6])) {
+            continue;
+        }
+        $sqlVerificar = "SELECT COUNT(*) FROM suscripciones WHERE id = :id";
+        $stmtVerificar = $db->prepare($sqlVerificar);
+        $stmtVerificar->bindParam(':id', $linea[0]);
+        $stmtVerificar->execute();
+
+        if ($stmtVerificar->fetchColumn() > 0) {
+            continue;
+        }
+
+        $sql = "INSERT INTO suscripciones (id, estado, fecha_inicio, id_usuario, fecha_termino, id_videojuego, mensualidad) VALUES (:id, :estado, :fecha_inicio, :id_usuario, :fecha_termino, :id_videojuego, :mensualidad)";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id', $linea[0]);
+        $stmt->bindParam(':estado', $linea[1]);
+        $fecha_inicio = date_format(date_create_from_format('d-m-y', $linea[2]), 'Y-m-d');
+        $stmt->bindParam(':fecha_inicio', $fecha_inicio);
+        $stmt->bindParam(':id_usuario', $linea[3]);
+        $fecha_termino = date_format(date_create_from_format('d-m-y', $linea[4]), 'Y-m-d');
+        $stmt->bindParam(':fecha_termino', $fecha_termino);
+        $stmt->bindParam(':id_videojuego', $linea[5]);
+        $stmt->bindParam(':mensualidad', $linea[6]);
+        $stmt->execute();
+        echo "Datos cargados suscripciones\n";
+    }
+    $db->commit();
+} catch (Exception $e) {
+    $db->rollBack();
+    echo "Error durante la carga de datos de suscripciones: " . $e->getMessage();
+}
+
+
 ?>
 
 
