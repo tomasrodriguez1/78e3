@@ -140,6 +140,10 @@ try {
         $stmtVerificar->bindParam(':id_videojuego', $linea[0]);
         $stmtVerificar->bindParam(':genero', $linea[1]);
         $stmtVerificar->execute();
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[5])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[5]. "no existe \n";
+            continue;
+        }
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
         }
@@ -173,6 +177,10 @@ try {
         $stmtVerificar->bindParam(':id_videojuego', $linea[3]);
         $stmtVerificar->execute();
 
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[5])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[5]. "no existe \n";
+            continue;
+        }
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
         }
@@ -206,6 +214,10 @@ try {
         $stmtVerificar->bindParam(':id_videojuego', $linea[3]);
         $stmtVerificar->execute();
 
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[5])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[5]. "no existe \n";
+            continue;
+        }
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
         }
@@ -276,6 +288,14 @@ try {
         $stmtVerificar->bindParam(':id_usuario', $linea[0]);
         $stmtVerificar->bindParam(':id_proveedor', $linea[1]);
         $stmtVerificar->execute();
+        if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[3])) {
+            echo "Saltandonde esta linea porque el usuario".$linea[3]. "no existe \n";
+            continue;
+        }
+        if (!existeEnTabla($db, 'proveedores', 'id', $linea[5])) {
+            echo "Saltandonde esta linea porque el proveedor".$linea[5]. "no existe \n";
+            continue;
+        }
 
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
@@ -308,6 +328,14 @@ try {
         $stmtVerificar->bindParam(':id_usuario', $linea[0]);
         $stmtVerificar->bindParam(':id_videojuego', $linea[5]);
         $stmtVerificar->execute();
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[5])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[5]. "no existe \n";
+            continue;
+        }
+        if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[3])) {
+            echo "Saltandonde esta linea porque el usuario".$linea[3]. "no existe \n";
+            continue;
+        }
 
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
@@ -341,7 +369,14 @@ try {
         $stmtVerificar->bindParam(':id_usuario', $linea[0]);
         $stmtVerificar->bindParam(':id_videojuego', $linea[5]);
         $stmtVerificar->execute();
-
+        if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[3])) {
+            echo "Saltandonde esta linea porque el usuario".$linea[3]. "no existe \n";
+            continue;
+        }
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[5])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[5]. "no existe \n";
+            continue;
+        }
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
         }
@@ -377,7 +412,19 @@ try {
         $stmtVerificar = $db->prepare($sqlVerificar);
         $stmtVerificar->bindParam(':pago_id', $linea[0]);
         $stmtVerificar->execute();
-
+        
+        if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[3])) {
+            echo "Saltandonde esta linea porque el usuario".$linea[3]. "no existe \n";
+            continue;
+        }
+        if (!existeEnTabla($db, 'proveedores', 'id', $linea[5])) {
+            echo "Saltandonde esta linea porque el proveedor".$linea[5]. "no existe \n";
+            continue;
+        }
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[5])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[5]. "no existe \n";
+            continue;
+        }
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
         }
@@ -418,6 +465,10 @@ try {
         $stmtVerificar->bindParam(':pago_id', $linea[0]);
         $stmtVerificar->execute();
 
+        if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[3])) {
+            echo "Saltandonde esta linea porque el usuario".$linea[3]. "no existe \n";
+            continue;
+        }
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
         }
@@ -452,7 +503,14 @@ try {
         $stmtVerificar = $db->prepare($sqlVerificar);
         $stmtVerificar->bindParam(':id', $linea[0]);
         $stmtVerificar->execute();
-
+        if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[3])) {
+            echo "Saltandonde esta linea porque el usuario".$linea[3]. "no existe \n";
+            continue;
+        }
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[5])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[5]. "no existe \n";
+            continue;
+        }
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
         }
