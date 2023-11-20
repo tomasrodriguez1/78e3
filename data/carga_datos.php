@@ -140,8 +140,8 @@ try {
         $stmtVerificar->bindParam(':id_videojuego', $linea[0]);
         $stmtVerificar->bindParam(':genero', $linea[1]);
         $stmtVerificar->execute();
-        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[5])) {
-            echo "Saltandonde esta linea porque el videojuego ".$linea[5]. "no existe \n";
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[0])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[0]. "no existe \n";
             continue;
         }
         if ($stmtVerificar->fetchColumn() > 0) {
@@ -177,8 +177,8 @@ try {
         $stmtVerificar->bindParam(':id_videojuego', $linea[3]);
         $stmtVerificar->execute();
 
-        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[5])) {
-            echo "Saltandonde esta linea porque el videojuego ".$linea[5]. "no existe \n";
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[3])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[3]. "no existe \n";
             continue;
         }
         if ($stmtVerificar->fetchColumn() > 0) {
@@ -214,8 +214,8 @@ try {
         $stmtVerificar->bindParam(':id_videojuego', $linea[3]);
         $stmtVerificar->execute();
 
-        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[5])) {
-            echo "Saltandonde esta linea porque el videojuego ".$linea[5]. "no existe \n";
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[3])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[3]. "no existe \n";
             continue;
         }
         if ($stmtVerificar->fetchColumn() > 0) {
@@ -288,12 +288,12 @@ try {
         $stmtVerificar->bindParam(':id_usuario', $linea[0]);
         $stmtVerificar->bindParam(':id_proveedor', $linea[1]);
         $stmtVerificar->execute();
-        if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[3])) {
-            echo "Saltandonde esta linea porque el usuario".$linea[3]. "no existe \n";
+        if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[0])) {
+            echo "Saltandonde esta linea porque el usuario".$linea[0]. "no existe \n";
             continue;
         }
-        if (!existeEnTabla($db, 'proveedores', 'id', $linea[5])) {
-            echo "Saltandonde esta linea porque el proveedor".$linea[5]. "no existe \n";
+        if (!existeEnTabla($db, 'proveedores', 'id', $linea[1])) {
+            echo "Saltandonde esta linea porque el proveedor".$linea[1]. "no existe \n";
             continue;
         }
 
@@ -332,8 +332,8 @@ try {
             echo "Saltandonde esta linea porque el videojuego ".$linea[5]. "no existe \n";
             continue;
         }
-        if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[3])) {
-            echo "Saltandonde esta linea porque el usuario".$linea[3]. "no existe \n";
+        if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[0])) {
+            echo "Saltandonde esta linea porque el usuario".$linea[0]. "no existe \n";
             continue;
         }
 
@@ -369,8 +369,8 @@ try {
         $stmtVerificar->bindParam(':id_usuario', $linea[0]);
         $stmtVerificar->bindParam(':id_videojuego', $linea[5]);
         $stmtVerificar->execute();
-        if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[3])) {
-            echo "Saltandonde esta linea porque el usuario".$linea[3]. "no existe \n";
+        if (!existeEnTabla($db, 'usuarios', 'id_usuario', $linea[0])) {
+            echo "Saltandonde esta linea porque el usuario".$linea[0]. "no existe \n";
             continue;
         }
         if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[5])) {
@@ -421,8 +421,8 @@ try {
             echo "Saltandonde esta linea porque el proveedor".$linea[5]. "no existe \n";
             continue;
         }
-        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[5])) {
-            echo "Saltandonde esta linea porque el videojuego ".$linea[5]. "no existe \n";
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[6])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[6]. "no existe \n";
             continue;
         }
         if ($stmtVerificar->fetchColumn() > 0) {
