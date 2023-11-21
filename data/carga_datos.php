@@ -456,7 +456,7 @@ try {
     foreach($csv_pago_suscripcion as $index => $linea) {
         if ($index === 0) continue;
         $linea = str_getcsv($linea, ";");
-        if (verificarCampos($linea, [0, 1, 2, 3, 7])) {
+        if (!verificarCampos($linea, [0, 1, 2, 3, 7])) {
             continue;
         }
         $sqlVerificar = "SELECT COUNT(*) FROM pago_suscripcion WHERE pago_id = :pago_id";
@@ -531,18 +531,75 @@ try {
     $db->rollBack();
     echo "Error durante la carga de datos de suscripciones: " . $e->getMessage();
 }
-
+## Videojuegos__suscripcion
 try {
-    $sql = "SELECT * FROM pago_suscripcion";
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
+    $db->beginTransaction();
+    $csv_videojuegos_suscripcion = file("CSV PAR/videojuego.csv");
+    foreach($csv_videojuegos_suscripcion as $index => $linea) {
+        if ($index === 0) continue;
+        $linea = str_getcsv($linea, ";");
 
-    echo "Contenido de la tabla pago_suscripcion:\n";
-    while ($fila = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        echo "Pago ID: " . $fila['pago_id'] . ", Monto: " . $fila['monto'] . ", Fecha: " . $fila['fecha'] . ", ID Usuario: " . $fila['id_usuario'] . ", Subs ID: " . $fila['subs_id'] . "\n";
+        if (!verificarCampos($linea, [0, 6])) {
+            continue;
+        }
+        $sqlVerificar = "SELECT COUNT(*) FROM videojuegos_suscripcion WHERE id_videojuego = :id_videojuego AND mensualidad = :mensualidad";
+        $stmtVerificar = $db->prepare($sqlVerificar);
+        $stmtVerificar->bindParam(':id_videojuego', $linea[0]);
+        $stmtVerificar->bindParam(':mensualidad', $linea[6]);
+        $stmtVerificar->execute();
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[0])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[0]. "no existe \n";
+            continue;
+        }
+        if ($stmtVerificar->fetchColumn() > 0) {
+            continue;
+        }
+        $sql = "INSERT INTO videojuegos_suscripcion (id_videojuego, mensualidad) VALUES (:id_videojuego, :mensualidad)";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id_videojuego', $linea[0]);
+        $stmt->bindParam(':mensualidad', $linea[6]);
+        $stmt->execute();
+        echo "Datos cargados videojuegos_suscripcion\n";
     }
-} catch (PDOException $e) {
-    echo "Error al imprimir datos de la tabla: " . $e->getMessage();
+    $db->commit();
+} catch (Exception $e) {
+    $db->rollBack();
+    echo "Error durante la carga de datos videojuegos_suscripcion: " . $e->getMessage();
+}
+## videojuego_no_suscripcion
+try {
+    $db->beginTransaction();
+    $csv_videojuego_no_suscripcion = file("CSV PAR/videojuego.csv");
+    foreach($csv_videojuego_no_suscripcion as $index => $linea) {
+        if ($index === 0) continue;
+        $linea = str_getcsv($linea, ";");
+
+        if (!verificarCampos($linea, [0, 5])) {
+            continue;
+        }
+        $sqlVerificar = "SELECT COUNT(*) FROM videojuego_no_suscripcion WHERE id_videojuego = :id_videojuego AND beneficio_preorden = :beneficio_preorden";
+        $stmtVerificar = $db->prepare($sqlVerificar);
+        $stmtVerificar->bindParam(':id_videojuego', $linea[0]);
+        $stmtVerificar->bindParam(':beneficio_preorden', $linea[5]);
+        $stmtVerificar->execute();
+        if (!existeEnTabla($db, 'videojuegos', 'id_videojuego', $linea[0])) {
+            echo "Saltandonde esta linea porque el videojuego ".$linea[0]. "no existe \n";
+            continue;
+        }
+        if ($stmtVerificar->fetchColumn() > 0) {
+            continue;
+        }
+        $sql = "INSERT INTO videojuego_no_suscripcion (id_videojuego, beneficio_preorden) VALUES (:id_videojuego, :beneficio_preorden)";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id_videojuego', $linea[0]);
+        $stmt->bindParam(':beneficio_preorden', $linea[5]);
+        $stmt->execute();
+        echo "Datos cargados videojuegos_no_suscripcion\n";
+    }
+    $db->commit();
+} catch (Exception $e) {
+    $db->rollBack();
+    echo "Error durante la carga de datos videojuegos_no_suscripcion: " . $e->getMessage();
 }
 ?>
 
