@@ -26,7 +26,7 @@ if (!isset($_SESSION['user_id'])) {
     <div style="text-align: center;"> <!-- Contenedor para centralizar -->
         <div class="navbar">
             <a href="perfil_usuario.php">Mi Perfil</a>
-            <a href="one_time_purchase.php">One Time Purchases</a>
+            <a href="./paginas/one_time_purchase.php">One Time Purchases</a>
             <a href="consulta_inestructurada.php">Consulta Inestructurada</a>
             <!-- Agrega aquí más enlaces según necesites -->
         </div>
@@ -34,25 +34,30 @@ if (!isset($_SESSION['user_id'])) {
 
     <br>
     <br>
-   <!-- SECCION: Suscripciones de Videojuegos -->
-   <h1 class="titulo-suscripciones">Suscripciones de Videojuegos</h1>
-    <!-- Formulario de Búsqueda -->
+   <!-- Formulario de Búsqueda -->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-            <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
-            <input type="text" name="nombre_videojuego" placeholder="Nombre del Videojuego">
-            <input type="submit" value="Buscar">
+        <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
+        <input type="text" name="nombre_videojuego" placeholder="Nombre del Videojuego">
+        <input type="submit" value="Buscar">
     </form>
 
-    <!-- Mostrar Resultados de la Búsqueda -->
+    <!-- Procesar el formulario y obtener resultados -->
     <?php
-    foreach ($resultados as $row) {
-        // Mostrar cada resultado
-        echo "<div>";
-        echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
-        echo " - Videojuego: " . htmlspecialchars($row['nombre_videojuego']);
-        echo " - Precio: " . htmlspecialchars($row['precio']);
-        echo "</div>";
-    }
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Aquí tu código para procesar el formulario y realizar la consulta
+        // Por ejemplo:
+        // $resultados = tuFuncionParaConsultarLaBaseDeDatos($_POST['proveedor'], $_POST['nombre_videojuego']);
+
+        // Mostrar Resultados de la Búsqueda
+        foreach ($resultados as $row) {
+            // Mostrar cada resultado
+            echo "<div>";
+            echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
+            echo " - Videojuego: " . htmlspecialchars($row['nombre_videojuego']);
+            echo " - Precio: " . htmlspecialchars($row['precio']);
+            echo "</div>";
+            }
+        }
     ?>
     <!-- Mostrar cada proveedor en su rectangulo -->
    <div class="proveedores-container">
