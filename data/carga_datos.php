@@ -261,7 +261,18 @@ try {
         $stmt->bindParam(':id_usuario', $linea[0]);
         $stmt->bindParam(':nombre', $linea[1]);
         $stmt->bindParam(':mail', $linea[2]);
+
+        ### METODO DE ENCRIPTACION DE PASSWORD
+        #$password = $linea[3];
+        #$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        #$stmt->bindParam(':password', $hashedPassword);
+
         $stmt->bindParam(':password', $linea[3]);
+
+
+
+
+
         $stmt->bindParam(':username', $linea[4]);
         $fecha_nacimiento = date_format(date_create_from_format('d-m-Y', $linea[11]), 'Y-m-d');
         $stmt->bindParam(':fecha_nacimiento', $fecha_nacimiento);
@@ -449,7 +460,7 @@ try {
     $db->rollBack();
     echo "Error durante la carga de datos de pago_no_suscripcion: " . $e->getMessage();
 }
-## TABLA Pago SUSCRIPCION --> PROBLEMA ACA 
+## TABLA Pago SUSCRIPCION 
 try {
     $db->beginTransaction();
     $csv_pago_suscripcion = file("CSV PAR/pagos.csv");

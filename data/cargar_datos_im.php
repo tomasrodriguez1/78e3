@@ -101,6 +101,12 @@ try {
         $stmt->bindParam(':id', $linea[0]);
         $stmt->bindParam(':nombre', $linea[1]);
         $stmt->bindParam(':mail', $linea[2]);
+
+        ### METODO DE ENCRIPTACION DE PASSWORD
+        #$password = $linea[3];
+        #$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        #$stmt->bindParam(':password', $hashedPassword);
+
         $stmt->bindParam(':password', $linea[3]);
         $stmt->bindParam(':username', $linea[4]);
         $fecha_nacimiento = date_format(date_create_from_format('d-m-Y', $linea[5]), 'Y-m-d');
@@ -770,5 +776,123 @@ foreach ($usuarios as $usuario) {
         echo "Usuario con ID " . $usuario['id_usuario'] . " cargado con éxito.\n";
     }
 }
+
+try {
+    $db2->beginTransaction();
+
+    $csvFile = fopen("CSV IMPAR/pagos.csv", "r");
+
+    // Omitir la línea del encabezado
+    fgetcsv($csvFile, 1000, ";");
+
+    while (($line = fgetcsv($csvFile, 1000, ";")) !== FALSE) {
+        $pago_id = $line[0];
+        $monto = $line[1];
+
+        // Preparar la sentencia SQL para insertar
+        $sql = "INSERT INTO pagos_totales (pago_id, monto) VALUES (:pago_id, :monto)";
+        $stmt = $db2->prepare($sql);
+
+        $stmt->bindParam(':pago_id', $pago_id, PDO::PARAM_INT);
+        $stmt->bindParam(':monto', $monto, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    fclose($csvFile);
+
+    $db2->commit();
+    echo "Datos cargados en pagos_totales\n";
+} catch (Exception $e) {
+    $db2->rollBack();
+    echo "Error durante la carga de datos en pagos_totales: \n" . $e->getMessage();
+    echo "\n";
+}
+
+### Agregar los datos de pagos de la tabla pago_suscripcion del grupo par
+
+try {
+    // Inicia la transacción en db2
+    $db2->beginTransaction();
+
+    // Obtén los datos de la tabla pago_suscripcion de db1
+    $query = $db->query("SELECT pago_id, monto FROM pago_suscripcion");
+    $pagos = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    // Prepara la sentencia de inserción para db2
+    $insertStmt = $db2->prepare("INSERT INTO pagos_totales (pago_id, monto) VALUES (:pago_id, :monto)");
+
+    // Inserta cada fila en la tabla pagos_totales de db2
+    foreach ($pagos as $pago) {
+        $insertStmt->bindParam(':pago_id', $pago['pago_id'], PDO::PARAM_INT);
+        $insertStmt->bindParam(':monto', $pago['monto'], PDO::PARAM_INT);
+        $insertStmt->execute();
+    }
+
+    // Confirma la transacción
+    $db2->commit();
+    echo "Datos de pago_suscripcion importados a pagos_totales\n";
+} catch (PDOException $e) {
+    // En caso de error, realiza un rollback
+    $db2->rollBack();
+    echo "Error durante la importación de datos: " . $e->getMessage() . "\n";
+}
+
+
+### Agregar los datos de pagos de la tabla pago_suscripcion del grupo par
+try {
+    $db2->beginTransaction();
+    $query = $db->query("SELECT pago_id, monto FROM pago_suscripcion");
+    $pagos = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($pagos as $pago) {
+        $checkStmt = $db2->prepare("SELECT * FROM pagos_totales WHERE pago_id = ?");
+        $checkStmt->execute([$pago['pago_id']]);
+        
+        if ($checkStmt->rowCount() == 0) {
+            $insertStmt = $db2->prepare("INSERT INTO pagos_totales (pago_id, monto) VALUES (:pago_id, :monto)");
+            $insertStmt->bindParam(':pago_id', $pago['pago_id'], PDO::PARAM_INT);
+            $insertStmt->bindParam(':monto', $pago['monto'], PDO::PARAM_INT);
+            $insertStmt->execute();
+        }
+    }
+    $db2->commit();
+    echo "Datos de pago_suscripcion importados a pagos_totales\n";
+} catch (PDOException $e) {
+    $db2->rollBack();
+    echo "Error durante la importación de datos: " . $e->getMessage() . "\n";
+}
+
+### Agregar los datos de pagos de la tabla pago_no_suscripcion del grupo par
+try {
+    $db2->beginTransaction();
+    $query = $db->query("SELECT pago_id, monto FROM pago_no_suscripcion");
+    $pagos = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($pagos as $pago) {
+        $checkStmt = $db2->prepare("SELECT * FROM pagos_totales WHERE pago_id = ?");
+        $checkStmt->execute([$pago['pago_id']]);
+        
+        if ($checkStmt->rowCount() == 0) {
+            $insertStmt = $db2->prepare("INSERT INTO pagos_totales (pago_id, monto) VALUES (:pago_id, :monto)");
+            $insertStmt->bindParam(':pago_id', $pago['pago_id'], PDO::PARAM_INT);
+            $insertStmt->bindParam(':monto', $pago['monto'], PDO::PARAM_INT);
+            $insertStmt->execute();
+        }
+    }
+    $db2->commit();
+    echo "Datos de pago_suscripcion importados a pagos_totales\n";
+} catch (PDOException $e) {
+    $db2->rollBack();
+    echo "Error durante la importación de datos: " . $e->getMessage() . "\n";
+}
+
+
+
+
+
+
+
+
+
 ?>
 
