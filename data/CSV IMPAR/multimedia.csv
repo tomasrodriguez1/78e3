@@ -1,0 +1,697 @@
+﻿pid;sid;cid;titulo;duracion;clasificacion;puntuacion;a√±o;numero;serie;genero
+1;;;Return to Babylon;75;G;7.1;2013;;;Drama
+1;;;Return to Babylon;75;G;7.1;2013;;;Comedia
+1;;;Return to Babylon;75;G;7.1;2013;;;Biograf√≠a
+2;;;Life's a Beach;100;PG-13;9;2012;;;Comedia
+3;;;'77;113;G;2.1;2017;;;Drama
+3;;;'77;113;G;2.1;2017;;;Comedia
+4;;;In My Sleep;104;PG;1.6;2010;;;Thriller sicol√≥gico
+4;;;In My Sleep;104;PG;1.6;2010;;;Thriller
+4;;;In My Sleep;104;PG;1.6;2010;;;Misterio
+4;;;In My Sleep;104;PG;1.6;2010;;;Drama
+5;;;The Evil Within;98;PG-13;4.6;2017;;;Horror
+6;;;Fahrenheit 451;100;G;3;2018;;;Thriller
+6;;;Fahrenheit 451;100;G;3;2018;;;Drama
+6;;;Fahrenheit 451;100;G;3;2018;;;Cyberpunk
+6;;;Fahrenheit 451;100;G;3;2018;;;Ciencia ficci√≥n apocal√≠ptica
+6;;;Fahrenheit 451;100;G;3;2018;;;Ciencia ficci√≥n
+7;;;A Walk Among the Tombstones;114;G;2.7;2014;;;Drama
+7;;;A Walk Among the Tombstones;114;G;2.7;2014;;;Crimen
+7;;;A Walk Among the Tombstones;114;G;2.7;2014;;;Acci√≥n
+8;;;Jurassic World;124;G;7.8;2015;;;Cyberpunk
+8;;;Jurassic World;124;G;7.8;2015;;;Ciencia ficci√≥n
+8;;;Jurassic World;124;G;7.8;2015;;;Aventura
+8;;;Jurassic World;124;G;7.8;2015;;;Acci√≥n
+9;;;The Three Stooges;92;PG-13;2.1;2012;;;Familiar
+9;;;The Three Stooges;92;PG-13;2.1;2012;;;Comedia
+10;;;Motherless Brooklyn;144;PG-13;9.7;2019;;;Misterio
+10;;;Motherless Brooklyn;144;PG-13;9.7;2019;;;Drama
+10;;;Motherless Brooklyn;144;PG-13;9.7;2019;;;Crimen
+11;;;Anderson's Cross;98;PG;4.2;2010;;;Romance
+11;;;Anderson's Cross;98;PG;4.2;2010;;;Drama
+11;;;Anderson's Cross;98;PG;4.2;2010;;;Comedia
+12;;;Tangled;100;PG;7.9;2010;;;Comedia
+12;;;Tangled;100;PG;7.9;2010;;;Aventura
+12;;;Tangled;100;PG;7.9;2010;;;Animaci√≥n
+13;;;John Carter;132;NC-17;5.4;2012;;;Romance Planetario
+13;;;John Carter;132;NC-17;5.4;2012;;;Ciencia ficci√≥n
+13;;;John Carter;132;NC-17;5.4;2012;;;Aventura
+13;;;John Carter;132;NC-17;5.4;2012;;;Acci√≥n
+14;;;Disconnect;112;PG-13;2.1;2010;;;Misterio
+14;;;Disconnect;112;PG-13;2.1;2010;;;Drama
+14;;;Disconnect;112;PG-13;2.1;2010;;;Cyberpunk
+14;;;Disconnect;112;PG-13;2.1;2010;;;Ciencia ficci√≥n
+15;;;The Stanford Prison Experiment;122;PG-13;1.2;2015;;;Hist√≥rico
+15;;;The Stanford Prison Experiment;122;PG-13;1.2;2015;;;Drama
+15;;;The Stanford Prison Experiment;122;PG-13;1.2;2015;;;Biograf√≠a
+16;;;Venus & Vegas;95;PG-13;7.8;2010;;;Crimen
+16;;;Venus & Vegas;95;PG-13;7.8;2010;;;Comedia
+16;;;Venus & Vegas;95;PG-13;7.8;2010;;;Acci√≥n
+17;;;Dinner for Schmucks;114;G;5.1;2010;;;Comedia
+18;;;A Million Little Pieces;113;PG-13;4.3;2018;;;Drama
+19;;;Satin;84;PG-13;5.8;2011;;;M√∫sica
+19;;;Satin;84;PG-13;5.8;2011;;;Drama
+19;;;Satin;84;PG-13;5.8;2011;;;Comedia
+20;;;Toy Story 3;103;G;1.1;2010;;;Comedia
+20;;;Toy Story 3;103;G;1.1;2010;;;Aventura
+20;;;Toy Story 3;103;G;1.1;2010;;;Animaci√≥n
+21;;;Before We Go;95;PG-13;9.1;2014;;;Romance
+21;;;Before We Go;95;PG-13;9.1;2014;;;Drama
+21;;;Before We Go;95;PG-13;9.1;2014;;;Comedia
+22;;;A Bird of the Air;108;PG-13;5.1;2011;;;Romance
+22;;;A Bird of the Air;108;PG-13;5.1;2011;;;Drama
+23;;;Puss in Boots;90;PG-13;4;2011;;;Comedia
+23;;;Puss in Boots;90;PG-13;4;2011;;;Aventura
+23;;;Puss in Boots;90;PG-13;4;2011;;;Animaci√≥n
+24;;;Mad World;98;PG;7;2010;;;Drama
+25;;;The Passing;92;PG-13;2.2;2011;;;Horror
+26;;;Sludge;95;G;1.7;2017;;;Horror
+27;;;42;128;G;6.7;2013;;;Drama
+27;;;42;128;G;6.7;2013;;;Deporte
+27;;;42;128;G;6.7;2013;;;Biograf√≠a
+28;;;Being Flynn;102;PG;9.9;2012;;;Drama
+29;;;The Equalizer;132;PG;3.9;2014;;;Thriller
+29;;;The Equalizer;132;PG;3.9;2014;;;Crimen
+29;;;The Equalizer;132;PG;3.9;2014;;;Acci√≥n
+30;;;Captain America: The First Avenger;124;PG;4.1;2011;;;Ciencia ficci√≥n
+30;;;Captain America: The First Avenger;124;PG;4.1;2011;;;Biopunk
+30;;;Captain America: The First Avenger;124;PG;4.1;2011;;;Aventura
+30;;;Captain America: The First Avenger;124;PG;4.1;2011;;;Acci√≥n
+31;;;Sin City: A Dame to Kill For;102;PG;9.1;2014;;;Thriller
+31;;;Sin City: A Dame to Kill For;102;PG;9.1;2014;;;Crimen
+31;;;Sin City: A Dame to Kill For;102;PG;9.1;2014;;;Acci√≥n
+32;;;Drunkboat;98;PG;8.6;2010;;;Drama
+33;;;The Only Living Boy in New York;89;PG;7;2017;;;Drama
+34;;;Satan Hates You;94;NC-17;8.2;2010;;;Horror
+35;;;The Devil You Know;76;G;2;2013;;;Thriller
+35;;;The Devil You Know;76;G;2;2013;;;Misterio
+36;;;House at the End of the Drive;91;G;1.1;2014;;;Thriller
+36;;;House at the End of the Drive;91;G;1.1;2014;;;Horror
+37;;;Margaret;150;PG-13;1.7;2011;;;Drama
+38;;;Harlem Hostel;81;PG-13;3.7;2010;;;Drama
+38;;;Harlem Hostel;81;PG-13;3.7;2010;;;Comedia
+39;;;Smoking Nonsmoking;84;PG;3.2;2011;;;Drama
+40;;;Tower Heist;104;PG-13;5.9;2011;;;Crimen
+40;;;Tower Heist;104;PG-13;5.9;2011;;;Comedia
+40;;;Tower Heist;104;PG-13;5.9;2011;;;Acci√≥n
+41;;;The Mechanic;93;G;8.7;2011;;;Thriller
+41;;;The Mechanic;93;G;8.7;2011;;;Acci√≥n
+42;;;Prince of Persia: The Sands of Time;116;PG;2.4;2010;;;Fantas√≠a
+42;;;Prince of Persia: The Sands of Time;116;PG;2.4;2010;;;Aventura
+42;;;Prince of Persia: The Sands of Time;116;PG;2.4;2010;;;Acci√≥n
+43;;;Unstoppable;98;G;3.3;2010;;;Thriller
+43;;;Unstoppable;98;G;3.3;2010;;;Acci√≥n
+44;;;Extremely Loud & Incredibly Close;129;G;4.1;2011;;;Misterio
+44;;;Extremely Loud & Incredibly Close;129;G;4.1;2011;;;Drama
+44;;;Extremely Loud & Incredibly Close;129;G;4.1;2011;;;Aventura
+45;;;The Tree of Life;139;PG-13;7.4;2011;;;Fantas√≠a
+45;;;The Tree of Life;139;PG-13;7.4;2011;;;Drama
+46;;;Ant-Man;117;PG-13;7.4;2015;;;Comedia
+46;;;Ant-Man;117;PG-13;7.4;2015;;;Aventura
+46;;;Ant-Man;117;PG-13;7.4;2015;;;Acci√≥n
+47;;;Season of the Witch;95;PG;2.6;2011;;;Fantas√≠a
+47;;;Season of the Witch;95;PG;2.6;2011;;;Aventura
+47;;;Season of the Witch;95;PG;2.6;2011;;;Acci√≥n
+48;;;Atlas Shrugged: Part I;97;G;3.3;2011;;;Misterio
+48;;;Atlas Shrugged: Part I;97;G;3.3;2011;;;Drama
+48;;;Atlas Shrugged: Part I;97;G;3.3;2011;;;Cyberpunk
+48;;;Atlas Shrugged: Part I;97;G;3.3;2011;;;Ciencia ficci√≥n
+49;;;Hall Pass;105;PG-13;3.7;2011;;;Romance
+49;;;Hall Pass;105;PG-13;3.7;2011;;;Comedia
+50;;;The Croods;98;G;5.3;2013;;;Aventura
+50;;;The Croods;98;G;5.3;2013;;;Animaci√≥n
+50;;;The Croods;98;G;5.3;2013;;;Acci√≥n
+51;;;Barry Munday;95;PG;5;2010;;;Romance
+51;;;Barry Munday;95;PG;5;2010;;;Drama
+51;;;Barry Munday;95;PG;5;2010;;;Comedia
+52;;;Chasing 3000;115;G;9.8;2010;;;Familiar
+52;;;Chasing 3000;115;G;9.8;2010;;;Deporte
+53;;;Red Tails;125;G;5.2;2012;;;Hist√≥rico
+53;;;Red Tails;125;G;5.2;2012;;;Drama
+53;;;Red Tails;125;G;5.2;2012;;;Acci√≥n
+54;;;Aftermath;84;PG-13;3.6;2013;;;Thriller
+54;;;Aftermath;84;PG-13;3.6;2013;;;Crimen
+55;;;The Invited;95;G;5.3;2010;;;Thriller
+55;;;The Invited;95;G;5.3;2010;;;Horror
+56;;;Something Borrowed;112;PG-13;3.2;2011;;;Romance
+56;;;Something Borrowed;112;PG-13;3.2;2011;;;Drama
+56;;;Something Borrowed;112;PG-13;3.2;2011;;;Comedia
+57;;;CHIPS;100;PG;3.6;2017;;;Crimen
+57;;;CHIPS;100;PG;3.6;2017;;;Comedia
+57;;;CHIPS;100;PG;3.6;2017;;;Acci√≥n
+58;;;Ramona and Beezus;104;G;5.4;2010;;;Familiar
+58;;;Ramona and Beezus;104;G;5.4;2010;;;Drama
+58;;;Ramona and Beezus;104;G;5.4;2010;;;Comedia
+59;;;Rings;102;G;7.3;2017;;;Misterio
+59;;;Rings;102;G;7.3;2017;;;Horror
+59;;;Rings;102;G;7.3;2017;;;Drama
+60;;;Love & Other Drugs;112;PG-13;6.8;2010;;;Romance
+60;;;Love & Other Drugs;112;PG-13;6.8;2010;;;Drama
+60;;;Love & Other Drugs;112;PG-13;6.8;2010;;;Comedia
+61;;;Syrup;90;PG-13;2.6;2013;;;Romance
+61;;;Syrup;90;PG-13;2.6;2013;;;Drama
+61;;;Syrup;90;PG-13;2.6;2013;;;Comedia
+62;;;A Thousand Words;91;PG-13;5.2;2012;;;Drama
+62;;;A Thousand Words;91;PG-13;5.2;2012;;;Comedia
+63;;;The Legend of Secret Pass;92;G;8.9;2010;;;Fantas√≠a
+63;;;The Legend of Secret Pass;92;G;8.9;2010;;;Familiar
+63;;;The Legend of Secret Pass;92;G;8.9;2010;;;Animaci√≥n
+64;;;Night of the Templar;101;PG;9;2013;;;Misterio
+64;;;Night of the Templar;101;PG;9;2013;;;Horror
+65;;;What's Your Number?;106;G;1.4;2011;;;Romance
+65;;;What's Your Number?;106;G;1.4;2011;;;Comedia
+66;;;Jersey Justice;100;PG-13;6.3;2014;;;Thriller
+66;;;Jersey Justice;100;PG-13;6.3;2014;;;Acci√≥n
+67;;;Cell;98;PG;8.8;2016;;;Horror
+67;;;Cell;98;PG;8.8;2016;;;Drama
+67;;;Cell;98;PG;8.8;2016;;;Acci√≥n
+68;;;Night Catches Us;90;PG;7.4;2010;;;Romance
+68;;;Night Catches Us;90;PG;7.4;2010;;;Drama
+69;;;Drive;100;G;1.1;2011;;;Drama
+69;;;Drive;100;G;1.1;2011;;;Crimen
+70;;;Kid Cannabis;110;PG;8.9;2014;;;Crimen
+70;;;Kid Cannabis;110;PG;8.9;2014;;;Comedia
+70;;;Kid Cannabis;110;PG;8.9;2014;;;Biograf√≠a
+71;;;Santorini Blue;90;PG;6.7;2013;;;Drama
+71;;;Santorini Blue;90;PG;6.7;2013;;;Comedia
+72;;;The Wolfman;103;G;4.5;2010;;;Horror
+72;;;The Wolfman;103;G;4.5;2010;;;Fantas√≠a
+72;;;The Wolfman;103;G;4.5;2010;;;Drama
+73;;;The Last Full Measure;116;G;9.7;2019;;;Guerra
+73;;;The Last Full Measure;116;G;9.7;2019;;;Drama
+74;;;The Boxtrolls;96;NC-17;1;2014;;;Comedia
+74;;;The Boxtrolls;96;NC-17;1;2014;;;Aventura
+74;;;The Boxtrolls;96;NC-17;1;2014;;;Animaci√≥n
+75;;;The Incredible Burt Wonderstone;100;PG;4.6;2013;;;Comedia
+76;;;Dallas Buyers Club;117;PG;4.9;2013;;;Drama
+76;;;Dallas Buyers Club;117;PG;4.9;2013;;;Biograf√≠a
+77;;;Elliot Loves;92;G;1.9;2012;;;Romance
+77;;;Elliot Loves;92;G;1.9;2012;;;Comedia
+78;;;Jack Reacher;130;G;9.8;2012;;;Thriller
+78;;;Jack Reacher;130;G;9.8;2012;;;Acci√≥n
+79;;;R.I.P.D.;96;PG-13;5.1;2013;;;Comedia
+79;;;R.I.P.D.;96;PG-13;5.1;2013;;;Aventura
+79;;;R.I.P.D.;96;PG-13;5.1;2013;;;Acci√≥n
+80;;;Miles Ahead;100;G;5.6;2015;;;M√∫sica
+80;;;Miles Ahead;100;G;5.6;2015;;;Drama
+80;;;Miles Ahead;100;G;5.6;2015;;;Biograf√≠a
+81;;;The Yellow Wallpaper;115;PG;5.3;2012;;;Thriller
+82;;;Scary Movie 5;88;PG;7.2;2013;;;Horror
+82;;;Scary Movie 5;88;PG;7.2;2013;;;Comedia
+83;;;13;91;PG-13;2.6;2010;;;Thriller
+83;;;13;91;PG-13;2.6;2010;;;Drama
+83;;;13;91;PG-13;2.6;2010;;;Crimen
+84;;;The Dirt;107;PG-13;1.3;2019;;;Drama
+84;;;The Dirt;107;PG-13;1.3;2019;;;Comedia
+84;;;The Dirt;107;PG-13;1.3;2019;;;Biograf√≠a
+85;;;Thor;115;PG;10;2011;;;Fantas√≠a
+85;;;Thor;115;PG;10;2011;;;Aventura
+85;;;Thor;115;PG;10;2011;;;Acci√≥n
+86;;;Devil's Knot;114;R;8.3;2013;;;Drama
+86;;;Devil's Knot;114;R;8.3;2013;;;Crimen
+86;;;Devil's Knot;114;R;8.3;2013;;;Biograf√≠a
+87;;;It's Kind of a Funny Story;101;PG;8.1;2010;;;Romance
+87;;;It's Kind of a Funny Story;101;PG;8.1;2010;;;Drama
+87;;;It's Kind of a Funny Story;101;PG;8.1;2010;;;Comedia
+88;;;Jack and Jill;91;G;3;2011;;;Comedia
+89;;;The Do-Deca-Pentathlon;76;PG;9.4;2012;;;Comedia
+90;;;She's Out of My League;104;G;9.6;2010;;;Romance
+90;;;She's Out of My League;104;G;9.6;2010;;;Comedia
+91;;;Flipped;90;PG-13;6.9;2010;;;Romance
+91;;;Flipped;90;PG-13;6.9;2010;;;Drama
+91;;;Flipped;90;PG-13;6.9;2010;;;Comedia
+92;;;Valentine's Day;125;PG;5.3;2010;;;Romance
+92;;;Valentine's Day;125;PG;5.3;2010;;;Comedia
+93;;;The Power of Few;96;G;4.5;2013;;;Drama
+93;;;The Power of Few;96;G;4.5;2013;;;Crimen
+93;;;The Power of Few;96;G;4.5;2013;;;Acci√≥n
+94;;;Dreamkiller;110;PG-13;8.5;2010;;;Thriller
+94;;;Dreamkiller;110;PG-13;8.5;2010;;;Fantas√≠a oscura
+95;;;Priest;87;PG;3.8;2011;;;Thriller
+95;;;Priest;87;PG;3.8;2011;;;Horror
+95;;;Priest;87;PG;3.8;2011;;;Acci√≥n
+96;;;Maximum Ride;88;PG-13;3.9;2016;;;Comedia
+96;;;Maximum Ride;88;PG-13;3.9;2016;;;Aventura
+96;;;Maximum Ride;88;PG-13;3.9;2016;;;Acci√≥n
+97;;;Waking Madison;89;G;5.2;2010;;;Drama
+98;;;The Babymakers;95;NC-17;6.6;2012;;;Comedia
+99;;;Electric Slide;95;PG;6.7;2014;;;Crimen
+99;;;Electric Slide;95;PG;6.7;2014;;;Biograf√≠a
+99;;;Electric Slide;95;PG;6.7;2014;;;Acci√≥n
+100;;;Krystal;90;PG-13;2;2017;;;Drama
+100;;;Krystal;90;PG-13;2;2017;;;Comedia
+101;;;Scream;111;NC-17;7;1996;;;Slasher
+101;;;Scream;111;NC-17;7;1996;;;Horror
+;11;97;La primera polaroid;62;R;8.3;2017;2;13 reasons why;Thriller sicol√≥gico
+;11;96;Casete 1: lado A;60;R;8.3;2017;1;13 reasons why;Thriller sicol√≥gico
+;11;98;Si: soy la chica nueva;56;R;8.3;2017;3;13 reasons why;Thriller sicol√≥gico
+;8;89;Carla;58;R;5.8;2018;3;√âlite;Thriller
+;7;86;Hemos vuelto;50;PG-13;8;2017;3;La Casa de Papel;Thriller
+;11;98;Si: soy la chica nueva;56;R;8.3;2017;3;13 reasons why;Thriller
+;5;75;Los sobrevivientes;59;PG-13;9.9;2017;3;Dark;Thriller
+;7;84;Efectuar lo acordado;50;PG-13;8;2017;1;La Casa de Papel;Thriller
+;11;96;Casete 1: lado A;60;R;8.3;2017;1;13 reasons why;Thriller
+;22;129;Episode 1;40;PG;8.6;2013;1;Peaky Blinders;Thriller
+;5;72;Principios y finales;53;PG-13;9.9;2017;2;Dark;Thriller
+;27;145;The Return;49;PG-13;9.2;2009;2;The Vampire Diaries;Thriller
+;7;85;Se acabaron las m√°scaras;50;PG-13;8;2017;2;La Casa de Papel;Thriller
+;8;87;Bienvenidos;60;R;5.8;2018;1;√âlite;Thriller
+;27;144;Pilot;49;PG-13;9.2;2009;1;The Vampire Diaries;Thriller
+;22;130;Episode 1;42;PG;8.6;2013;2;Peaky Blinders;Thriller
+;29;150;Estudio en rosa;60;PG-13;9.2;2010;1;Sherlock;Thriller
+;11;97;La primera polaroid;62;R;8.3;2017;2;13 reasons why;Thriller
+;5;74;Deja vu;60;PG-13;9.9;2017;3;Dark;Thriller
+;29;151;Esc√°ndalo en Belgravia;60;PG-13;9.2;2010;2;Sherlock;Thriller
+;29;152;Many Happy Returns;60;PG-13;9.2;2010;3;Sherlock;Thriller
+;8;88;20 horas desaparecido;55;R;5.8;2018;2;√âlite;Thriller
+;22;131;Episode 1;41;PG;8.6;2013;3;Peaky Blinders;Thriller
+;5;70;Secretos;51;PG-13;9.9;2017;1;Dark;Thriller
+;5;73;Materia oscura;54;PG-13;9.9;2017;2;Dark;Thriller
+;5;71;Mentiras;44;PG-13;9.9;2017;1;Dark;Thriller
+;27;146;The Birthday;49;PG-13;9.2;2009;3;The Vampire Diaries;Thriller
+;31;156;Exposed;44;NC-17;7.4;2015;1;Scream;Slasher
+;31;157;Psycho;45;NC-17;7.4;2015;2;Scream;Slasher
+;1;68;Episode 4;65;R;8;2019;2;Sex Education;Romance
+;2;30;El de los Kips;22;PG;9.5;1994;5;Friends;Romance
+;2;12;El de la leche materna;22;PG;9.5;1994;2;Friends;Romance
+;2;21;El de la medusa;22;PG;9.5;1994;4;Friends;Romance
+;2;23;El de las esposas;24;PG;9.5;1994;4;Friends;Romance
+;1;1;Episode 1;62;R;8;2019;1;Sex Education;Romance
+;2;26;El de despu√©s de que Ross dijera el nombre de Rachel;22;PG;9.5;1994;5;Friends;Romance
+;1;5;Episode 5;64;R;8;2019;1;Sex Education;Romance
+;1;4;Episode 4;65;R;8;2019;1;Sex Education;Romance
+;18;119;El recuerdo de un recuerdo;21;G;9.4;2010;3;Hora de aventura;Romance
+;2;22;El de la gata;26;PG;9.5;1994;4;Friends;Romance
+;2;15;El de la carne para cinco y una berenjena;26;PG;9.5;1994;2;Friends;Romance
+;2;9;El de George Stephanopoulos;23;PG;9.5;1994;1;Friends;Romance
+;2;28;El de los trillizos;24;PG;9.5;1994;5;Friends;Romance
+;2;19;El del t√∫nel metaf√≥rico;22;PG;9.5;1994;3;Friends;Romance
+;28;147;Pilot;40;PG-13;8;2007;1;Gossip Girl;Romance
+;2;24;El de los bailes de sal√≥n;24;PG;9.5;1994;4;Friends;Romance
+;2;13;El de cuando muere Heckles;23;PG;9.5;1994;2;Friends;Romance
+;1;2;Episode 2;66;R;8;2019;1;Sex Education;Romance
+;2;17;El de cuando nadie est√° listo;22;PG;9.5;1994;3;Friends;Romance
+;1;65;Episode 1;62;R;8;2019;2;Sex Education;Romance
+;2;20;El de Frank Jr.;26;PG;9.5;1994;3;Friends;Romance
+;2;11;El de la nueva novia de Ross;25;PG;9.5;1994;2;Friends;Romance
+;1;69;Episode 5;64;R;8;2019;2;Sex Education;Romance
+;18;118;Lleg√≥ de la Noche√≥sfera;21;G;9.4;2010;2;Hora de aventura;Romance
+;1;67;Episode 3;59;R;8;2019;2;Sex Education;Romance
+;2;29;El que Phoebe odia la PBS;26;PG;9.5;1994;5;Friends;Romance
+;2;10;El del detergente de lavander√≠a germano-oriental;22;PG;9.5;1994;1;Friends;Romance
+;2;14;El esposo de Phoebe;24;PG;9.5;1994;2;Friends;Romance
+;2;6;En el que todo empieza;22;PG;9.5;1994;1;Friends;Romance
+;28;148;Verano: una especie de maravilla;42;PG-13;8;2007;2;Gossip Girl;Romance
+;2;8;El del pulgar;21;PG;9.5;1994;1;Friends;Romance
+;1;66;Episode 2;66;R;8;2019;2;Sex Education;Romance
+;2;27;El de los besos;24;PG;9.5;1994;5;Friends;Romance
+;28;149;Los contratiempos de la Fortuna;45;PG-13;8;2007;3;Gossip Girl;Romance
+;2;18;El de la mermelada;24;PG;9.5;1994;3;Friends;Romance
+;2;7;El de la ecograf√≠a final;20;PG;9.5;1994;1;Friends;Romance
+;1;3;Episode 3;59;R;8;2019;1;Sex Education;Romance
+;18;117;Panico en la fiesta del palacio;21;G;9.4;2010;1;Hora de aventura;Romance
+;2;16;El de la fantas√≠a de la Princesa Leia;25;PG;9.5;1994;3;Friends;Romance
+;2;25;El de la nueva novia de Joey;26;PG;9.5;1994;4;Friends;Romance
+;19;122;Los siete magn√≠ficos;58;PG-13;8.5;2005;3;Supernatural;Misterio
+;8;89;Carla;58;R;5.8;2018;3;√âlite;Misterio
+;27;145;The Return;49;PG-13;9.2;2009;2;The Vampire Diaries;Misterio
+;8;87;Bienvenidos;60;R;5.8;2018;1;√âlite;Misterio
+;13;103;Cap√≠tulo 14: Un beso antes de morir;60;PG-13;4.3;2017;2;Riverdale;Misterio
+;13;102;Cap√≠tulo 1: Corrientes traicioneras;55;PG-13;4.3;2017;1;Riverdale;Misterio
+;19;120;Wendigo;55;PG-13;8.5;2005;1;Supernatural;Misterio
+;27;144;Pilot;49;PG-13;9.2;2009;1;The Vampire Diaries;Misterio
+;19;121;En mi tiempo de morir;50;PG-13;8.5;2005;2;Supernatural;Misterio
+;13;104;Cap√≠tulo 36: D√≠a del Trabajo;62;PG-13;4.3;2017;3;Riverdale;Misterio
+;11;97;La primera polaroid;62;R;8.3;2017;2;13 reasons why;Misterio
+;11;98;Si: soy la chica nueva;56;R;8.3;2017;3;13 reasons why;Misterio
+;8;88;20 horas desaparecido;55;R;5.8;2018;2;√âlite;Misterio
+;11;96;Casete 1: lado A;60;R;8.3;2017;1;13 reasons why;Misterio
+;27;146;The Birthday;49;PG-13;9.2;2009;3;The Vampire Diaries;Misterio
+;31;157;Psycho;45;NC-17;7.4;2015;2;Scream;Horror
+;19;120;Wendigo;55;PG-13;8.5;2005;1;Supernatural;Horror
+;19;122;Los siete magn√≠ficos;58;PG-13;8.5;2005;3;Supernatural;Horror
+;19;121;En mi tiempo de morir;50;PG-13;8.5;2005;2;Supernatural;Horror
+;31;156;Exposed;44;NC-17;7.4;2015;1;Scream;Horror
+;9;91;Misadventure;60;PG-13;9.5;2016;2;The Crown;Hist√≥rico
+;22;129;Episode 1;40;PG;8.6;2013;1;Peaky Blinders;Hist√≥rico
+;22;131;Episode 1;41;PG;8.6;2013;3;Peaky Blinders;Hist√≥rico
+;9;90;Wolferton Splash;62;PG-13;9.5;2016;1;The Crown;Hist√≥rico
+;9;92;Olding;58;PG-13;9.5;2016;3;The Crown;Hist√≥rico
+;22;130;Episode 1;42;PG;8.6;2013;2;Peaky Blinders;Hist√≥rico
+;24;137;Se√±al de humo;23;PG-13;9.8;2010;3;Ataque a los titanes;Fantas√≠a oscura
+;24;135;A ti: 2.000 a√±os en el futuro;23;PG-13;9.8;2010;1;Ataque a los titanes;Fantas√≠a oscura
+;24;136;El tit√°n bestia;23;PG-13;9.8;2010;2;Ataque a los titanes;Fantas√≠a oscura
+;3;37;El maestro del juego;23;PG;10;2012;2;Jojo's Bizarre Adventure;Fantas√≠a
+;3;33;Juventud con dio;23;PG;10;2012;1;Jojo's Bizarre Adventure;Fantas√≠a
+;3;47;¬°Josuke Higashikata! Conoce a Angelo;23;PG;10;2012;4;Jojo's Bizarre Adventure;Fantas√≠a
+;3;39;Jojo vs. la forma de vida definitiva;23;PG;10;2012;2;Jojo's Bizarre Adventure;Fantas√≠a
+;14;105;Partida x Y x Compa√±eros;24;G;7.5;2011;1;Hunter x Hunter;Fantas√≠a
+;3;31;Dio: el invasor;23;PG;10;2012;1;Jojo's Bizarre Adventure;Fantas√≠a
+;25;140;Interludio;23;PG;8.6;2003;3;Full Metal Alchemist Brotherhood;Fantas√≠a
+;3;45;Silver Chariot;23;PG;10;2012;3;Jojo's Bizarre Adventure;Fantas√≠a
+;3;40;Los guerreros definitivos de tiempos antiguos;23;PG;10;2012;2;Jojo's Bizarre Adventure;Fantas√≠a
+;3;49;Los Hermanos Nijimura (Parte 2);23;PG;10;2012;4;Jojo's Bizarre Adventure;Fantas√≠a
+;3;46;¬°Jotaro Kujo! Conoce a Josuke Higashikata;23;PG;10;2012;4;Jojo's Bizarre Adventure;Fantas√≠a
+;3;41;un hombre pose√≠do por un esp√≠ritu maligno;23;PG;10;2012;3;Jojo's Bizarre Adventure;Fantas√≠a
+;3;34;Overdrive;23;PG;10;2012;1;Jojo's Bizarre Adventure;Fantas√≠a
+;14;106;Un x Guardi√°n x Peligroso;24;G;7.5;2011;2;Hunter x Hunter;Fantas√≠a
+;3;35;Los caballeros oscuros;23;PG;10;2012;1;Jojo's Bizarre Adventure;Fantas√≠a
+;25;139;Los que acechan bajo tierra;23;PG;8.6;2003;2;Full Metal Alchemist Brotherhood;Fantas√≠a
+;3;36;El jojo de nueva york;23;PG;10;2012;2;Jojo's Bizarre Adventure;Fantas√≠a
+;3;44;Tower of gray;23;PG;10;2012;3;Jojo's Bizarre Adventure;Fantas√≠a
+;3;42;¬°¬øqui√©n ser√° el juez?!;23;PG;10;2012;3;Jojo's Bizarre Adventure;Fantas√≠a
+;25;138;El alquimista de acero;23;PG;8.6;2003;1;Full Metal Alchemist Brotherhood;Fantas√≠a
+;3;32;Una carta del pasado;23;PG;10;2012;1;Jojo's Bizarre Adventure;Fantas√≠a
+;3;48;Los Hermanos Nijimura (Parte 1);23;PG;10;2012;4;Jojo's Bizarre Adventure;Fantas√≠a
+;14;107;Respuesta de papa;24;G;7.5;2011;3;Hunter x Hunter;Fantas√≠a
+;3;50;Los Hermanos Nijimura (Parte 3);23;PG;10;2012;4;Jojo's Bizarre Adventure;Fantas√≠a
+;3;38;El hombre del pilar;23;PG;10;2012;2;Jojo's Bizarre Adventure;Fantas√≠a
+;3;43;La maldici√≥n de dio;23;PG;10;2012;3;Jojo's Bizarre Adventure;Fantas√≠a
+;6;79;Relox;32;G;10;2003;2;31 minutos;Familiar
+;6;76;El comienzo;29;G;10;2003;1;31 minutos;Familiar
+;26;142;El estado avatar;24;G;7.9;2005;2;Avatar: la leyenda de Aang;Familiar
+;18;117;Panico en la fiesta del palacio;21;G;9.4;2010;1;Hora de aventura;Familiar
+;18;119;El recuerdo de un recuerdo;21;G;9.4;2010;3;Hora de aventura;Familiar
+;6;77;El arbol furioso;31;G;10;2003;1;31 minutos;Familiar
+;6;83;Cirug√≠a;32;G;10;2003;4;31 minutos;Familiar
+;18;118;Lleg√≥ de la Noche√≥sfera;21;G;9.4;2010;2;Hora de aventura;Familiar
+;6;81;La maquina del tiempo;31;G;10;2003;3;31 minutos;Familiar
+;6;78;Vacaciones;34;G;10;2003;2;31 minutos;Familiar
+;26;143;El despertar;24;G;7.9;2005;3;Avatar: la leyenda de Aang;Familiar
+;26;141;El ni√±o en el iceberg;24;G;7.9;2005;1;Avatar: la leyenda de Aang;Familiar
+;6;80;Por el sr. manguera;28;G;10;2003;3;31 minutos;Familiar
+;6;82;La mona lisa;32;G;10;2003;4;31 minutos;Familiar
+;1;2;Episode 2;66;R;8;2019;1;Sex Education;Drama
+;5;73;Materia oscura;54;PG-13;9.9;2017;2;Dark;Drama
+;5;75;Los sobrevivientes;59;PG-13;9.9;2017;3;Dark;Drama
+;28;147;Pilot;40;PG-13;8;2007;1;Gossip Girl;Drama
+;27;146;The Birthday;49;PG-13;9.2;2009;3;The Vampire Diaries;Drama
+;4;56;Viento;20;PG-13;9.8;2007;3;Naruto Shippuden;Drama
+;1;68;Episode 4;65;R;8;2019;2;Sex Education;Drama
+;4;61;La pupila de la serpiente;20;PG-13;9.8;2007;6;Naruto Shippuden;Drama
+;19;121;En mi tiempo de morir;50;PG-13;8.5;2005;2;Supernatural;Drama
+;20;124;Las aventuras de Supergirl;40;G;6.4;2015;2;Supergirl;Drama
+;11;96;Casete 1: lado A;60;R;8.3;2017;1;13 reasons why;Drama
+;28;149;Los contratiempos de la Fortuna;45;PG-13;8;2007;3;Gossip Girl;Drama
+;10;93;Midoriya Izuku: Origen;24;G;8.6;2015;1;My Hero Academia;Drama
+;9;92;Olding;58;PG-13;9.5;2016;3;The Crown;Drama
+;5;72;Principios y finales;53;PG-13;9.9;2017;2;Dark;Drama
+;22;129;Episode 1;40;PG;8.6;2013;1;Peaky Blinders;Drama
+;4;53;El nuevo objetivo;22;PG-13;9.8;2007;2;Naruto Shippuden;Drama
+;15;109;Empapada;62;PG-13;9.2;2017;2;Atypical;Drama
+;28;148;Verano: una especie de maravilla;42;PG-13;8;2007;2;Gossip Girl;Drama
+;24;137;Se√±al de humo;23;PG-13;9.8;2010;3;Ataque a los titanes;Drama
+;19;122;Los siete magn√≠ficos;58;PG-13;8.5;2005;3;Supernatural;Drama
+;4;60;Un asunto shinobi;21;PG-13;9.8;2007;5;Naruto Shippuden;Drama
+;16;111;Piloto;43;R;9.3;2004;1;Dr. House;Drama
+;30;153;Rose;45;G;9;2005;1;Doctor Who;Drama
+;11;97;La primera polaroid;62;R;8.3;2017;2;13 reasons why;Drama
+;30;155;Smith y Jones;45;G;9;2005;2;Doctor Who;Drama
+;22;131;Episode 1;41;PG;8.6;2013;3;Peaky Blinders;Drama
+;17;115;Gotas de lluvia sobre mi cabeza;42;R;8.7;2005;2;Grey's Anatomy;Drama
+;4;57;La amenaza que se acerca en silencio;20;PG-13;9.8;2007;4;Naruto Shippuden;Drama
+;27;144;Pilot;49;PG-13;9.2;2009;1;The Vampire Diaries;Drama
+;1;5;Episode 5;64;R;8;2019;1;Sex Education;Drama
+;9;91;Misadventure;60;PG-13;9.5;2016;2;The Crown;Drama
+;17;114;La noche de un d√≠a dif√≠cil;40;R;8.7;2005;1;Grey's Anatomy;Drama
+;7;86;Hemos vuelto;50;PG-13;8;2017;3;La Casa de Papel;Drama
+;10;95;Empieza el juego;24;G;8.6;2015;3;My Hero Academia;Drama
+;1;65;Episode 1;62;R;8;2019;2;Sex Education;Drama
+;15;110;Los mejores planes;59;PG-13;9.2;2017;3;Atypical;Drama
+;4;59;El precio del poder;20;PG-13;9.8;2007;5;Naruto Shippuden;Drama
+;27;145;The Return;49;PG-13;9.2;2009;2;The Vampire Diaries;Drama
+;16;113;Sentido;44;R;9.3;2004;3;Dr. House;Drama
+;20;125;La mujer de acero;42;G;6.4;2015;3;Supergirl;Drama
+;4;58;La invasi√≥n de Akatsuki;21;PG-13;9.8;2007;4;Naruto Shippuden;Drama
+;10;94;Libreta de h√©roes;24;G;8.6;2015;2;My Hero Academia;Drama
+;17;116;Lleg√≥ el momento;45;R;8.7;2005;3;Grey's Anatomy;Drama
+;16;112;Aceptaci√≥n;42;R;9.3;2004;2;Dr. House;Drama
+;13;102;Cap√≠tulo 1: Corrientes traicioneras;55;PG-13;4.3;2017;1;Riverdale;Drama
+;8;88;20 horas desaparecido;55;R;5.8;2018;2;√âlite;Drama
+;5;71;Mentiras;44;PG-13;9.9;2017;1;Dark;Drama
+;4;63;El viajero;20;PG-13;9.8;2007;7;Naruto Shippuden;Drama
+;4;54;¬°Formaci√≥n: el nuevo equipo Kakashi!;20;PG-13;9.8;2007;2;Naruto Shippuden;Drama
+;5;70;Secretos;51;PG-13;9.9;2017;1;Dark;Drama
+;15;108;Ant√°rtida;60;PG-13;9.2;2017;1;Atypical;Drama
+;1;66;Episode 2;66;R;8;2019;2;Sex Education;Drama
+;5;74;Deja vu;60;PG-13;9.9;2017;3;Dark;Drama
+;11;98;Si: soy la chica nueva;56;R;8.3;2017;3;13 reasons why;Drama
+;13;103;Cap√≠tulo 14: Un beso antes de morir;60;PG-13;4.3;2017;2;Riverdale;Drama
+;19;120;Wendigo;55;PG-13;8.5;2005;1;Supernatural;Drama
+;1;3;Episode 3;59;R;8;2019;1;Sex Education;Drama
+;24;135;A ti: 2.000 a√±os en el futuro;23;PG-13;9.8;2010;1;Ataque a los titanes;Drama
+;8;89;Carla;58;R;5.8;2018;3;√âlite;Drama
+;4;55;Pesadilla;21;PG-13;9.8;2007;3;Naruto Shippuden;Drama
+;4;51;El regreso a casa;22;PG-13;9.8;2007;1;Naruto Shippuden;Drama
+;27;145;The Return;49;PG-13;9.2;2009;2;The Vampire Diaries;Drama
+;7;85;Se acabaron las m√°scaras;50;PG-13;8;2017;2;La Casa de Papel;Drama
+;13;104;Cap√≠tulo 36: D√≠a del Trabajo;62;PG-13;4.3;2017;3;Riverdale;Drama
+;27;146;The Birthday;49;PG-13;9.2;2009;3;The Vampire Diaries;Drama
+;7;84;Efectuar lo acordado;50;PG-13;8;2017;1;La Casa de Papel;Drama
+;9;90;Wolferton Splash;62;PG-13;9.5;2016;1;The Crown;Drama
+;1;69;Episode 5;64;R;8;2019;2;Sex Education;Drama
+;20;123;M√°s fuertes juntos;35;G;6.4;2015;1;Supergirl;Drama
+;4;64;El sucesor de la t√©cnica prohibida;22;PG-13;9.8;2007;7;Naruto Shippuden;Drama
+;30;154;Nueva tierra;46;G;9;2005;2;Doctor Who;Drama
+;22;130;Episode 1;42;PG;8.6;2013;2;Peaky Blinders;Drama
+;1;1;Episode 1;62;R;8;2019;1;Sex Education;Drama
+;4;52;El Akatsuki comienza a moverse;20;PG-13;9.8;2007;1;Naruto Shippuden;Drama
+;8;87;Bienvenidos;60;R;5.8;2018;1;√âlite;Drama
+;27;144;Pilot;49;PG-13;9.2;2009;1;The Vampire Diaries;Drama
+;4;62;Ojo de halc√≥n;20;PG-13;9.8;2007;6;Naruto Shippuden;Drama
+;24;136;El tit√°n bestia;23;PG-13;9.8;2010;2;Ataque a los titanes;Drama
+;1;67;Episode 3;59;R;8;2019;2;Sex Education;Drama
+;1;4;Episode 4;65;R;8;2019;1;Sex Education;Drama
+;12;99;El fin y el comienzo;20;G;10;2014;1;Haikyuu!!;Deporte
+;12;101;Saludos;21;G;10;2014;3;Haikyuu!!;Deporte
+;12;100;¬°Vamos a Tokyo!;22;G;10;2014;2;Haikyuu!!;Deporte
+;13;103;Cap√≠tulo 14: Un beso antes de morir;60;PG-13;4.3;2017;2;Riverdale;Crimen
+;22;130;Episode 1;42;PG;8.6;2013;2;Peaky Blinders;Crimen
+;29;152;Many Happy Returns;60;PG-13;9.2;2010;3;Sherlock;Crimen
+;13;104;Cap√≠tulo 36: D√≠a del Trabajo;62;PG-13;4.3;2017;3;Riverdale;Crimen
+;13;102;Cap√≠tulo 1: Corrientes traicioneras;55;PG-13;4.3;2017;1;Riverdale;Crimen
+;7;86;Hemos vuelto;50;PG-13;8;2017;3;La Casa de Papel;Crimen
+;22;129;Episode 1;40;PG;8.6;2013;1;Peaky Blinders;Crimen
+;7;84;Efectuar lo acordado;50;PG-13;8;2017;1;La Casa de Papel;Crimen
+;29;150;Estudio en rosa;60;PG-13;9.2;2010;1;Sherlock;Crimen
+;29;151;Esc√°ndalo en Belgravia;60;PG-13;9.2;2010;2;Sherlock;Crimen
+;22;131;Episode 1;41;PG;8.6;2013;3;Peaky Blinders;Crimen
+;7;85;Se acabaron las m√°scaras;50;PG-13;8;2017;2;La Casa de Papel;Crimen
+;2;8;El del pulgar;21;PG;9.5;1994;1;Friends;Comedia
+;2;12;El de la leche materna;22;PG;9.5;1994;2;Friends;Comedia
+;19;122;Los siete magn√≠ficos;58;PG-13;8.5;2005;3;Supernatural;Comedia
+;20;124;Las aventuras de Supergirl;40;G;6.4;2015;2;Supergirl;Comedia
+;17;114;La noche de un d√≠a dif√≠cil;40;R;8.7;2005;1;Grey's Anatomy;Comedia
+;12;101;Saludos;21;G;10;2014;3;Haikyuu!!;Comedia
+;6;77;El arbol furioso;31;G;10;2003;1;31 minutos;Comedia
+;2;9;El de George Stephanopoulos;23;PG;9.5;1994;1;Friends;Comedia
+;6;76;El comienzo;29;G;10;2003;1;31 minutos;Comedia
+;4;53;El nuevo objetivo;22;PG-13;9.8;2007;2;Naruto Shippuden;Comedia
+;1;5;Episode 5;64;R;8;2019;1;Sex Education;Comedia
+;2;20;El de Frank Jr.;26;PG;9.5;1994;3;Friends;Comedia
+;17;116;Lleg√≥ el momento;45;R;8.7;2005;3;Grey's Anatomy;Comedia
+;1;66;Episode 2;66;R;8;2019;2;Sex Education;Comedia
+;17;115;Gotas de lluvia sobre mi cabeza;42;R;8.7;2005;2;Grey's Anatomy;Comedia
+;1;65;Episode 1;62;R;8;2019;2;Sex Education;Comedia
+;21;126;Simpsons Roasting on an Open Fire;20;PG-13;9.1;1989;1;Los Simpsons;Comedia
+;15;109;Empapada;62;PG-13;9.2;2017;2;Atypical;Comedia
+;16;111;Piloto;43;R;9.3;2004;1;Dr. House;Comedia
+;26;143;El despertar;24;G;7.9;2005;3;Avatar: la leyenda de Aang;Comedia
+;4;58;La invasi√≥n de Akatsuki;21;PG-13;9.8;2007;4;Naruto Shippuden;Comedia
+;2;18;El de la mermelada;24;PG;9.5;1994;3;Friends;Comedia
+;6;79;Relox;32;G;10;2003;2;31 minutos;Comedia
+;2;21;El de la medusa;22;PG;9.5;1994;4;Friends;Comedia
+;4;55;Pesadilla;21;PG-13;9.8;2007;3;Naruto Shippuden;Comedia
+;26;142;El estado avatar;24;G;7.9;2005;2;Avatar: la leyenda de Aang;Comedia
+;4;56;Viento;20;PG-13;9.8;2007;3;Naruto Shippuden;Comedia
+;2;7;El de la ecograf√≠a final;20;PG;9.5;1994;1;Friends;Comedia
+;24;136;El tit√°n bestia;23;PG-13;9.8;2010;2;Ataque a los titanes;Comedia
+;20;125;La mujer de acero;42;G;6.4;2015;3;Supergirl;Comedia
+;2;14;El esposo de Phoebe;24;PG;9.5;1994;2;Friends;Comedia
+;2;6;En el que todo empieza;22;PG;9.5;1994;1;Friends;Comedia
+;14;106;Un x Guardi√°n x Peligroso;24;G;7.5;2011;2;Hunter x Hunter;Comedia
+;2;26;El de despu√©s de que Ross dijera el nombre de Rachel;22;PG;9.5;1994;5;Friends;Comedia
+;4;60;Un asunto shinobi;21;PG-13;9.8;2007;5;Naruto Shippuden;Comedia
+;1;3;Episode 3;59;R;8;2019;1;Sex Education;Comedia
+;1;67;Episode 3;59;R;8;2019;2;Sex Education;Comedia
+;2;23;El de las esposas;24;PG;9.5;1994;4;Friends;Comedia
+;20;123;M√°s fuertes juntos;35;G;6.4;2015;1;Supergirl;Comedia
+;2;27;El de los besos;24;PG;9.5;1994;5;Friends;Comedia
+;16;112;Aceptaci√≥n;42;R;9.3;2004;2;Dr. House;Comedia
+;24;135;A ti: 2.000 a√±os en el futuro;23;PG-13;9.8;2010;1;Ataque a los titanes;Comedia
+;4;54;¬°Formaci√≥n: el nuevo equipo Kakashi!;20;PG-13;9.8;2007;2;Naruto Shippuden;Comedia
+;12;99;El fin y el comienzo;20;G;10;2014;1;Haikyuu!!;Comedia
+;4;61;La pupila de la serpiente;20;PG-13;9.8;2007;6;Naruto Shippuden;Comedia
+;2;29;El que Phoebe odia la PBS;26;PG;9.5;1994;5;Friends;Comedia
+;12;100;¬°Vamos a Tokyo!;22;G;10;2014;2;Haikyuu!!;Comedia
+;6;83;Cirug√≠a;32;G;10;2003;4;31 minutos;Comedia
+;2;15;El de la carne para cinco y una berenjena;26;PG;9.5;1994;2;Friends;Comedia
+;24;137;Se√±al de humo;23;PG-13;9.8;2010;3;Ataque a los titanes;Comedia
+;1;1;Episode 1;62;R;8;2019;1;Sex Education;Comedia
+;2;24;El de los bailes de sal√≥n;24;PG;9.5;1994;4;Friends;Comedia
+;2;13;El de cuando muere Heckles;23;PG;9.5;1994;2;Friends;Comedia
+;4;59;El precio del poder;20;PG-13;9.8;2007;5;Naruto Shippuden;Comedia
+;6;82;La mona lisa;32;G;10;2003;4;31 minutos;Comedia
+;4;62;Ojo de halc√≥n;20;PG-13;9.8;2007;6;Naruto Shippuden;Comedia
+;2;22;El de la gata;26;PG;9.5;1994;4;Friends;Comedia
+;26;141;El ni√±o en el iceberg;24;G;7.9;2005;1;Avatar: la leyenda de Aang;Comedia
+;19;120;Wendigo;55;PG-13;8.5;2005;1;Supernatural;Comedia
+;2;30;El de los Kips;22;PG;9.5;1994;5;Friends;Comedia
+;2;11;El de la nueva novia de Ross;25;PG;9.5;1994;2;Friends;Comedia
+;14;107;Respuesta de papa;24;G;7.5;2011;3;Hunter x Hunter;Comedia
+;21;127;"Bart Gets an ""F""";20;PG-13;9.1;1989;2;Los Simpsons;Comedia
+;2;16;El de la fantas√≠a de la Princesa Leia;25;PG;9.5;1994;3;Friends;Comedia
+;4;64;El sucesor de la t√©cnica prohibida;22;PG-13;9.8;2007;7;Naruto Shippuden;Comedia
+;15;108;Ant√°rtida;60;PG-13;9.2;2017;1;Atypical;Comedia
+;6;80;Por el sr. manguera;28;G;10;2003;3;31 minutos;Comedia
+;1;69;Episode 5;64;R;8;2019;2;Sex Education;Comedia
+;2;28;El de los trillizos;24;PG;9.5;1994;5;Friends;Comedia
+;14;105;Partida x Y x Compa√±eros;24;G;7.5;2011;1;Hunter x Hunter;Comedia
+;4;51;El regreso a casa;22;PG-13;9.8;2007;1;Naruto Shippuden;Comedia
+;16;113;Sentido;44;R;9.3;2004;3;Dr. House;Comedia
+;19;121;En mi tiempo de morir;50;PG-13;8.5;2005;2;Supernatural;Comedia
+;2;25;El de la nueva novia de Joey;26;PG;9.5;1994;4;Friends;Comedia
+;2;19;El del t√∫nel metaf√≥rico;22;PG;9.5;1994;3;Friends;Comedia
+;21;128;Stark Raving Dad;20;PG-13;9.1;1989;3;Los Simpsons;Comedia
+;6;81;La maquina del tiempo;31;G;10;2003;3;31 minutos;Comedia
+;1;68;Episode 4;65;R;8;2019;2;Sex Education;Comedia
+;4;63;El viajero;20;PG-13;9.8;2007;7;Naruto Shippuden;Comedia
+;4;57;La amenaza que se acerca en silencio;20;PG-13;9.8;2007;4;Naruto Shippuden;Comedia
+;1;4;Episode 4;65;R;8;2019;1;Sex Education;Comedia
+;6;78;Vacaciones;34;G;10;2003;2;31 minutos;Comedia
+;2;17;El de cuando nadie est√° listo;22;PG;9.5;1994;3;Friends;Comedia
+;15;110;Los mejores planes;59;PG-13;9.2;2017;3;Atypical;Comedia
+;4;52;El Akatsuki comienza a moverse;20;PG-13;9.8;2007;1;Naruto Shippuden;Comedia
+;1;2;Episode 2;66;R;8;2019;1;Sex Education;Comedia
+;2;10;El del detergente de lavander√≠a germano-oriental;22;PG;9.5;1994;1;Friends;Comedia
+;24;136;El tit√°n bestia;23;PG-13;9.8;2010;2;Ataque a los titanes;Ciencia ficci√≥n apocal√≠ptica
+;24;137;Se√±al de humo;23;PG-13;9.8;2010;3;Ataque a los titanes;Ciencia ficci√≥n apocal√≠ptica
+;24;135;A ti: 2.000 a√±os en el futuro;23;PG-13;9.8;2010;1;Ataque a los titanes;Ciencia ficci√≥n apocal√≠ptica
+;20;124;Las aventuras de Supergirl;40;G;6.4;2015;2;Supergirl;Ciencia ficci√≥n
+;5;73;Materia oscura;54;PG-13;9.9;2017;2;Dark;Ciencia ficci√≥n
+;30;155;Smith y Jones;45;G;9;2005;2;Doctor Who;Ciencia ficci√≥n
+;20;125;La mujer de acero;42;G;6.4;2015;3;Supergirl;Ciencia ficci√≥n
+;5;71;Mentiras;44;PG-13;9.9;2017;1;Dark;Ciencia ficci√≥n
+;10;94;Libreta de h√©roes;24;G;8.6;2015;2;My Hero Academia;Ciencia ficci√≥n
+;5;72;Principios y finales;53;PG-13;9.9;2017;2;Dark;Ciencia ficci√≥n
+;25;140;Interludio;23;PG;8.6;2003;3;Full Metal Alchemist Brotherhood;Ciencia ficci√≥n
+;24;136;El tit√°n bestia;23;PG-13;9.8;2010;2;Ataque a los titanes;Ciencia ficci√≥n
+;5;75;Los sobrevivientes;59;PG-13;9.9;2017;3;Dark;Ciencia ficci√≥n
+;25;139;Los que acechan bajo tierra;23;PG;8.6;2003;2;Full Metal Alchemist Brotherhood;Ciencia ficci√≥n
+;10;95;Empieza el juego;24;G;8.6;2015;3;My Hero Academia;Ciencia ficci√≥n
+;5;70;Secretos;51;PG-13;9.9;2017;1;Dark;Ciencia ficci√≥n
+;24;137;Se√±al de humo;23;PG-13;9.8;2010;3;Ataque a los titanes;Ciencia ficci√≥n
+;10;93;Midoriya Izuku: Origen;24;G;8.6;2015;1;My Hero Academia;Ciencia ficci√≥n
+;20;123;M√°s fuertes juntos;35;G;6.4;2015;1;Supergirl;Ciencia ficci√≥n
+;25;138;El alquimista de acero;23;PG;8.6;2003;1;Full Metal Alchemist Brotherhood;Ciencia ficci√≥n
+;30;154;Nueva tierra;46;G;9;2005;2;Doctor Who;Ciencia ficci√≥n
+;30;153;Rose;45;G;9;2005;1;Doctor Who;Ciencia ficci√≥n
+;5;74;Deja vu;60;PG-13;9.9;2017;3;Dark;Ciencia ficci√≥n
+;24;135;A ti: 2.000 a√±os en el futuro;23;PG-13;9.8;2010;1;Ataque a los titanes;Ciencia ficci√≥n
+;4;63;El viajero;20;PG-13;9.8;2007;7;Naruto Shippuden;Aventura
+;25;139;Los que acechan bajo tierra;23;PG;8.6;2003;2;Full Metal Alchemist Brotherhood;Aventura
+;3;48;Los Hermanos Nijimura (Parte 1);23;PG;10;2012;4;Jojo's Bizarre Adventure;Aventura
+;3;37;El maestro del juego;23;PG;10;2012;2;Jojo's Bizarre Adventure;Aventura
+;26;141;El ni√±o en el iceberg;24;G;7.9;2005;1;Avatar: la leyenda de Aang;Aventura
+;30;154;Nueva tierra;46;G;9;2005;2;Doctor Who;Aventura
+;3;32;Una carta del pasado;23;PG;10;2012;1;Jojo's Bizarre Adventure;Aventura
+;20;123;M√°s fuertes juntos;35;G;6.4;2015;1;Supergirl;Aventura
+;4;64;El sucesor de la t√©cnica prohibida;22;PG-13;9.8;2007;7;Naruto Shippuden;Aventura
+;19;121;En mi tiempo de morir;50;PG-13;8.5;2005;2;Supernatural;Aventura
+;3;39;Jojo vs. la forma de vida definitiva;23;PG;10;2012;2;Jojo's Bizarre Adventure;Aventura
+;4;52;El Akatsuki comienza a moverse;20;PG-13;9.8;2007;1;Naruto Shippuden;Aventura
+;3;50;Los Hermanos Nijimura (Parte 3);23;PG;10;2012;4;Jojo's Bizarre Adventure;Aventura
+;29;152;Many Happy Returns;60;PG-13;9.2;2010;3;Sherlock;Aventura
+;3;34;Overdrive;23;PG;10;2012;1;Jojo's Bizarre Adventure;Aventura
+;26;142;El estado avatar;24;G;7.9;2005;2;Avatar: la leyenda de Aang;Aventura
+;4;56;Viento;20;PG-13;9.8;2007;3;Naruto Shippuden;Aventura
+;19;120;Wendigo;55;PG-13;8.5;2005;1;Supernatural;Aventura
+;4;57;La amenaza que se acerca en silencio;20;PG-13;9.8;2007;4;Naruto Shippuden;Aventura
+;3;35;Los caballeros oscuros;23;PG;10;2012;1;Jojo's Bizarre Adventure;Aventura
+;30;155;Smith y Jones;45;G;9;2005;2;Doctor Who;Aventura
+;3;33;Juventud con dio;23;PG;10;2012;1;Jojo's Bizarre Adventure;Aventura
+;18;118;Lleg√≥ de la Noche√≥sfera;21;G;9.4;2010;2;Hora de aventura;Aventura
+;4;54;¬°Formaci√≥n: el nuevo equipo Kakashi!;20;PG-13;9.8;2007;2;Naruto Shippuden;Aventura
+;4;59;El precio del poder;20;PG-13;9.8;2007;5;Naruto Shippuden;Aventura
+;20;125;La mujer de acero;42;G;6.4;2015;3;Supergirl;Aventura
+;3;44;Tower of gray;23;PG;10;2012;3;Jojo's Bizarre Adventure;Aventura
+;4;60;Un asunto shinobi;21;PG-13;9.8;2007;5;Naruto Shippuden;Aventura
+;19;122;Los siete magn√≠ficos;58;PG-13;8.5;2005;3;Supernatural;Aventura
+;3;49;Los Hermanos Nijimura (Parte 2);23;PG;10;2012;4;Jojo's Bizarre Adventure;Aventura
+;3;42;¬°¬øqui√©n ser√° el juez?!;23;PG;10;2012;3;Jojo's Bizarre Adventure;Aventura
+;25;140;Interludio;23;PG;8.6;2003;3;Full Metal Alchemist Brotherhood;Aventura
+;4;62;Ojo de halc√≥n;20;PG-13;9.8;2007;6;Naruto Shippuden;Aventura
+;3;41;un hombre pose√≠do por un esp√≠ritu maligno;23;PG;10;2012;3;Jojo's Bizarre Adventure;Aventura
+;3;46;¬°Jotaro Kujo! Conoce a Josuke Higashikata;23;PG;10;2012;4;Jojo's Bizarre Adventure;Aventura
+;18;117;Panico en la fiesta del palacio;21;G;9.4;2010;1;Hora de aventura;Aventura
+;3;47;¬°Josuke Higashikata! Conoce a Angelo;23;PG;10;2012;4;Jojo's Bizarre Adventure;Aventura
+;25;138;El alquimista de acero;23;PG;8.6;2003;1;Full Metal Alchemist Brotherhood;Aventura
+;29;150;Estudio en rosa;60;PG-13;9.2;2010;1;Sherlock;Aventura
+;3;36;El jojo de nueva york;23;PG;10;2012;2;Jojo's Bizarre Adventure;Aventura
+;4;53;El nuevo objetivo;22;PG-13;9.8;2007;2;Naruto Shippuden;Aventura
+;3;45;Silver Chariot;23;PG;10;2012;3;Jojo's Bizarre Adventure;Aventura
+;4;55;Pesadilla;21;PG-13;9.8;2007;3;Naruto Shippuden;Aventura
+;18;119;El recuerdo de un recuerdo;21;G;9.4;2010;3;Hora de aventura;Aventura
+;4;51;El regreso a casa;22;PG-13;9.8;2007;1;Naruto Shippuden;Aventura
+;30;153;Rose;45;G;9;2005;1;Doctor Who;Aventura
+;4;61;La pupila de la serpiente;20;PG-13;9.8;2007;6;Naruto Shippuden;Aventura
+;3;38;El hombre del pilar;23;PG;10;2012;2;Jojo's Bizarre Adventure;Aventura
+;3;31;Dio: el invasor;23;PG;10;2012;1;Jojo's Bizarre Adventure;Aventura
+;3;40;Los guerreros definitivos de tiempos antiguos;23;PG;10;2012;2;Jojo's Bizarre Adventure;Aventura
+;4;58;La invasi√≥n de Akatsuki;21;PG-13;9.8;2007;4;Naruto Shippuden;Aventura
+;3;43;La maldici√≥n de dio;23;PG;10;2012;3;Jojo's Bizarre Adventure;Aventura
+;26;143;El despertar;24;G;7.9;2005;3;Avatar: la leyenda de Aang;Aventura
+;29;151;Esc√°ndalo en Belgravia;60;PG-13;9.2;2010;2;Sherlock;Aventura
+;20;124;Las aventuras de Supergirl;40;G;6.4;2015;2;Supergirl;Aventura
+;4;55;Pesadilla;21;PG-13;9.8;2007;3;Naruto Shippuden;Acci√≥n
+;3;38;El hombre del pilar;23;PG;10;2012;2;Jojo's Bizarre Adventure;Acci√≥n
+;4;61;La pupila de la serpiente;20;PG-13;9.8;2007;6;Naruto Shippuden;Acci√≥n
+;4;59;El precio del poder;20;PG-13;9.8;2007;5;Naruto Shippuden;Acci√≥n
+;14;105;Partida x Y x Compa√±eros;24;G;7.5;2011;1;Hunter x Hunter;Acci√≥n
+;10;95;Empieza el juego;24;G;8.6;2015;3;My Hero Academia;Acci√≥n
+;4;57;La amenaza que se acerca en silencio;20;PG-13;9.8;2007;4;Naruto Shippuden;Acci√≥n
+;4;58;La invasi√≥n de Akatsuki;21;PG-13;9.8;2007;4;Naruto Shippuden;Acci√≥n
+;4;60;Un asunto shinobi;21;PG-13;9.8;2007;5;Naruto Shippuden;Acci√≥n
+;3;42;¬°¬øqui√©n ser√° el juez?!;23;PG;10;2012;3;Jojo's Bizarre Adventure;Acci√≥n
+;3;39;Jojo vs. la forma de vida definitiva;23;PG;10;2012;2;Jojo's Bizarre Adventure;Acci√≥n
+;3;43;La maldici√≥n de dio;23;PG;10;2012;3;Jojo's Bizarre Adventure;Acci√≥n
+;3;45;Silver Chariot;23;PG;10;2012;3;Jojo's Bizarre Adventure;Acci√≥n
+;19;120;Wendigo;55;PG-13;8.5;2005;1;Supernatural;Acci√≥n
+;20;123;M√°s fuertes juntos;35;G;6.4;2015;1;Supergirl;Acci√≥n
+;10;94;Libreta de h√©roes;24;G;8.6;2015;2;My Hero Academia;Acci√≥n
+;14;106;Un x Guardi√°n x Peligroso;24;G;7.5;2011;2;Hunter x Hunter;Acci√≥n
+;3;36;El jojo de nueva york;23;PG;10;2012;2;Jojo's Bizarre Adventure;Acci√≥n
+;3;46;¬°Jotaro Kujo! Conoce a Josuke Higashikata;23;PG;10;2012;4;Jojo's Bizarre Adventure;Acci√≥n
+;3;50;Los Hermanos Nijimura (Parte 3);23;PG;10;2012;4;Jojo's Bizarre Adventure;Acci√≥n
+;19;122;Los siete magn√≠ficos;58;PG-13;8.5;2005;3;Supernatural;Acci√≥n
+;4;54;¬°Formaci√≥n: el nuevo equipo Kakashi!;20;PG-13;9.8;2007;2;Naruto Shippuden;Acci√≥n
+;3;41;un hombre pose√≠do por un esp√≠ritu maligno;23;PG;10;2012;3;Jojo's Bizarre Adventure;Acci√≥n
+;4;62;Ojo de halc√≥n;20;PG-13;9.8;2007;6;Naruto Shippuden;Acci√≥n
+;4;64;El sucesor de la t√©cnica prohibida;22;PG-13;9.8;2007;7;Naruto Shippuden;Acci√≥n
+;3;34;Overdrive;23;PG;10;2012;1;Jojo's Bizarre Adventure;Acci√≥n
+;24;136;El tit√°n bestia;23;PG-13;9.8;2010;2;Ataque a los titanes;Acci√≥n
+;3;33;Juventud con dio;23;PG;10;2012;1;Jojo's Bizarre Adventure;Acci√≥n
+;19;121;En mi tiempo de morir;50;PG-13;8.5;2005;2;Supernatural;Acci√≥n
+;3;48;Los Hermanos Nijimura (Parte 1);23;PG;10;2012;4;Jojo's Bizarre Adventure;Acci√≥n
+;3;44;Tower of gray;23;PG;10;2012;3;Jojo's Bizarre Adventure;Acci√≥n
+;3;47;¬°Josuke Higashikata! Conoce a Angelo;23;PG;10;2012;4;Jojo's Bizarre Adventure;Acci√≥n
+;4;51;El regreso a casa;22;PG-13;9.8;2007;1;Naruto Shippuden;Acci√≥n
+;3;32;Una carta del pasado;23;PG;10;2012;1;Jojo's Bizarre Adventure;Acci√≥n
+;3;37;El maestro del juego;23;PG;10;2012;2;Jojo's Bizarre Adventure;Acci√≥n
+;24;137;Se√±al de humo;23;PG-13;9.8;2010;3;Ataque a los titanes;Acci√≥n
+;24;135;A ti: 2.000 a√±os en el futuro;23;PG-13;9.8;2010;1;Ataque a los titanes;Acci√≥n
+;20;125;La mujer de acero;42;G;6.4;2015;3;Supergirl;Acci√≥n
+;4;53;El nuevo objetivo;22;PG-13;9.8;2007;2;Naruto Shippuden;Acci√≥n
+;3;35;Los caballeros oscuros;23;PG;10;2012;1;Jojo's Bizarre Adventure;Acci√≥n
+;14;107;Respuesta de papa;24;G;7.5;2011;3;Hunter x Hunter;Acci√≥n
+;4;63;El viajero;20;PG-13;9.8;2007;7;Naruto Shippuden;Acci√≥n
+;3;49;Los Hermanos Nijimura (Parte 2);23;PG;10;2012;4;Jojo's Bizarre Adventure;Acci√≥n
+;3;40;Los guerreros definitivos de tiempos antiguos;23;PG;10;2012;2;Jojo's Bizarre Adventure;Acci√≥n
+;20;124;Las aventuras de Supergirl;40;G;6.4;2015;2;Supergirl;Acci√≥n
+;10;93;Midoriya Izuku: Origen;24;G;8.6;2015;1;My Hero Academia;Acci√≥n
+;4;52;El Akatsuki comienza a moverse;20;PG-13;9.8;2007;1;Naruto Shippuden;Acci√≥n
+;3;31;Dio: el invasor;23;PG;10;2012;1;Jojo's Bizarre Adventure;Acci√≥n
+;4;56;Viento;20;PG-13;9.8;2007;3;Naruto Shippuden;Acci√≥n
+;23;132;Pilot;22;PG;8.3;2013;1;Rick y Morty;Acci√≥n
+;23;134;The Rickshank Rickdemption;22;PG;8.3;2013;3;Rick y Morty;Acci√≥n
+;23;133;A Rickle in Time;22;PG;8.3;2013;2;Rick y Morty;Acci√≥n

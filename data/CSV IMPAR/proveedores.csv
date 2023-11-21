@@ -1,0 +1,1131 @@
+﻿id;nombre;costo;sid;pid;precio;disponibilidad
+7;Star+;7100;10;;;
+11;Peackok;4000;;47;;
+20;DCCanal;4000;;67;;
+9;Showtime;3200;5;;;
+11;Peackok;4000;;68;;
+20;DCCanal;4000;;25;;
+14;Movistar+ Lite;7400;;30;;
+6;Disney+;6500;;96;;
+12;Viu;5000;;79;;
+9;Showtime;3200;;65;;
+1;Netflix;4500;;67;;
+8;Hulu;7000;;24;;
+1;Netflix;4500;;99;;
+5;Funimation;3900;;61;;
+5;Funimation;3900;;66;;
+7;Star+;7100;26;;;
+8;Hulu;7000;;12;;
+2;Amazon Prime Video;3700;;68;;
+17;Sky;6400;;58;;
+2;Amazon Prime Video;3700;;2;4000;1
+5;Funimation;3900;;51;6500;1
+11;Peackok;4000;;97;;
+9;Showtime;3200;;69;;
+9;Showtime;3200;22;;;
+17;Sky;6400;;94;;
+17;Sky;6400;;29;;
+3;Crunchyroll;4400;5;;;
+7;Star+;7100;;85;;
+18;ATRESplayer;2800;25;;;
+19;Mitele Plus;3700;9;;;
+5;Funimation;3900;;18;;
+7;Star+;7100;11;;;
+13;Sony Liv;3100;;99;6000;1
+18;ATRESplayer;2800;;37;6000;2
+5;Funimation;3900;;97;;
+1;Netflix;4500;;33;;
+11;Peackok;4000;;8;;
+5;Funimation;3900;;16;;
+18;ATRESplayer;2800;;52;;
+11;Peackok;4000;;84;5000;2
+14;Movistar+ Lite;7400;;43;;
+14;Movistar+ Lite;7400;;50;;
+7;Star+;7100;20;;;
+5;Funimation;3900;;53;;
+6;Disney+;6500;;77;;
+2;Amazon Prime Video;3700;2;;;
+19;Mitele Plus;3700;;96;4500;1
+17;Sky;6400;;19;9000;7
+13;Sony Liv;3100;;30;6000;3
+19;Mitele Plus;3700;;81;;
+4;HBO+;3500;;55;;
+18;ATRESplayer;2800;;23;;
+18;ATRESplayer;2800;14;;;
+14;Movistar+ Lite;7400;;1;;
+6;Disney+;6500;;1;;
+16;Rakuten TV;6500;;71;;
+1;Netflix;4500;;65;;
+1;Netflix;4500;;23;6500;3
+9;Showtime;3200;7;;;
+1;Netflix;4500;;47;;
+13;Sony Liv;3100;;87;;
+17;Sky;6400;;90;;
+9;Showtime;3200;17;;;
+17;Sky;6400;;50;;
+16;Rakuten TV;6500;;81;;
+2;Amazon Prime Video;3700;;82;;
+15;Discovery+;3700;;27;5000;1
+7;Star+;7100;;82;6500;7
+9;Showtime;3200;14;;;
+11;Peackok;4000;;70;;
+9;Showtime;3200;;71;;
+18;ATRESplayer;2800;;98;;
+1;Netflix;4500;;62;;
+16;Rakuten TV;6500;;14;;
+13;Sony Liv;3100;;73;4500;1
+14;Movistar+ Lite;7400;10;;;
+16;Rakuten TV;6500;23;;;
+14;Movistar+ Lite;7400;20;;;
+13;Sony Liv;3100;;77;;
+11;Peackok;4000;21;;;
+5;Funimation;3900;;92;;
+2;Amazon Prime Video;3700;;70;;
+1;Netflix;4500;;91;;
+15;Discovery+;3700;;12;;
+16;Rakuten TV;6500;;34;;
+18;ATRESplayer;2800;10;;;
+14;Movistar+ Lite;7400;;79;;
+19;Mitele Plus;3700;;15;;
+7;Star+;7100;;53;;
+1;Netflix;4500;;1;;
+4;HBO+;3500;;42;5000;1
+9;Showtime;3200;;60;;
+18;ATRESplayer;2800;;57;;
+5;Funimation;3900;;22;;
+9;Showtime;3200;;85;;
+5;Funimation;3900;21;;;
+1;Netflix;4500;;18;;
+12;Viu;5000;;80;;
+1;Netflix;4500;;69;;
+7;Star+;7100;;25;;
+8;Hulu;7000;24;;;
+6;Disney+;6500;;5;;
+18;ATRESplayer;2800;3;;;
+11;Peackok;4000;;21;;
+16;Rakuten TV;6500;;5;6500;3
+19;Mitele Plus;3700;;84;;
+9;Showtime;3200;;56;;
+1;Netflix;4500;;90;;
+4;HBO+;3500;;65;4500;1
+14;Movistar+ Lite;7400;;53;;
+17;Sky;6400;8;;;
+14;Movistar+ Lite;7400;;48;;
+15;Discovery+;3700;9;;;
+1;Netflix;4500;;56;;
+16;Rakuten TV;6500;21;;;
+12;Viu;5000;;66;;
+3;Crunchyroll;4400;1;;;
+18;ATRESplayer;2800;;32;;
+16;Rakuten TV;6500;;51;;
+4;HBO+;3500;;30;;
+8;Hulu;7000;;57;;
+14;Movistar+ Lite;7400;;25;;
+6;Disney+;6500;;28;;
+7;Star+;7100;;16;;
+6;Disney+;6500;16;;;
+16;Rakuten TV;6500;;31;;
+18;ATRESplayer;2800;26;;;
+2;Amazon Prime Video;3700;20;;;
+12;Viu;5000;;32;;
+5;Funimation;3900;;17;;
+2;Amazon Prime Video;3700;;79;;
+1;Netflix;4500;;6;;
+19;Mitele Plus;3700;;12;;
+11;Peackok;4000;;2;;
+5;Funimation;3900;;56;;
+15;Discovery+;3700;;73;;
+2;Amazon Prime Video;3700;;42;;
+11;Peackok;4000;;31;;
+4;HBO+;3500;;58;;
+17;Sky;6400;;95;;
+19;Mitele Plus;3700;;23;;
+17;Sky;6400;10;;;
+6;Disney+;6500;;45;;
+16;Rakuten TV;6500;19;;;
+6;Disney+;6500;;69;;
+16;Rakuten TV;6500;;80;7500;10
+2;Amazon Prime Video;3700;;65;;
+7;Star+;7100;;15;;
+12;Viu;5000;;71;;
+11;Peackok;4000;;14;;
+2;Amazon Prime Video;3700;13;;;
+14;Movistar+ Lite;7400;;84;;
+17;Sky;6400;;59;;
+5;Funimation;3900;;63;;
+7;Star+;7100;;23;;
+5;Funimation;3900;;85;4500;2
+4;HBO+;3500;;17;6500;7
+5;Funimation;3900;;43;;
+2;Amazon Prime Video;3700;;67;;
+9;Showtime;3200;28;;;
+9;Showtime;3200;;46;;
+2;Amazon Prime Video;3700;;77;;
+13;Sony Liv;3100;;29;;
+9;Showtime;3200;27;;;
+18;ATRESplayer;2800;;74;;
+1;Netflix;4500;;11;;
+18;ATRESplayer;2800;;20;;
+5;Funimation;3900;14;;;
+16;Rakuten TV;6500;;17;;
+19;Mitele Plus;3700;;62;7000;2
+8;Hulu;7000;;52;;
+14;Movistar+ Lite;7400;;73;;
+15;Discovery+;3700;;21;;
+7;Star+;7100;;73;;
+9;Showtime;3200;19;;;
+9;Showtime;3200;26;;;
+1;Netflix;4500;;94;;
+11;Peackok;4000;;99;;
+1;Netflix;4500;;63;;
+1;Netflix;4500;12;;;
+16;Rakuten TV;6500;;63;;
+17;Sky;6400;;55;;
+2;Amazon Prime Video;3700;;101;;
+18;ATRESplayer;2800;;81;;
+10;Stan;7900;;58;;
+14;Movistar+ Lite;7400;1;;;
+3;Crunchyroll;4400;24;;;
+5;Funimation;3900;;25;;
+13;Sony Liv;3100;;97;9500;10
+4;HBO+;3500;;6;;
+10;Stan;7900;;96;8000;3
+11;Peackok;4000;;93;;
+10;Stan;7900;;94;;
+2;Amazon Prime Video;3700;16;;;
+6;Disney+;6500;;31;;
+5;Funimation;3900;;98;;
+5;Funimation;3900;;67;;
+7;Star+;7100;;83;;
+6;Disney+;6500;;26;6500;7
+2;Amazon Prime Video;3700;;54;;
+16;Rakuten TV;6500;6;;;
+9;Showtime;3200;;8;;
+9;Showtime;3200;13;;;
+17;Sky;6400;;2;;
+17;Sky;6400;;8;;
+3;Crunchyroll;4400;7;;;
+18;ATRESplayer;2800;;76;8500;7
+1;Netflix;4500;;28;;
+6;Disney+;6500;5;;;
+18;ATRESplayer;2800;;48;3500;1
+14;Movistar+ Lite;7400;13;;;
+14;Movistar+ Lite;7400;;68;;
+3;Crunchyroll;4400;25;;;
+15;Discovery+;3700;;20;;
+11;Peackok;4000;;50;;
+5;Funimation;3900;;59;;
+16;Rakuten TV;6500;;101;;
+2;Amazon Prime Video;3700;;32;;
+2;Amazon Prime Video;3700;3;;;
+7;Star+;7100;;72;;
+17;Sky;6400;;53;;
+5;Funimation;3900;8;;;
+6;Disney+;6500;;4;;
+8;Hulu;7000;;33;;
+7;Star+;7100;23;;;
+13;Sony Liv;3100;;63;;
+15;Discovery+;3700;16;;;
+18;ATRESplayer;2800;;83;;
+11;Peackok;4000;;56;;
+11;Peackok;4000;10;;;
+7;Star+;7100;;14;;
+5;Funimation;3900;;69;;
+20;DCCanal;4000;;69;;
+2;Amazon Prime Video;3700;;76;;
+11;Peackok;4000;;27;;
+3;Crunchyroll;4400;20;;;
+6;Disney+;6500;1;;;
+19;Mitele Plus;3700;;79;6000;7
+9;Showtime;3200;;44;;
+7;Star+;7100;;91;;
+14;Movistar+ Lite;7400;;96;;
+9;Showtime;3200;18;;;
+2;Amazon Prime Video;3700;;61;;
+11;Peackok;4000;;60;;
+16;Rakuten TV;6500;29;;;
+11;Peackok;4000;;62;3000;2
+19;Mitele Plus;3700;;101;;
+6;Disney+;6500;;17;8500;7
+1;Netflix;4500;;50;;
+4;HBO+;3500;;4;;
+17;Sky;6400;;43;;
+14;Movistar+ Lite;7400;;34;;
+16;Rakuten TV;6500;;52;;
+3;Crunchyroll;4400;26;;;
+17;Sky;6400;;41;;
+10;Stan;7900;;1;3500;1
+16;Rakuten TV;6500;4;;;
+19;Mitele Plus;3700;15;;;
+17;Sky;6400;;86;;
+15;Discovery+;3700;18;;;
+14;Movistar+ Lite;7400;;15;;
+7;Star+;7100;;28;;
+2;Amazon Prime Video;3700;;97;;
+1;Netflix;4500;;87;;
+16;Rakuten TV;6500;;69;;
+1;Netflix;4500;;82;;
+15;Discovery+;3700;;97;;
+19;Mitele Plus;3700;;58;;
+8;Hulu;7000;;18;;
+8;Hulu;7000;;93;1000;7
+1;Netflix;4500;;66;;
+10;Stan;7900;;76;;
+6;Disney+;6500;;2;;
+1;Netflix;4500;;77;7000;2
+3;Crunchyroll;4400;;59;7000;7
+18;ATRESplayer;2800;;56;;
+3;Crunchyroll;4400;22;;;
+9;Showtime;3200;23;;;
+5;Funimation;3900;;73;;
+19;Mitele Plus;3700;;61;;
+1;Netflix;4500;;72;;
+7;Star+;7100;;90;;
+13;Sony Liv;3100;9;;;
+8;Hulu;7000;;40;1000;3
+9;Showtime;3200;;87;;
+15;Discovery+;3700;;75;;
+15;Discovery+;3700;;2;9500;10
+2;Amazon Prime Video;3700;;100;;
+19;Mitele Plus;3700;;21;;
+7;Star+;7100;;75;4500;1
+16;Rakuten TV;6500;;44;;
+8;Hulu;7000;;74;;
+1;Netflix;4500;;24;;
+16;Rakuten TV;6500;18;;;
+2;Amazon Prime Video;3700;;13;;
+7;Star+;7100;5;;;
+13;Sony Liv;3100;;92;;
+20;DCCanal;4000;;58;;
+4;HBO+;3500;;12;;
+12;Viu;5000;;82;;
+8;Hulu;7000;;49;;
+10;Stan;7900;;20;6000;7
+7;Star+;7100;;48;4000;1
+6;Disney+;6500;;59;;
+6;Disney+;6500;;9;;
+13;Sony Liv;3100;;31;8500;3
+10;Stan;7900;;66;4500;1
+16;Rakuten TV;6500;;90;;
+16;Rakuten TV;6500;;24;;
+1;Netflix;4500;;54;6000;1
+5;Funimation;3900;;27;;
+11;Peackok;4000;;46;;
+1;Netflix;4500;28;;;
+7;Star+;7100;;94;;
+1;Netflix;4500;;30;;
+11;Peackok;4000;26;;;
+17;Sky;6400;;52;;
+15;Discovery+;3700;;87;;
+2;Amazon Prime Video;3700;26;;;
+2;Amazon Prime Video;3700;;83;;
+12;Viu;5000;;54;;
+18;ATRESplayer;2800;;28;;
+8;Hulu;7000;;76;;
+7;Star+;7100;;32;9500;7
+18;ATRESplayer;2800;;68;;
+11;Peackok;4000;;30;;
+3;Crunchyroll;4400;;29;4500;2
+14;Movistar+ Lite;7400;;59;;
+16;Rakuten TV;6500;13;;;
+16;Rakuten TV;6500;;68;;
+1;Netflix;4500;;71;;
+12;Viu;5000;;11;;
+11;Peackok;4000;1;;;
+6;Disney+;6500;;12;;
+12;Viu;5000;;81;6000;1
+4;HBO+;3500;;99;;
+6;Disney+;6500;;15;;
+5;Funimation;3900;;7;;
+19;Mitele Plus;3700;;45;;
+1;Netflix;4500;;46;;
+11;Peackok;4000;;91;;
+19;Mitele Plus;3700;;28;;
+6;Disney+;6500;;71;;
+15;Discovery+;3700;;60;;
+6;Disney+;6500;;16;;
+19;Mitele Plus;3700;;37;9500;7
+3;Crunchyroll;4400;30;;;
+1;Netflix;4500;;39;6500;2
+18;ATRESplayer;2800;;30;;
+4;HBO+;3500;;85;;
+2;Amazon Prime Video;3700;;96;;
+2;Amazon Prime Video;3700;;86;;
+7;Star+;7100;;5;;
+6;Disney+;6500;;88;;
+4;HBO+;3500;;50;4000;2
+4;HBO+;3500;;51;;
+13;Sony Liv;3100;;1;;
+11;Peackok;4000;;55;;
+1;Netflix;4500;31;;;
+4;HBO+;3500;3;;;
+14;Movistar+ Lite;7400;;60;5500;1
+18;ATRESplayer;2800;7;;;
+14;Movistar+ Lite;7400;;29;;
+19;Mitele Plus;3700;;4;;
+18;ATRESplayer;2800;15;;;
+6;Disney+;6500;;83;;
+11;Peackok;4000;;45;;
+12;Viu;5000;;60;;
+15;Discovery+;3700;;94;;
+5;Funimation;3900;;100;;
+1;Netflix;4500;;73;;
+19;Mitele Plus;3700;;68;3000;1
+7;Star+;7100;;93;;
+15;Discovery+;3700;23;;;
+5;Funimation;3900;;55;;
+1;Netflix;4500;;10;;
+17;Sky;6400;;79;;
+9;Showtime;3200;16;;;
+20;DCCanal;4000;;76;;
+18;ATRESplayer;2800;;18;;
+17;Sky;6400;;34;4500;1
+9;Showtime;3200;10;;;
+19;Mitele Plus;3700;;10;;
+4;HBO+;3500;;56;;
+3;Crunchyroll;4400;19;;;
+7;Star+;7100;;21;9500;3
+12;Viu;5000;29;;;
+3;Crunchyroll;4400;4;;;
+2;Amazon Prime Video;3700;;66;;
+4;HBO+;3500;;86;;
+7;Star+;7100;;30;;
+4;HBO+;3500;18;;;
+13;Sony Liv;3100;;45;9000;7
+3;Crunchyroll;4400;;81;;
+7;Star+;7100;24;;;
+8;Hulu;7000;;37;;
+1;Netflix;4500;23;;;
+14;Movistar+ Lite;7400;4;;;
+20;DCCanal;4000;;101;;
+1;Netflix;4500;;70;;
+15;Discovery+;3700;;42;;
+14;Movistar+ Lite;7400;;74;5500;1
+5;Funimation;3900;;74;;
+5;Funimation;3900;;44;;
+2;Amazon Prime Video;3700;;15;;
+11;Peackok;4000;;44;;
+7;Star+;7100;;70;6000;1
+18;ATRESplayer;2800;;45;;
+2;Amazon Prime Video;3700;31;;;
+6;Disney+;6500;;91;;
+5;Funimation;3900;;21;;
+16;Rakuten TV;6500;;65;5500;1
+4;HBO+;3500;22;;;
+4;HBO+;3500;;101;4500;2
+4;HBO+;3500;5;;;
+11;Peackok;4000;;81;;
+17;Sky;6400;;40;;
+6;Disney+;6500;2;;;
+2;Amazon Prime Video;3700;5;;;
+11;Peackok;4000;;9;3000;1
+19;Mitele Plus;3700;;99;3000;1
+5;Funimation;3900;;50;4500;1
+2;Amazon Prime Video;3700;;21;;
+2;Amazon Prime Video;3700;;20;;
+5;Funimation;3900;17;;;
+12;Viu;5000;;20;;
+16;Rakuten TV;6500;;3;;
+2;Amazon Prime Video;3700;;19;;
+5;Funimation;3900;;52;;
+2;Amazon Prime Video;3700;12;;;
+4;HBO+;3500;14;;;
+2;Amazon Prime Video;3700;;1;;
+1;Netflix;4500;;45;;
+8;Hulu;7000;11;;;
+5;Funimation;3900;;89;;
+19;Mitele Plus;3700;;51;;
+6;Disney+;6500;;49;;
+14;Movistar+ Lite;7400;;16;;
+16;Rakuten TV;6500;;38;9000;7
+7;Star+;7100;6;;;
+17;Sky;6400;;6;;
+6;Disney+;6500;;36;;
+6;Disney+;6500;30;;;
+3;Crunchyroll;4400;13;;;
+7;Star+;7100;;1;;
+20;DCCanal;4000;24;;;
+17;Sky;6400;;62;;
+2;Amazon Prime Video;3700;;7;;
+5;Funimation;3900;;76;;
+8;Hulu;7000;;86;;
+6;Disney+;6500;;75;8000;3
+6;Disney+;6500;7;;;
+17;Sky;6400;;82;;
+1;Netflix;4500;;101;4000;1
+1;Netflix;4500;;96;;
+3;Crunchyroll;4400;;68;;
+5;Funimation;3900;;5;3500;1
+3;Crunchyroll;4400;;99;;
+2;Amazon Prime Video;3700;;23;;
+15;Discovery+;3700;;90;6000;3
+16;Rakuten TV;6500;;11;;
+14;Movistar+ Lite;7400;;52;9000;3
+5;Funimation;3900;;31;;
+18;ATRESplayer;2800;;40;;
+2;Amazon Prime Video;3700;15;;;
+4;HBO+;3500;;100;;
+18;ATRESplayer;2800;31;;;
+18;ATRESplayer;2800;19;;;
+11;Peackok;4000;;66;;
+19;Mitele Plus;3700;;14;;
+6;Disney+;6500;;52;;
+17;Sky;6400;;92;;
+6;Disney+;6500;;34;;
+2;Amazon Prime Video;3700;;58;;
+3;Crunchyroll;4400;6;;;
+6;Disney+;6500;;39;4000;1
+16;Rakuten TV;6500;31;;;
+1;Netflix;4500;;88;;
+9;Showtime;3200;;54;4000;1
+2;Amazon Prime Video;3700;17;;;
+6;Disney+;6500;4;;;
+5;Funimation;3900;;95;;
+18;ATRESplayer;2800;2;;;
+11;Peackok;4000;;49;;
+12;Viu;5000;;40;7000;7
+20;DCCanal;4000;;61;;
+11;Peackok;4000;;64;;
+14;Movistar+ Lite;7400;;78;;
+15;Discovery+;3700;;46;;
+7;Star+;7100;7;;;
+7;Star+;7100;;33;;
+15;Discovery+;3700;;37;;
+5;Funimation;3900;;3;;
+16;Rakuten TV;6500;;95;7500;10
+3;Crunchyroll;4400;;70;;
+1;Netflix;4500;8;;;
+5;Funimation;3900;;15;;
+17;Sky;6400;14;;;
+2;Amazon Prime Video;3700;;91;;
+18;ATRESplayer;2800;;33;7000;2
+18;ATRESplayer;2800;;8;5500;1
+2;Amazon Prime Video;3700;10;;;
+9;Showtime;3200;8;;;
+15;Discovery+;3700;;53;;
+4;HBO+;3500;;14;;
+9;Showtime;3200;;79;;
+13;Sony Liv;3100;;85;;
+6;Disney+;6500;27;;;
+3;Crunchyroll;4400;;5;9000;3
+7;Star+;7100;25;;;
+3;Crunchyroll;4400;9;;;
+12;Viu;5000;;68;5000;1
+5;Funimation;3900;;83;7000;1
+1;Netflix;4500;;68;;
+14;Movistar+ Lite;7400;;35;6500;7
+9;Showtime;3200;;53;;
+17;Sky;6400;;76;;
+2;Amazon Prime Video;3700;;98;;
+2;Amazon Prime Video;3700;;10;;
+3;Crunchyroll;4400;29;;;
+5;Funimation;3900;;6;;
+1;Netflix;4500;;34;;
+8;Hulu;7000;16;;;
+14;Movistar+ Lite;7400;;85;7000;2
+17;Sky;6400;;75;6000;1
+19;Mitele Plus;3700;;78;4000;1
+11;Peackok;4000;;12;;
+2;Amazon Prime Video;3700;;16;;
+14;Movistar+ Lite;7400;17;;;
+7;Star+;7100;;42;8500;7
+1;Netflix;4500;;17;;
+12;Viu;5000;;26;;
+7;Star+;7100;15;;;
+14;Movistar+ Lite;7400;;33;;
+4;HBO+;3500;;41;4500;1
+14;Movistar+ Lite;7400;29;;;
+8;Hulu;7000;9;;;
+16;Rakuten TV;6500;;12;;
+5;Funimation;3900;;24;;
+2;Amazon Prime Video;3700;;52;;
+15;Discovery+;3700;;29;;
+8;Hulu;7000;28;;;
+6;Disney+;6500;;86;;
+1;Netflix;4500;;14;;
+9;Showtime;3200;;29;;
+5;Funimation;3900;;13;;
+15;Discovery+;3700;19;;;
+16;Rakuten TV;6500;;91;;
+5;Funimation;3900;;84;;
+8;Hulu;7000;;92;;
+1;Netflix;4500;;40;;
+18;ATRESplayer;2800;;95;;
+7;Star+;7100;27;;;
+6;Disney+;6500;;92;;
+1;Netflix;4500;;98;;
+11;Peackok;4000;;51;;
+5;Funimation;3900;;35;;
+14;Movistar+ Lite;7400;;22;;
+7;Star+;7100;;34;;
+12;Viu;5000;;19;;
+2;Amazon Prime Video;3700;;93;;
+4;HBO+;3500;;60;8500;3
+7;Star+;7100;;89;;
+3;Crunchyroll;4400;14;;;
+11;Peackok;4000;;58;;
+7;Star+;7100;;98;;
+4;HBO+;3500;;20;;
+17;Sky;6400;;66;;
+2;Amazon Prime Video;3700;14;;;
+14;Movistar+ Lite;7400;;72;;
+5;Funimation;3900;;4;;
+9;Showtime;3200;;35;;
+16;Rakuten TV;6500;;19;4000;2
+17;Sky;6400;;96;;
+14;Movistar+ Lite;7400;16;;;
+16;Rakuten TV;6500;15;;;
+16;Rakuten TV;6500;;57;;
+8;Hulu;7000;;43;;
+6;Disney+;6500;;21;;
+6;Disney+;6500;;70;;
+8;Hulu;7000;;9;;
+1;Netflix;4500;;13;;
+7;Star+;7100;;80;;
+19;Mitele Plus;3700;;74;;
+6;Disney+;6500;;76;;
+18;ATRESplayer;2800;11;;;
+14;Movistar+ Lite;7400;11;;;
+11;Peackok;4000;;88;;
+9;Showtime;3200;31;;;
+12;Viu;5000;;72;6000;1
+10;Stan;7900;;57;;
+15;Discovery+;3700;14;;;
+6;Disney+;6500;;37;;
+18;ATRESplayer;2800;1;;;
+6;Disney+;6500;;44;;
+8;Hulu;7000;;14;;
+6;Disney+;6500;13;;;
+8;Hulu;7000;;5;;
+16;Rakuten TV;6500;1;;;
+2;Amazon Prime Video;3700;;37;;
+15;Discovery+;3700;;79;;
+2;Amazon Prime Video;3700;21;;;
+2;Amazon Prime Video;3700;1;;;
+3;Crunchyroll;4400;21;;;
+3;Crunchyroll;4400;2;;;
+19;Mitele Plus;3700;;34;;
+2;Amazon Prime Video;3700;9;;;
+18;ATRESplayer;2800;;61;;
+19;Mitele Plus;3700;;97;8000;7
+9;Showtime;3200;25;;;
+6;Disney+;6500;19;;;
+17;Sky;6400;;11;1000;7
+9;Showtime;3200;;47;;
+20;DCCanal;4000;;95;;
+13;Sony Liv;3100;;66;6000;3
+2;Amazon Prime Video;3700;6;;;
+5;Funimation;3900;;48;6500;3
+18;ATRESplayer;2800;;97;;
+15;Discovery+;3700;;18;;
+2;Amazon Prime Video;3700;;90;;
+18;ATRESplayer;2800;;86;;
+10;Stan;7900;;82;8000;7
+1;Netflix;4500;;49;6500;1
+12;Viu;5000;;15;;
+11;Peackok;4000;9;;;
+17;Sky;6400;2;;;
+4;HBO+;3500;;72;6500;1
+6;Disney+;6500;;53;6500;1
+1;Netflix;4500;;84;;
+16;Rakuten TV;6500;;39;;
+2;Amazon Prime Video;3700;;43;1000;3
+16;Rakuten TV;6500;17;;;
+5;Funimation;3900;;36;;
+12;Viu;5000;;101;;
+6;Disney+;6500;;27;;
+14;Movistar+ Lite;7400;;99;6000;1
+5;Funimation;3900;;88;3000;2
+9;Showtime;3200;3;;;
+8;Hulu;7000;25;;;
+5;Funimation;3900;30;;;
+8;Hulu;7000;;94;;
+17;Sky;6400;;46;;
+16;Rakuten TV;6500;30;;;
+8;Hulu;7000;;30;;
+14;Movistar+ Lite;7400;;89;;
+3;Crunchyroll;4400;10;;;
+7;Star+;7100;;35;8000;3
+14;Movistar+ Lite;7400;3;;;
+1;Netflix;4500;;31;;
+3;Crunchyroll;4400;;80;;
+5;Funimation;3900;;57;;
+3;Crunchyroll;4400;;50;7000;3
+5;Funimation;3900;;34;;
+2;Amazon Prime Video;3700;;71;;
+16;Rakuten TV;6500;;59;;
+15;Discovery+;3700;;61;;
+9;Showtime;3200;;21;;
+16;Rakuten TV;6500;;83;;
+3;Crunchyroll;4400;;23;;
+17;Sky;6400;;15;;
+2;Amazon Prime Video;3700;;59;;
+1;Netflix;4500;;92;;
+19;Mitele Plus;3700;;25;;
+12;Viu;5000;;41;;
+18;ATRESplayer;2800;;90;;
+12;Viu;5000;;33;;
+6;Disney+;6500;;11;;
+3;Crunchyroll;4400;;25;;
+15;Discovery+;3700;;56;;
+14;Movistar+ Lite;7400;;19;6500;2
+20;DCCanal;4000;;20;;
+2;Amazon Prime Video;3700;;6;;
+5;Funimation;3900;;11;;
+15;Discovery+;3700;2;;;
+6;Disney+;6500;;68;;
+11;Peackok;4000;;54;;
+4;HBO+;3500;;21;;
+19;Mitele Plus;3700;;71;;
+15;Discovery+;3700;12;;;
+1;Netflix;4500;;37;;
+2;Amazon Prime Video;3700;19;;;
+5;Funimation;3900;;87;;
+9;Showtime;3200;;41;;
+19;Mitele Plus;3700;;9;;
+2;Amazon Prime Video;3700;25;;;
+1;Netflix;4500;1;;;
+20;DCCanal;4000;7;;;
+6;Disney+;6500;12;;;
+19;Mitele Plus;3700;;26;;
+18;ATRESplayer;2800;;88;;
+14;Movistar+ Lite;7400;;13;;
+7;Star+;7100;;99;;
+16;Rakuten TV;6500;24;;;
+4;HBO+;3500;20;;;
+1;Netflix;4500;;36;;
+8;Hulu;7000;;28;;
+2;Amazon Prime Video;3700;;48;;
+16;Rakuten TV;6500;28;;;
+4;HBO+;3500;;61;;
+2;Amazon Prime Video;3700;;73;;
+6;Disney+;6500;;23;;
+1;Netflix;4500;;76;4000;2
+14;Movistar+ Lite;7400;5;;;
+2;Amazon Prime Video;3700;;87;;
+11;Peackok;4000;;89;;
+6;Disney+;6500;;42;;
+18;ATRESplayer;2800;23;;;
+17;Sky;6400;25;;;
+18;ATRESplayer;2800;29;;;
+14;Movistar+ Lite;7400;19;;;
+14;Movistar+ Lite;7400;25;;;
+7;Star+;7100;;51;;
+14;Movistar+ Lite;7400;;9;;
+17;Sky;6400;;91;;
+15;Discovery+;3700;13;;;
+14;Movistar+ Lite;7400;;97;;
+13;Sony Liv;3100;;13;5500;1
+2;Amazon Prime Video;3700;;14;7500;7
+6;Disney+;6500;;6;;
+9;Showtime;3200;;31;1000;3
+1;Netflix;4500;13;;;
+6;Disney+;6500;;54;;
+17;Sky;6400;;42;6500;1
+14;Movistar+ Lite;7400;;80;;
+18;ATRESplayer;2800;20;;;
+7;Star+;7100;;3;;
+18;ATRESplayer;2800;;10;;
+1;Netflix;4500;24;;;
+14;Movistar+ Lite;7400;18;;;
+14;Movistar+ Lite;7400;;66;;
+15;Discovery+;3700;15;;;
+16;Rakuten TV;6500;25;;;
+15;Discovery+;3700;;85;;
+14;Movistar+ Lite;7400;;64;;
+7;Star+;7100;;6;;
+10;Stan;7900;;19;;
+15;Discovery+;3700;;100;6000;7
+1;Netflix;4500;;59;;
+9;Showtime;3200;;99;8500;7
+4;HBO+;3500;16;;;
+18;ATRESplayer;2800;;1;;
+11;Peackok;4000;;94;;
+1;Netflix;4500;;81;;
+1;Netflix;4500;17;;;
+2;Amazon Prime Video;3700;;75;6500;3
+14;Movistar+ Lite;7400;;7;7500;10
+1;Netflix;4500;;7;;
+5;Funimation;3900;;26;;
+5;Funimation;3900;;49;;
+11;Peackok;4000;;36;3500;1
+17;Sky;6400;;16;;
+9;Showtime;3200;;43;;
+3;Crunchyroll;4400;12;;;
+10;Stan;7900;10;;;
+14;Movistar+ Lite;7400;27;;;
+9;Showtime;3200;1;;;
+17;Sky;6400;6;;;
+5;Funimation;3900;;38;;
+5;Funimation;3900;;41;;
+15;Discovery+;3700;;1;;
+11;Peackok;4000;;78;8500;7
+2;Amazon Prime Video;3700;;34;;
+6;Disney+;6500;;62;;
+2;Amazon Prime Video;3700;29;;;
+18;ATRESplayer;2800;;29;;
+14;Movistar+ Lite;7400;;77;;
+7;Star+;7100;;44;;
+9;Showtime;3200;29;;;
+15;Discovery+;3700;;59;;
+12;Viu;5000;;100;;
+2;Amazon Prime Video;3700;;26;;
+16;Rakuten TV;6500;;9;;
+17;Sky;6400;;74;;
+10;Stan;7900;;85;;
+16;Rakuten TV;6500;;55;;
+9;Showtime;3200;;62;;
+17;Sky;6400;;48;6500;2
+2;Amazon Prime Video;3700;7;;;
+17;Sky;6400;;64;;
+17;Sky;6400;;33;;
+16;Rakuten TV;6500;;66;;
+14;Movistar+ Lite;7400;7;;;
+17;Sky;6400;;17;;
+5;Funimation;3900;;93;;
+1;Netflix;4500;;100;5000;1
+6;Disney+;6500;;24;;
+11;Peackok;4000;;52;;
+2;Amazon Prime Video;3700;;35;7000;1
+10;Stan;7900;;101;1000;3
+9;Showtime;3200;6;;;
+15;Discovery+;3700;;45;;
+1;Netflix;4500;;53;;
+14;Movistar+ Lite;7400;;27;;
+7;Star+;7100;22;;;
+2;Amazon Prime Video;3700;;57;;
+6;Disney+;6500;;41;;
+14;Movistar+ Lite;7400;24;;;
+17;Sky;6400;;97;;
+8;Hulu;7000;;89;;
+9;Showtime;3200;;93;;
+19;Mitele Plus;3700;;38;3500;1
+5;Funimation;3900;;54;5500;2
+16;Rakuten TV;6500;5;;;
+7;Star+;7100;;84;;
+20;DCCanal;4000;;86;5000;1
+6;Disney+;6500;;61;5500;1
+3;Crunchyroll;4400;;54;;
+19;Mitele Plus;3700;;56;;
+11;Peackok;4000;;4;;
+12;Viu;5000;;42;6000;7
+18;ATRESplayer;2800;;5;;
+7;Star+;7100;;71;;
+1;Netflix;4500;;2;8500;7
+2;Amazon Prime Video;3700;;94;;
+19;Mitele Plus;3700;;42;;
+2;Amazon Prime Video;3700;24;;;
+18;ATRESplayer;2800;;58;;
+11;Peackok;4000;;17;;
+4;HBO+;3500;8;;;
+18;ATRESplayer;2800;;77;7000;1
+9;Showtime;3200;;58;;
+4;HBO+;3500;;9;;
+16;Rakuten TV;6500;;21;4000;1
+1;Netflix;4500;2;;;
+19;Mitele Plus;3700;7;;;
+7;Star+;7100;;60;;
+1;Netflix;4500;;43;;
+11;Peackok;4000;;35;;
+3;Crunchyroll;4400;;43;;
+11;Peackok;4000;;71;;
+6;Disney+;6500;;55;;
+19;Mitele Plus;3700;;85;;
+1;Netflix;4500;;21;;
+14;Movistar+ Lite;7400;;14;;
+9;Showtime;3200;24;;;
+4;HBO+;3500;2;;;
+8;Hulu;7000;;78;;
+15;Discovery+;3700;1;;;
+7;Star+;7100;;9;;
+12;Viu;5000;;96;;
+9;Showtime;3200;9;;;
+3;Crunchyroll;4400;18;;;
+18;ATRESplayer;2800;22;;;
+19;Mitele Plus;3700;;41;;
+7;Star+;7100;;64;1000;3
+4;HBO+;3500;;29;;
+4;HBO+;3500;15;;;
+15;Discovery+;3700;3;;;
+14;Movistar+ Lite;7400;;83;4000;2
+1;Netflix;4500;;79;;
+7;Star+;7100;13;;;
+1;Netflix;4500;26;;;
+1;Netflix;4500;9;;;
+15;Discovery+;3700;;95;;
+6;Disney+;6500;;30;;
+14;Movistar+ Lite;7400;;2;;
+6;Disney+;6500;23;;;
+17;Sky;6400;;83;;
+7;Star+;7100;;22;;
+7;Star+;7100;;47;;
+8;Hulu;7000;;41;;
+1;Netflix;4500;;95;;
+14;Movistar+ Lite;7400;;23;;
+8;Hulu;7000;;79;;
+11;Peackok;4000;;74;4000;2
+19;Mitele Plus;3700;30;;;
+14;Movistar+ Lite;7400;;26;;
+11;Peackok;4000;;67;;
+1;Netflix;4500;;8;;
+10;Stan;7900;;5;5000;1
+4;HBO+;3500;;15;;
+1;Netflix;4500;20;;;
+9;Showtime;3200;;26;;
+19;Mitele Plus;3700;;13;;
+7;Star+;7100;8;;;
+19;Mitele Plus;3700;;22;;
+14;Movistar+ Lite;7400;;100;;
+1;Netflix;4500;;27;;
+12;Viu;5000;20;;;
+19;Mitele Plus;3700;;1;6500;2
+6;Disney+;6500;;65;;
+16;Rakuten TV;6500;9;;;
+3;Crunchyroll;4400;;94;;
+7;Star+;7100;;79;;
+16;Rakuten TV;6500;;74;;
+7;Star+;7100;;26;;
+19;Mitele Plus;3700;;11;;
+2;Amazon Prime Video;3700;;92;;
+2;Amazon Prime Video;3700;;78;9500;3
+6;Disney+;6500;;78;;
+5;Funimation;3900;;14;;
+14;Movistar+ Lite;7400;;21;;
+13;Sony Liv;3100;;20;9000;7
+6;Disney+;6500;26;;;
+14;Movistar+ Lite;7400;;49;;
+9;Showtime;3200;;75;;
+1;Netflix;4500;;57;;
+18;ATRESplayer;2800;;63;;
+2;Amazon Prime Video;3700;;5;;
+9;Showtime;3200;11;;;
+8;Hulu;7000;;44;;
+17;Sky;6400;;61;;
+14;Movistar+ Lite;7400;;8;;
+8;Hulu;7000;;6;;
+6;Disney+;6500;;98;;
+13;Sony Liv;3100;;44;7500;7
+1;Netflix;4500;;75;;
+1;Netflix;4500;;20;;
+11;Peackok;4000;;85;;
+11;Peackok;4000;6;;;
+19;Mitele Plus;3700;;83;;
+18;ATRESplayer;2800;;38;3000;1
+16;Rakuten TV;6500;;98;;
+19;Mitele Plus;3700;27;;;
+8;Hulu;7000;;81;;
+8;Hulu;7000;;62;;
+9;Showtime;3200;;40;;
+11;Peackok;4000;;15;;
+1;Netflix;4500;;26;3500;1
+16;Rakuten TV;6500;27;;;
+6;Disney+;6500;;19;;
+11;Peackok;4000;;1;;
+5;Funimation;3900;;20;;
+7;Star+;7100;;67;;
+16;Rakuten TV;6500;;53;;
+11;Peackok;4000;;77;;
+8;Hulu;7000;;47;;
+6;Disney+;6500;;80;;
+1;Netflix;4500;;42;;
+9;Showtime;3200;;52;;
+8;Hulu;7000;5;;;
+7;Star+;7100;;20;1000;7
+8;Hulu;7000;12;;;
+6;Disney+;6500;;94;;
+14;Movistar+ Lite;7400;28;;;
+8;Hulu;7000;;42;;
+17;Sky;6400;;14;;
+6;Disney+;6500;;95;6000;7
+13;Sony Liv;3100;;42;;
+7;Star+;7100;;101;;
+2;Amazon Prime Video;3700;;47;;
+6;Disney+;6500;;79;;
+19;Mitele Plus;3700;;20;;
+5;Funimation;3900;;82;;
+1;Netflix;4500;;61;;
+2;Amazon Prime Video;3700;;29;;
+12;Viu;5000;;88;9000;3
+15;Discovery+;3700;;9;;
+15;Discovery+;3700;29;;;
+16;Rakuten TV;6500;;67;;
+7;Star+;7100;;38;;
+19;Mitele Plus;3700;;94;;
+7;Star+;7100;;77;;
+16;Rakuten TV;6500;;45;8500;3
+7;Star+;7100;;59;;
+6;Disney+;6500;25;;;
+18;ATRESplayer;2800;;99;;
+8;Hulu;7000;3;;;
+15;Discovery+;3700;;81;;
+2;Amazon Prime Video;3700;;36;;
+12;Viu;5000;;10;;
+18;ATRESplayer;2800;;100;4500;2
+2;Amazon Prime Video;3700;;85;;
+7;Star+;7100;;97;;
+14;Movistar+ Lite;7400;;3;;
+6;Disney+;6500;14;;;
+18;ATRESplayer;2800;;93;;
+5;Funimation;3900;;19;;
+17;Sky;6400;;20;;
+17;Sky;6400;15;;;
+19;Mitele Plus;3700;;64;8500;7
+14;Movistar+ Lite;7400;31;;;
+8;Hulu;7000;30;;;
+16;Rakuten TV;6500;22;;;
+7;Star+;7100;;100;;
+5;Funimation;3900;;42;;
+7;Star+;7100;4;;;
+5;Funimation;3900;;47;;
+4;HBO+;3500;17;;;
+14;Movistar+ Lite;7400;;101;;
+5;Funimation;3900;;80;;
+1;Netflix;4500;14;;;
+8;Hulu;7000;14;;;
+7;Star+;7100;;54;;
+3;Crunchyroll;4400;;3;;
+2;Amazon Prime Video;3700;;28;;
+6;Disney+;6500;;20;;
+8;Hulu;7000;;15;;
+2;Amazon Prime Video;3700;;30;;
+18;ATRESplayer;2800;;54;1000;7
+19;Mitele Plus;3700;;72;6500;3
+11;Peackok;4000;;53;;
+15;Discovery+;3700;;3;;
+18;ATRESplayer;2800;;34;4000;2
+12;Viu;5000;;22;;
+1;Netflix;4500;;58;;
+17;Sky;6400;;12;;
+8;Hulu;7000;;83;;
+17;Sky;6400;;44;;
+6;Disney+;6500;;99;;
+6;Disney+;6500;17;;;
+8;Hulu;7000;;95;;
+14;Movistar+ Lite;7400;;55;;
+6;Disney+;6500;;56;;
+14;Movistar+ Lite;7400;;28;;
+18;ATRESplayer;2800;;85;;
+5;Funimation;3900;;2;;
+14;Movistar+ Lite;7400;;57;;
+4;HBO+;3500;;57;;
+15;Discovery+;3700;;39;;
+12;Viu;5000;;74;7000;2
+11;Peackok;4000;17;;;
+9;Showtime;3200;21;;;
+11;Peackok;4000;;5;9500;7
+1;Netflix;4500;;9;;
+8;Hulu;7000;15;;;
+11;Peackok;4000;31;;;
+11;Peackok;4000;;13;6500;7
+14;Movistar+ Lite;7400;;70;;
+19;Mitele Plus;3700;;57;;
+11;Peackok;4000;;41;;
+14;Movistar+ Lite;7400;15;;;
+6;Disney+;6500;31;;;
+18;ATRESplayer;2800;;15;;
+12;Viu;5000;;99;;
+2;Amazon Prime Video;3700;;24;;
+6;Disney+;6500;;3;;
+13;Sony Liv;3100;;49;;
+6;Disney+;6500;;81;;
+9;Showtime;3200;;48;;
+3;Crunchyroll;4400;;28;;
+18;ATRESplayer;2800;;39;;
+19;Mitele Plus;3700;23;;;
+15;Discovery+;3700;;76;;
+9;Showtime;3200;;86;;
+13;Sony Liv;3100;;90;;
+4;HBO+;3500;28;;;
+5;Funimation;3900;;10;;
+6;Disney+;6500;;67;;
+8;Hulu;7000;;19;;
+8;Hulu;7000;23;;;
+9;Showtime;3200;20;;;
+11;Peackok;4000;;98;;
+5;Funimation;3900;;81;6000;3
+13;Sony Liv;3100;;70;;
+12;Viu;5000;;21;;
+13;Sony Liv;3100;;91;;
+9;Showtime;3200;4;;;
+17;Sky;6400;;7;5500;1
+18;ATRESplayer;2800;;2;;
+5;Funimation;3900;;60;;
+7;Star+;7100;14;;;
+7;Star+;7100;;11;;
+5;Funimation;3900;;1;;
+11;Peackok;4000;23;;;
+1;Netflix;4500;;22;;
+4;HBO+;3500;;53;;
+7;Star+;7100;;68;;
+2;Amazon Prime Video;3700;;46;;
+2;Amazon Prime Video;3700;;27;;
+17;Sky;6400;;36;;
+3;Crunchyroll;4400;16;;;
+19;Mitele Plus;3700;;91;;
+16;Rakuten TV;6500;;47;;
+5;Funimation;3900;;65;8500;7
+9;Showtime;3200;;91;;
+7;Star+;7100;;95;6500;7
+14;Movistar+ Lite;7400;26;;;
+16;Rakuten TV;6500;;29;;
+18;ATRESplayer;2800;;94;4500;1
+18;ATRESplayer;2800;24;;;
+19;Mitele Plus;3700;;95;;
+7;Star+;7100;17;;;
+15;Discovery+;3700;;54;;
+2;Amazon Prime Video;3700;;88;;
+5;Funimation;3900;;94;;
+14;Movistar+ Lite;7400;;86;;
+15;Discovery+;3700;;22;;
+3;Crunchyroll;4400;17;;;
+3;Crunchyroll;4400;;64;5000;1
+5;Funimation;3900;22;;;
+10;Stan;7900;;72;4000;1
+6;Disney+;6500;;60;;
+1;Netflix;4500;;93;;
+11;Peackok;4000;;32;;
+7;Star+;7100;;8;5000;1
+18;ATRESplayer;2800;;19;;
+4;HBO+;3500;;64;;
+19;Mitele Plus;3700;;19;;
+1;Netflix;4500;;44;;
+14;Movistar+ Lite;7400;;92;;
+7;Star+;7100;;40;;
+4;HBO+;3500;6;;;
+1;Netflix;4500;;83;3000;2
+16;Rakuten TV;6500;;49;7500;7
+6;Disney+;6500;11;;;
+6;Disney+;6500;;46;;
+6;Disney+;6500;8;;;
+2;Amazon Prime Video;3700;;80;6000;2
+15;Discovery+;3700;;31;;
+2;Amazon Prime Video;3700;28;;;
+5;Funimation;3900;;32;;
+4;HBO+;3500;9;;;
+14;Movistar+ Lite;7400;;67;;
+8;Hulu;7000;29;;;
+18;ATRESplayer;2800;12;;;
+5;Funimation;3900;;58;;
+11;Peackok;4000;;92;;
+7;Star+;7100;;10;;
+4;HBO+;3500;23;;;
+3;Crunchyroll;4400;;20;;
+11;Peackok;4000;;43;;
+3;Crunchyroll;4400;8;;;
+18;ATRESplayer;2800;;51;;
+6;Disney+;6500;;33;;
+11;Peackok;4000;22;;;
+11;Peackok;4000;13;;;
+14;Movistar+ Lite;7400;21;;;
+14;Movistar+ Lite;7400;9;;;
+2;Amazon Prime Video;3700;;56;;
+12;Viu;5000;;45;;
+18;ATRESplayer;2800;;59;;
+18;ATRESplayer;2800;;72;;
+9;Showtime;3200;;74;;
+17;Sky;6400;;22;;
+3;Crunchyroll;4400;;1;;
+3;Crunchyroll;4400;;30;;
+3;Crunchyroll;4400;28;;;
+16;Rakuten TV;6500;;28;;
+9;Showtime;3200;;96;;
