@@ -80,7 +80,7 @@ function convertirFecha2($fecha) {
 
 ## TABLA Usuarios (id, nombre, mail, password, username, fecha_nacimiento)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
     $csv_usuarios = file("CSV IMPAR/usuarios.csv");
     foreach($csv_usuarios as $index => $linea) {
         if ($index === 0) continue;
@@ -89,7 +89,7 @@ try {
             continue;
         }
         $sqlVerificar = "SELECT COUNT(*) FROM usuarios WHERE id = :id";
-        $stmtVerificar = $db->prepare($sqlVerificar);
+        $stmtVerificar = $db2->prepare($sqlVerificar);
         $stmtVerificar->bindParam(':id', $linea[0]);
         $stmtVerificar->execute();
 
@@ -97,7 +97,7 @@ try {
             continue;
         }
         $sql = "INSERT INTO usuarios (id, nombre, mail, password, username, fecha_nacimiento) VALUES (:id, :nombre, :mail, :password, :username, :fecha_nacimiento)";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
         $stmt->bindParam(':id', $linea[0]);
         $stmt->bindParam(':nombre', $linea[1]);
         $stmt->bindParam(':mail', $linea[2]);
@@ -108,10 +108,10 @@ try {
         $stmt->execute();
 
     }
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en Usuarios\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos de usuarios: " . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -119,7 +119,7 @@ try {
 
 ## TABLA GeneroSubgenero (genero, nombre_subgenero)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/generos_subgeneros.csv", "r");
 
@@ -131,7 +131,7 @@ try {
         $line[1] = fixEncoding($line[1], $replacements);
 
         $sql = "INSERT INTO GeneroSubgenero (genero, nombre_subgenero) VALUES (:genero, :nombre_subgenero) ON CONFLICT (genero, nombre_subgenero) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':genero', $line[0]);
         $stmt->bindParam(':nombre_subgenero', $line[1]);
@@ -142,10 +142,10 @@ try {
     fclose($csvFile);
 
     // Commit the transaction
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en GeneroSubgenero\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos de GenerosSubgeneros: " . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -154,7 +154,7 @@ try {
 
 ## TABLA Series (sid, nombre)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/multimedia.csv", "r");
 
@@ -179,7 +179,7 @@ try {
 
     foreach ($series as $sid => $name) {
         $sql = "INSERT INTO Series (sid, nombre) VALUES (:sid, :nombre) ON CONFLICT (sid) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':sid', $sid, PDO::PARAM_INT);
         $stmt->bindParam(':nombre', $name, PDO::PARAM_STR);
@@ -188,10 +188,10 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en Series\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos de SERIES: " . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -199,7 +199,7 @@ try {
 
 ## Tabla Peliculas (pid, titulo, duracion, clasificacion, puntuacion, ano)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/multimedia.csv", "r");
 
@@ -220,7 +220,7 @@ try {
         }
 
         $sql = "INSERT INTO Peliculas (pid, titulo, duracion, clasificacion, puntuacion, ano) VALUES (:pid, :titulo, :duracion, :clasificacion, :puntuacion, :ano) ON CONFLICT (pid) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':pid', $pid, PDO::PARAM_INT);
         $stmt->bindParam(':titulo', $titulo, PDO::PARAM_STR);
@@ -234,10 +234,10 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en Peliculas\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos de PELICULAS: " . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -245,7 +245,7 @@ try {
 
 ## Tabla Capitulos (sid, cid, titulo, duracion, clasifcacion, puntuacion, año, numero)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/multimedia.csv", "r");
 
@@ -268,7 +268,7 @@ try {
         }
 
         $sql = "INSERT INTO Capitulos (sid, cid, titulo, duracion, clasificacion, puntuacion, ano, numero) VALUES (:sid, :cid, :titulo, :duracion, :clasificacion, :puntuacion, :ano, :numero) ON CONFLICT (cid) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':sid', $sid, PDO::PARAM_INT);
         $stmt->bindParam(':cid', $cid, PDO::PARAM_INT);
@@ -284,10 +284,10 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en Capitulos\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos En Capitulos: \n" . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -295,7 +295,7 @@ try {
 
 #Tabla GenerosCapitulos (sid, cid, genero)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/multimedia.csv", "r");
 
@@ -313,7 +313,7 @@ try {
         }
 
         $sql = "INSERT INTO GenerosCapitulos (sid, cid, genero) VALUES (:sid, :cid, :genero) ON CONFLICT (sid, cid) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':sid', $sid, PDO::PARAM_INT);
         $stmt->bindParam(':cid', $cid, PDO::PARAM_INT);
@@ -324,16 +324,16 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en GenerosCapitulos\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos en GenerosCapitulos: \n" . $e->getMessage();
 }
 
 ## Tabla GenerosPeliculas (pid, genero)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/multimedia.csv", "r");
 
@@ -350,7 +350,7 @@ try {
         }
 
         $sql = "INSERT INTO GenerosPeliculas (pid, genero) VALUES (:pid, :genero) ON CONFLICT (pid, genero) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':pid', $pid, PDO::PARAM_INT);
         $stmt->bindParam(':genero', $genero, PDO::PARAM_STR);
@@ -360,16 +360,16 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en GenerosPeliculas\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos en GenerosPeliculas: \n" . $e->getMessage();
 }
 
 ## Tabla Proveedores (id PK, nombre, costo INT)\
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/proveedores.csv", "r");
 
@@ -395,7 +395,7 @@ try {
 
     foreach ($proveedores as $nombre => $data) {
         $sql = "INSERT INTO Proveedores (id, nombre, costo) VALUES (:id, :nombre, :costo) ON CONFLICT (id) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':id', $data['id'], PDO::PARAM_INT);
         $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
@@ -405,10 +405,10 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en Proveedores\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos de PROVEEDORES: " . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -416,7 +416,7 @@ try {
 
 ## Tabla ProveedoresPeliculas (pro_id, pid)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/proveedores.csv", "r");
 
@@ -434,7 +434,7 @@ try {
         }
 
         $sql = "INSERT INTO ProveedoresPeliculas (pro_id, pid) VALUES (:pro_id, :pid) ON CONFLICT (pro_id, pid) DO NOTHING;";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':pro_id', $pro_id, PDO::PARAM_INT);
         $stmt->bindParam(':pid', $pid, PDO::PARAM_INT);
@@ -444,10 +444,10 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en ProveedoresPeliculas\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos en ProveedoresPeliculas: " . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -455,7 +455,7 @@ try {
 
 ## Tabla ProveedoresSeries (pro_id, sid)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/proveedores.csv", "r");
 
@@ -472,7 +472,7 @@ try {
         }
 
         $sql = "INSERT INTO ProveedoresSeries (pro_id, sid) VALUES (:pro_id, :sid) ON CONFLICT (pro_id, sid) DO NOTHING;";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':pro_id', $pro_id, PDO::PARAM_INT);
         $stmt->bindParam(':sid', $sid, PDO::PARAM_INT);
@@ -482,10 +482,10 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en ProveedoresSeries\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos ProveedoresSeries: " . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -494,7 +494,7 @@ try {
 
 ## Tabla PeliculasArriendo (pro_id, pid, precio, disponibilidad)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/proveedores.csv", "r");
 
@@ -513,7 +513,7 @@ try {
         }
 
         $sql = "INSERT INTO PeliculasArriendo (pro_id, pid, precio, disponibilidad) VALUES (:pro_id, :pid, :precio, :disponibilidad) ON CONFLICT (pro_id, pid) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':pro_id', $pro_id, PDO::PARAM_INT);
         $stmt->bindParam(':pid', $pid, PDO::PARAM_INT);
@@ -525,10 +525,10 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en PeliculasArriendo\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos en PeliculasArriendo: " . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -536,7 +536,7 @@ try {
 
 ## Tabla Subscripciones (id, estado, fecha_inicio, pro_id, uid, fecha_termino)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/subscripciones.csv", "r");
 
@@ -557,7 +557,7 @@ try {
         }
 
         $sql = "INSERT INTO Subscripciones (id, estado, fecha_inicio, pro_id, uid, fecha_termino) VALUES (:id, :estado, :fecha_inicio, :pro_id, :uid, :fecha_termino) ON CONFLICT (id) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->bindParam(':estado', $estado, PDO::PARAM_STR);
@@ -571,10 +571,10 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en Subscripciones\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos en Subscripciones: \n " . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -582,7 +582,7 @@ try {
 
 ## Tabla PagosSubscripciones (pago_id, monto, fecha, uid, subs_id)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/pagos.csv", "r");
 
@@ -604,7 +604,7 @@ try {
         }
 
         $sql = "INSERT INTO PagosSubscripcion (pago_id, monto, fecha, uid, subs_id) VALUES (:pago_id, :monto, :fecha, :uid, :subs_id) ON CONFLICT (pago_id) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':pago_id', $pago_id, PDO::PARAM_INT);
         $stmt->bindParam(':monto', $monto, PDO::PARAM_INT);
@@ -617,10 +617,10 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en PagosSubscripcion\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos en PagosSubricpcion: \n" . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -629,7 +629,7 @@ try {
 ## Tabla PagosPeliculasArriendo
 
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/pagos.csv", "r");
 
@@ -651,7 +651,7 @@ try {
         }
 
         $sql = "INSERT INTO PagosPeliculasArriendo (pago_id, monto, fecha, uid, pid, pro_id) VALUES (:pago_id, :monto, :fecha, :uid, :pid, :pro_id) ON CONFLICT (pago_id) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':pago_id', $pago_id, PDO::PARAM_INT);
         $stmt->bindParam(':monto', $monto, PDO::PARAM_INT);
@@ -665,10 +665,10 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en PagosPeliculasArriendo\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos en PagosPeliculasArriendo: \n " . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -677,7 +677,7 @@ try {
 
 ## Tabla VisualizacionesPeliculas (uid, pid, fecha)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/visualizaciones.csv", "r");
 
@@ -695,7 +695,7 @@ try {
         }
 
         $sql = "INSERT INTO VisualizacionesPeliculas (uid, pid, fecha) VALUES (:uid, :pid, :fecha) ON CONFLICT (uid, pid, fecha) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':uid', $uid, PDO::PARAM_INT);
         $stmt->bindParam(':pid', $pid, PDO::PARAM_INT);
@@ -706,10 +706,10 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en VisualizacionesPeliculas\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos en VisualizacionesPeliculas: \n" . $e->getMessage();
     echo "\n";
     echo "\n";
@@ -717,7 +717,7 @@ try {
 
 ## Tabla VisualizacionesCapitulos (uid, cid, fecha)
 try {
-    $db->beginTransaction();
+    $db2->beginTransaction();
 
     $csvFile = fopen("CSV IMPAR/visualizaciones.csv", "r");
 
@@ -735,7 +735,7 @@ try {
         }
 
         $sql = "INSERT INTO VisualizacionesCapitulos (uid, cid, fecha) VALUES (:uid, :cid, :fecha) ON CONFLICT (uid, cid, fecha) DO NOTHING";
-        $stmt = $db->prepare($sql);
+        $stmt = $db2->prepare($sql);
 
         $stmt->bindParam(':uid', $uid, PDO::PARAM_INT);
         $stmt->bindParam(':cid', $cid, PDO::PARAM_INT);
@@ -746,12 +746,29 @@ try {
 
     fclose($csvFile);
 
-    $db->commit();
+    $db2->commit();
     echo "Datos cargados en VisualizacionesCapitulos\n";
 } catch (Exception $e) {
-    $db->rollBack();
+    $db2->rollBack();
     echo "Error durante la carga de datos en VisualizacionesCapitulos: \n" . $e->getMessage();
     echo "\n";
     echo "\n";
 }
+
+### Agregar los datos de la tabla usuarios del grupo par
+
+$usuarios = $db->query("SELECT id_usuario, nombre, mail, password, username, fecha_nacimiento FROM usuarios")->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($usuarios as $usuario) {
+    // Verificar si el usuario ya existe en la segunda base de datos por id_usuario
+    $stmt = $db2->prepare("SELECT * FROM usuarios WHERE id_usuario = ?");
+    $stmt->execute([$usuario['id_usuario']]);
+    if ($stmt->rowCount() == 0) {
+        // Inserta el usuario en la segunda base de datos
+        $insert = $db2->prepare("INSERT INTO usuarios (id_usuario, nombre, mail, password, username, fecha_nacimiento) VALUES (?, ?, ?, ?, ?, ?)");
+        $insert->execute([$usuario['id_usuario'], $usuario['nombre'], $usuario['mail'], $usuario['password'], $usuario['username'], $usuario['fecha_nacimiento']]);
+        echo "Usuario con ID " . $usuario['id_usuario'] . " cargado con éxito.\n";
+    }
+}
+?>
 
