@@ -3,8 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include('./templates/header.html');
-require("data/conexion.php");
+include('../templates/header.html');
+require("../data/conexion.php");
 
 session_start();
 
@@ -13,9 +13,6 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: index.php');
     exit;
 }
-
-// Código para obtener datos de películas/juegos
-// $contenido = obtenerContenido(); // Función ficticia para obtener el contenido
 
 ?>
 
@@ -26,8 +23,8 @@ if (!isset($_SESSION['user_id'])) {
     <!-- SECCION: Barra de Navegación -->
     <div style="text-align: center;">
         <div class="navbar">
-            <a href="pagina_principal.php">Página Principal</a>
             <a href="perfil_usuario.php">Mi Perfil</a>
+            <a href="../pagina_principal.php">Página Principal</a>
         </div>
     </div>
 
@@ -55,8 +52,8 @@ if (!isset($_SESSION['user_id'])) {
 
     <!-- Botones en la parte inferior -->
     <div class="footer-buttons">
-        <a href="pagina_principal.php" class="btn-home">Volver al Inicio</a>
-        <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
+        <a href="../pagina_principal.php" class="btn-home">Volver al Inicio</a>
+        <a href="../auth/logout.php" class="btn-logout">Cerrar Sesión</a>
     </div>
     
     <!-- FIN DE LA PAGINA -->

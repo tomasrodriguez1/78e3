@@ -88,29 +88,26 @@ try {
         if (!verificarCampos($linea, [0, 1, 2, 3, 4, 5])) {
             continue;
         }
-        $sqlVerificar = "SELECT COUNT(*) FROM usuarios WHERE id = :id";
+        $sqlVerificar = "SELECT COUNT(*) FROM usuarios WHERE id_usuario = :id_usuario";
         $stmtVerificar = $db2->prepare($sqlVerificar);
-        $stmtVerificar->bindParam(':id', $linea[0]);
+        $stmtVerificar->bindParam(':id_usuario', $linea[0]);
         $stmtVerificar->execute();
 
         if ($stmtVerificar->fetchColumn() > 0) {
             continue;
         }
-        $sql = "INSERT INTO usuarios (id, nombre, mail, password, username, fecha_nacimiento) VALUES (:id, :nombre, :mail, :password, :username, :fecha_nacimiento)";
+        $sql = "INSERT INTO usuarios (id_usuario, nombre, mail, password, username, fecha_nacimiento) VALUES (:id_usuario, :nombre, :mail, :password, :username, :fecha_nacimiento)";
         $stmt = $db2->prepare($sql);
-        $stmt->bindParam(':id', $linea[0]);
+        $stmt->bindParam(':id_usuario', $linea[0]);
         $stmt->bindParam(':nombre', $linea[1]);
         $stmt->bindParam(':mail', $linea[2]);
 
         ### METODO DE ENCRIPTACION DE PASSWORD
-        $password = $linea[3];
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $stmt->bindParam(':password', $hashedPassword);
+        $stmt->bindParam(':password', password_hash($linea[3], PASSWORD_DEFAULT));
         $stmt->bindParam(':username', $linea[4]);
         $fecha_nacimiento = date_format(date_create_from_format('d-m-Y', $linea[5]), 'Y-m-d');
         $stmt->bindParam(':fecha_nacimiento', $fecha_nacimiento);
         $stmt->execute();
-
     }
     $db2->commit();
     echo "Datos cargados en Usuarios\n";
@@ -885,10 +882,27 @@ try {
 }
 
 
+try {
+    // Consulta para seleccionar todos los usuarios
+    $sqlSelect = "SELECT * FROM usuarios";
+    $stmtSelect = $db2->prepare($sqlSelect);
+    $stmtSelect->execute();
 
-
-
-
+    $resultados = $stmtSelect->fetchAll(PDO::FETCH_ASSOC);
+    if (count($resultados) > 0) {
+        // Imprimir los nombres de las columnas
+        echo implode("\t", array_keys($resultados[0])) . "\n";
+        
+        // Imprimir cada fila
+        foreach ($resultados as $fila) {
+            echo implode("\t", $fila) . "\n";
+        }
+    } else {
+        echo "No hay datos en la tabla de usuarios.\n";
+    }
+} catch (PDOException $e) {
+    echo "Error al recuperar datos: " . $e->getMessage();
+}
 
 
 

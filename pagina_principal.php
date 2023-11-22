@@ -36,11 +36,12 @@ if (!isset($_SESSION['user_id'])) {
     <br>
     <h4 align="center"> Suscripciones de Videojuegos</h4>
     <br>
-    <br>
     <!-- Formulario de Búsqueda -->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="formulario-busqueda">
-        <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
-        <input type="text" name="nombre_videojuego" placeholder="Nombre del Videojuego">
+        <div class="inputs-container">
+            <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
+            <input type="text" name="nombre_videojuego" placeholder="Nombre del Videojuego">
+        </div>
         <input type="submit" class="btn-logout" value="Buscar">
     </form>
 
@@ -64,7 +65,6 @@ if (!isset($_SESSION['user_id'])) {
             }
         }
     ?>
-    <br>
     <br>
 
     <!-- Mostrar cada proveedor en su rectangulo -->
