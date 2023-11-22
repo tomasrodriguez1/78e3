@@ -15,22 +15,23 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Consulta SQL para obtener la información de nombre, correo electrónico y nombre de usuario de la tabla "usuarios" según el usuario logueado
-$query = "SELECT nombre, mail, username FROM usuarios WHERE id = {$_SESSION['user_id']}";
-$result = mysqli_query($conexion, $query);
+$query = "SELECT nombre, mail, username FROM usuarios WHERE id = :user_id";
+$stmt = $conexion->prepare($query);
+$stmt->bindParam(':user_id', $_SESSION['user_id']);
+$stmt->execute();
 
-if ($result) {
-    // Recorrer los resultados de la consulta y mostrar la información
-    while ($row = mysqli_fetch_assoc($result)) {
-        $nombre = $row['nombre'];
-        $email = $row['mail'];
-        $username = $row['username'];
-    }
+if ($stmt) {
+    // Obtener los resultados de la consulta
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $nombre = $row['nombre'];
+    $email = $row['mail'];
+    $username = $row['username'];
 
     // Liberar los resultados de la consulta
-    mysqli_free_result($result);
+    $stmt->closeCursor();
 } else {
     // Manejar el caso de error en la consulta
-    echo "Error en la consulta: " . mysqli_error($conexion);
+    echo "Error en la consulta: " . $conexion->errorInfo()[2];
 }
 ?>
 
