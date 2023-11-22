@@ -605,6 +605,7 @@ try {
     $db->rollBack();
     echo "Error durante la carga de datos videojuegos_no_suscripcion: " . $e->getMessage();
 }
+
 ?>
 
 

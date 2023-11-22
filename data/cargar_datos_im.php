@@ -890,19 +890,12 @@ try {
 
     $resultados = $stmtSelect->fetchAll(PDO::FETCH_ASSOC);
     if (count($resultados) > 0) {
-        // Imprimir los nombres de las columnas una sola vez
-        $columnas = array_keys($resultados[0]);
-        foreach ($columnas as $columna) {
-            echo $columna . "\n";
-        }
-        echo "\n"; // Agregar una línea en blanco después de los nombres de las columnas
-
-        // Imprimir cada fila de datos, con cada campo en una nueva línea
+        // Imprimir los nombres de las columnas
+        echo implode("\t", array_keys($resultados[0])) . "\n";
+        
+        // Imprimir cada fila
         foreach ($resultados as $fila) {
-            foreach ($fila as $campo) {
-                echo $campo . "\n";
-            }
-            echo "\n"; // Agregar una línea en blanco después de cada registro
+            echo implode("\t", $fila) . "\n";
         }
     } else {
         echo "No hay datos en la tabla de usuarios.\n";
@@ -910,10 +903,6 @@ try {
 } catch (PDOException $e) {
     echo "Error al recuperar datos: " . $e->getMessage();
 }
-
-
-
-
 
 ?>
 
