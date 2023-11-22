@@ -21,8 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
 
+    // Verificación de acceso manual para 'pp' con contraseña 'pp'
     if ($username === 'pp' && $password === 'pp') {
-        $_SESSION['user_id'] = 'test_id';
+        $_SESSION['user_id'] = 'manual_access';
         $_SESSION['username'] = 'pp';
         header("Location: pagina_principal.php");
         exit;
@@ -33,12 +34,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':username', $username, PDO::PARAM_STR);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
     if ($row) {
-        if (!password_verify($password, $row['password'])) {
+        // Usuario encontrado, verificar contraseña
+        if (password_verify($password, $row['password'])) {
+            // La contraseña es correcta, iniciar sesión
+            $_SESSION['user_id'] = $row['id_usuario']; // Asumiendo que la tabla tiene un campo 'id'
+            $_SESSION['username'] = $username;
+            header("Location: pagina_principal.php");
+            exit;
+        } else {
+            // La contraseña no coincide
             $errorPassword = "Contraseña incorrecta.";
         }
     } else {
+        // Usuario no encontrado
         $errorUsername = "Nombre de usuario no encontrado.";
     }
 }
@@ -63,6 +72,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" id="password" name="password" required><br><br>
             <input type="submit" value="Iniciar Sesión">
         </form>
+
+        <!-- Sección de registro -->
+        <p>Si no tienes un usuario registrado, <a href="paginas/registro_frontend.php">regístrate</a>.</p>
     </div>
 </body>
 </html>
