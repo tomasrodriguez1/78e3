@@ -25,7 +25,7 @@ if (!isset($_SESSION['user_id'])) {
     <!-- SECCION: Barra de Navegación -->
     <div style="text-align: center;"> <!-- Contenedor para centralizar -->
         <div class="navbar">
-            <a href="perfil_usuario.php">Mi Perfil</a>
+            <a href="paginas/perfil_usuario.php">Mi Perfil</a>
             <a href="paginas/one_time_purchases.php">One Time Purchases</a>
             <a href="consulta_inestructurada.php">Consulta Inestructurada</a>
             <!-- Agrega aquí más enlaces según necesites -->
