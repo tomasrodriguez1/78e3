@@ -1,38 +1,44 @@
 <?php
-# Obtener los datos del formulario de registro
-$username = $_POST['username'];
-$nombre = $_POST['nombre'];
-$email = $_POST['email'];
-$fechaNacimiento = $_POST['fechaNacimiento'];
-$password = $_POST['password'];
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-# Verificar si el username ya existe en la base de datos
-$sql = "SELECT COUNT(*) as count FROM Usuarios WHERE username = '$username'";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
+include('../templates/header.html'); 
+require("../data/conexion.php");
 
-if ($row['count'] > 0) {
-    # El username ya existe, mostrar mensaje de error o redirigir a página de registro
-    echo "El username ya está en uso.";
-} else {
-    # Obtener el sucesor del mayor id del sistema
-    $sql = "SELECT MAX(id) as max_id FROM Usuarios";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    $nuevoId = $row['max_id'] + 1;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    # Obtener los datos del formulario de registro
+    $username = $_POST['username'];
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $fechaNacimiento = $_POST['fechaNacimiento'];
+    $password = $_POST['password'];
 
-    # Insertar el nuevo usuario en la tabla Usuarios
-    # Se debe ingresar la contraseña ENCRIPTADA --> Falta por hacer
-    $sql = "INSERT INTO Usuarios (id, username, nombre, email, fecha_nacimiento, password) 
-            VALUES ('$nuevoId', '$username', '$nombre', '$email', '$fechaNacimiento', '$password')";
-    $conn->query($sql);
+    # Verificar si el username ya existe en la base de datos
+    $stmt = $db2->prepare("SELECT COUNT(*) as count FROM Usuarios WHERE username = :username");
+    $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    if ($row['count'] > 0) {
+        # El username ya existe, mostrar mensaje de error
+        echo "El username ya está en uso.";
+    } else {
+        $sql = "SELECT MAX(id_usuario) as max_id FROM Usuarios";
+        $result = $db2->query($sql);
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+        $nuevoId = $row['max_id'] + 1;
+        # Encriptar contraseña
+        $passwordEncriptada = password_hash($password, PASSWORD_DEFAULT);
 
-    # Falta ver el tema de los permisos
-    
-    // Redirigir a la página de inicio de sesión u otra página
-    header("Location: login.php");
-    exit();
+        # Insertar el nuevo usuario en la base de datos
+        $sql = "INSERT INTO Usuarios (id_usuario, username, nombre, email, fecha_nacimiento, password) 
+            VALUES ('$nuevoId', '$username', '$nombre', '$email', '$fechaNacimiento', '$passwordEncriptada')";
+
+        # Redirigir a la página de inicio de sesión
+        header("Location: ../index.php");
+        exit();
+    }
 }
 ?>
 <html>
@@ -42,7 +48,7 @@ if ($row['count'] > 0) {
 <body>
     <h1 align="center">Registro de Usuario</h1>
     <div align="center">
-        <form method="post" action="auth/registro.php">
+        <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
             <label for="username">Nombre de Usuario:</label><br>
             <input type="text" id="username" name="username" required><br>
 
