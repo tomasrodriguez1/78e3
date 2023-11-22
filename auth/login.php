@@ -6,12 +6,11 @@ $sql = "SELECT * FROM Usuarios WHERE username = '$username'";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 
-#$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-#if ($row && password_verify($hashedPassword, $row['password'])) {
-
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+if ($row && password_verify($hashedPassword, $row['password'])) {
 
 # Encriptar la contraseña y ver si coincide con la encriptacion de la base de datos
-if ($row && password_verify($password, $row['password'])) {
+#if ($row && password_verify($password, $row['password'])) {
     // Usuario autenticado correctamente
 
     // Mostrar la información desde una vista materializada

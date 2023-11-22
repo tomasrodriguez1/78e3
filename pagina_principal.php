@@ -26,7 +26,7 @@ if (!isset($_SESSION['user_id'])) {
     <div style="text-align: center;"> <!-- Contenedor para centralizar -->
         <div class="navbar">
             <a href="perfil_usuario.php">Mi Perfil</a>
-            <a href="./paginas/one_time_purchase.php">One Time Purchases</a>
+            <a href="paginas/one_time_purchases.php">One Time Purchases</a>
             <a href="consulta_inestructurada.php">Consulta Inestructurada</a>
             <!-- Agrega aquí más enlaces según necesites -->
         </div>
@@ -34,14 +34,19 @@ if (!isset($_SESSION['user_id'])) {
 
     <br>
     <br>
-   <!-- Formulario de Búsqueda -->
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+    <h4 align="center"> Suscripciones de Videojuegos</h4>
+    <br>
+    <br>
+    <!-- Formulario de Búsqueda -->
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="formulario-busqueda">
         <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
         <input type="text" name="nombre_videojuego" placeholder="Nombre del Videojuego">
-        <input type="submit" value="Buscar">
+        <input type="submit" class="btn-logout" value="Buscar">
     </form>
 
+
     <!-- Procesar el formulario y obtener resultados -->
+    <!--  VER DESPUES PARA HACERLO CON EL OTRO GRUPO -->
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Aquí tu código para procesar el formulario y realizar la consulta
@@ -59,8 +64,12 @@ if (!isset($_SESSION['user_id'])) {
             }
         }
     ?>
+    <br>
+    <br>
+
     <!-- Mostrar cada proveedor en su rectangulo -->
-   <div class="proveedores-container">
+    <h4 align="center"> Proveedores de Videojuegos</h4>
+    <div class="proveedores-container">
         <?php
         try {
             $sql = "SELECT * FROM proveedores";

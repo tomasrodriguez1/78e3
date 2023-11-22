@@ -263,16 +263,9 @@ try {
         $stmt->bindParam(':mail', $linea[2]);
 
         ### METODO DE ENCRIPTACION DE PASSWORD
-        #$password = $linea[3];
-        #$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        #$stmt->bindParam(':password', $hashedPassword);
-
-        $stmt->bindParam(':password', $linea[3]);
-
-
-
-
-
+        $password = $linea[3];
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->bindParam(':password', $hashedPassword);
         $stmt->bindParam(':username', $linea[4]);
         $fecha_nacimiento = date_format(date_create_from_format('d-m-Y', $linea[11]), 'Y-m-d');
         $stmt->bindParam(':fecha_nacimiento', $fecha_nacimiento);
@@ -327,7 +320,7 @@ try {
     echo "Error durante la carga de datos de usuario_proveedor: " . $e->getMessage();
 }
 
-## TABLA USUARIO HORAS --> Se produce un error por que no esta el id de videojuego = 2 en la tabla videojuegos
+## TABLA USUARIO HORAS
 try {
     $db->beginTransaction();
     $csv_usuario_horas = file("CSV PAR/usuario_actividades.csv");

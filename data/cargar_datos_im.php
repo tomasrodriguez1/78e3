@@ -103,11 +103,9 @@ try {
         $stmt->bindParam(':mail', $linea[2]);
 
         ### METODO DE ENCRIPTACION DE PASSWORD
-        #$password = $linea[3];
-        #$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        #$stmt->bindParam(':password', $hashedPassword);
-
-        $stmt->bindParam(':password', $linea[3]);
+        $password = $linea[3];
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->bindParam(':password', $hashedPassword);
         $stmt->bindParam(':username', $linea[4]);
         $fecha_nacimiento = date_format(date_create_from_format('d-m-Y', $linea[5]), 'Y-m-d');
         $stmt->bindParam(':fecha_nacimiento', $fecha_nacimiento);
