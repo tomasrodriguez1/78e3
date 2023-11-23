@@ -68,7 +68,7 @@ function fixEncoding($text, $replacements) {
 }
 
 function convertirFecha($fecha) {
-    $date = DateTime::createFromFormat('d-m-y', $fecha);
+    $date = DateTime::createFromFormat('d-m-Y', $fecha);
     return $date ? $date->format('Y-m-d') : null;
 }
 
@@ -77,38 +77,57 @@ function convertirFecha2($fecha) {
     return $date ? $date->format('Y-m-d') : null;
 }
 
+function convertirFecha3($fecha) {
+    $date = DateTime::createFromFormat('d-m-y', $fecha);
+    return $date ? $date->format('Y-m-d') : null;
+}
+
+
 
 ## TABLA Usuarios (id, nombre, mail, password, username, fecha_nacimiento)
 try {
     $db2->beginTransaction();
     $csv_usuarios = file("CSV IMPAR/usuarios.csv");
-    foreach($csv_usuarios as $index => $linea) {
-        if ($index === 0) continue;
+
+    foreach ($csv_usuarios as $index => $linea) {
+        if ($index === 0) continue; // Skip header line
+
         $linea = str_getcsv($linea, ";");
         if (!verificarCampos($linea, [0, 1, 2, 3, 4, 5])) {
-            continue;
+            continue; // Skip invalid lines
         }
-        $sqlVerificar = "SELECT COUNT(*) FROM usuarios WHERE id_usuario = :id_usuario";
+
+        // Extracting data from CSV. Assuming $linea[0] is the 'id' from the CSV.
+        $id_usuario = $linea[0];
+        $nombre = $linea[1];
+        $mail = $linea[2];
+        $password = password_hash($linea[3], PASSWORD_DEFAULT); // Hashing the password
+        $username = $linea[4];
+        $fecha_nacimiento = date_format(date_create_from_format('d-m-Y', $linea[5]), 'Y-m-d');
+
+        // Verify if the user already exists in the database
+        $sqlVerificar = "SELECT COUNT(*) FROM Usuarios WHERE id_usuario = :id_usuario";
         $stmtVerificar = $db2->prepare($sqlVerificar);
-        $stmtVerificar->bindParam(':id_usuario', $linea[0]);
+        $stmtVerificar->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
         $stmtVerificar->execute();
 
         if ($stmtVerificar->fetchColumn() > 0) {
-            continue;
+            continue; // Skip if user already exists
         }
-        $sql = "INSERT INTO usuarios (id_usuario, nombre, mail, password, username, fecha_nacimiento) VALUES (:id_usuario, :nombre, :mail, :password, :username, :fecha_nacimiento)";
-        $stmt = $db2->prepare($sql);
-        $stmt->bindParam(':id_usuario', $linea[0]);
-        $stmt->bindParam(':nombre', $linea[1]);
-        $stmt->bindParam(':mail', $linea[2]);
 
-        ### METODO DE ENCRIPTACION DE PASSWORD
-        $stmt->bindParam(':password', password_hash($linea[3], PASSWORD_DEFAULT));
-        $stmt->bindParam(':username', $linea[4]);
-        $fecha_nacimiento = date_format(date_create_from_format('d-m-Y', $linea[5]), 'Y-m-d');
+        // Prepare the SQL statement for inserting new user
+        $sql = "INSERT INTO Usuarios (id_usuario, nombre, mail, password, username, fecha_nacimiento) VALUES (:id_usuario, :nombre, :mail, :password, :username, :fecha_nacimiento)";
+        $stmt = $db2->prepare($sql);
+        $stmt->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
+        $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+        $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
         $stmt->bindParam(':fecha_nacimiento', $fecha_nacimiento);
+
         $stmt->execute();
     }
+
     $db2->commit();
     echo "Datos cargados en Usuarios\n";
 } catch (Exception $e) {
@@ -117,6 +136,7 @@ try {
     echo "\n";
     echo "\n";
 }
+
 
 ## TABLA GeneroSubgenero (genero, nombre_subgenero)
 try {
@@ -546,14 +566,16 @@ try {
 
     while (($line = fgetcsv($csvFile, 1000, ";")) !== FALSE) {
         $id = trim($line[0]);
-        $estado = $line[1];
-        $fecha_inicio = convertirFecha($line[2]);
-        $pro_id = $line[3];
-        $uid = $line[4];
-        $fecha_termino = convertirFecha($line[5]);
+        $estado = trim($line[1]); // Truncate spaces in 'estado'
+        $fecha_inicio = trim($line[2]); // Truncate spaces in 'fecha_inicio'
+        $fecha_inicio = convertirFecha3($fecha_inicio); // Convert 'fecha_inicio'
+        $pro_id = trim($line[3]);
+        $uid = trim($line[4]);
+        $fecha_termino = trim($line[5]); // Truncate spaces in 'fecha_termino'
+        $fecha_termino = convertirFecha3($fecha_termino); // Convert 'fecha_termino'
 
-        // Verificar si los campos obligatorios están presentes
-        if (!is_numeric($id) || !is_numeric($pro_id) || !is_numeric($uid)) {
+        // Verificar si los campos obligatorios están presentes y son válidos
+        if (!is_numeric($id) || !is_numeric($pro_id) || !is_numeric($uid) || !$fecha_inicio || !$fecha_termino) {
             continue; // Saltar filas no válidas
         }
 

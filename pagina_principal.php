@@ -16,6 +16,21 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Aquí tu código para procesar el formulario y realizar la consulta
+    // Por ejemplo:
+    // $resultados = tuFuncionParaConsultarLaBaseDeDatos($_POST['proveedor'], $_POST['nombre_videojuego']);
+
+    // Mostrar Resultados de la Búsqueda
+    foreach ($resultados as $row) {
+        // Mostrar cada resultado
+        echo "<div>";
+        echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
+        echo " - Videojuego: " . htmlspecialchars($row['nombre_videojuego']);
+        echo " - Precio: " . htmlspecialchars($row['precio']);
+        echo "</div>";
+        }
+    }
 ?>
 
 <body>
@@ -47,41 +62,34 @@ if (!isset($_SESSION['user_id'])) {
 
 
     <!-- Procesar el formulario y obtener resultados -->
-    <!--  VER DESPUES PARA HACERLO CON EL OTRO GRUPO -->
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Aquí tu código para procesar el formulario y realizar la consulta
-        // Por ejemplo:
-        // $resultados = tuFuncionParaConsultarLaBaseDeDatos($_POST['proveedor'], $_POST['nombre_videojuego']);
-
-        // Mostrar Resultados de la Búsqueda
-        foreach ($resultados as $row) {
-            // Mostrar cada resultado
-            echo "<div>";
-            echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
-            echo " - Videojuego: " . htmlspecialchars($row['nombre_videojuego']);
-            echo " - Precio: " . htmlspecialchars($row['precio']);
-            echo "</div>";
-            }
-        }
-    ?>
+    <!-- FALTA ADAPTARLO A LA BASE DE DATOS DE GRUPO IMPAR -->
+    <h4 align="center"> Suscripciones de Películas y Series</h4>
     <br>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="formulario-busqueda">
+        <div class="inputs-container">
+            <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
+            <input type="text" name="nombre_videojuego" placeholder="Nombre del Videojuego">
+        </div>
+        <input type="submit" class="btn-logout" value="Buscar">
+    </form>
 
     <!-- Mostrar cada proveedor en su rectangulo -->
-    <h4 align="center"> Proveedores de Videojuegos</h4>
+    <h4 align="center"> Proveedores de Películas y Series</h4>
     <div class="proveedores-container">
         <?php
         try {
-            $sql = "SELECT * FROM proveedores";
-            $stmt = $db->query($sql);
+            $sql = "SELECT * FROM Proveedores";
+            $stmt = $db2->query($sql);
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo "<div class='proveedor-bloque' data-id='" . htmlspecialchars($row['id']) . "'>" . htmlspecialchars($row['nombre']) . "</div>";
+                echo "<div class='proveedor-bloque' data-id='" . htmlspecialchars($row['id']) . "' data-nombre='" . htmlspecialchars($row['nombre']) . "' data-costo='" . htmlspecialchars($row['costo']) . "'>" . htmlspecialchars($row['nombre']) . "</div>";
             }
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
         }
         ?>
     </div>
+
+
 
     <br>
     <br>
@@ -108,7 +116,14 @@ if (!isset($_SESSION['user_id'])) {
         document.querySelectorAll('.proveedor-bloque').forEach(item => {
             item.addEventListener('click', function(e) {
                 var proveedorId = this.getAttribute('data-id');
-                document.getElementById('detallesProveedor').innerHTML = 'Detalles del proveedor con ID: ' + proveedorId;
+                var proveedorNombre = this.getAttribute('data-nombre');
+                var proveedorCosto = this.getAttribute('data-costo');
+                
+                var detallesHTML = "<h3>" + proveedorNombre + "</h3>";
+                detallesHTML += "<p>ID: " + proveedorId + "</p>";
+                detallesHTML += "<p>Costo: $" + proveedorCosto + "</p>";
+                
+                document.getElementById('detallesProveedor').innerHTML = detallesHTML;
                 document.getElementById('modalProveedor').style.display = 'block';
             });
         });
@@ -118,6 +133,7 @@ if (!isset($_SESSION['user_id'])) {
         document.getElementById('modalProveedor').style.display = 'none';
     }
 </script>
+
 
 
 </body>
