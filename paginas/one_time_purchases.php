@@ -58,13 +58,14 @@ foreach ($contenido as $item) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Videojuegos</title>
-    <!-- Agrega aquí tus estilos CSS si es necesario -->
+    <title>Lista de Videojuegos</title>
+    <style>
+        #listaJuegos { display: none; } 
+    </style>
 </head>
 <body>
     <div class="navbar">
-        <a href="perfil_usuario.php">Mi Perfil</a>
-        <a href="../pagina_principal.php">Página Principal</a>
+        <!-- Tu navbar aquí -->
     </div>
 
     <button id="btnPeliculas">Películas</button>
@@ -72,58 +73,23 @@ foreach ($contenido as $item) {
 
     <div id="listaJuegos">
         <?php foreach ($videojuegos as $id_videojuego => $videojuego): ?>
-            <div class="nombre-juego" data-id="<?= $id_videojuego ?>">
-                <?= htmlspecialchars($videojuego['detalles']['titulo']) ?>
+            <div class="nombre-juego">
+                <a href="detalles_one_time.php?id=<?= urlencode($id_videojuego) ?>">
+                    <?= htmlspecialchars($videojuego['detalles']['titulo']) ?>
+                </a>
             </div>
         <?php endforeach; ?>
     </div>
 
-    <?php foreach ($videojuegos as $id_videojuego => $videojuego): ?>
-        <div id="detalles-juego-<?= $id_videojuego ?>" class="detalles-juego" style="display: none;">
-            <button class="regresar">Regresar a la lista</button>
-            <h2><?= htmlspecialchars($videojuego['detalles']['titulo']) ?></h2>
-            <p>Puntuación: <?= htmlspecialchars($videojuego['detalles']['puntuacion']) ?></p>
-            <p>Clasificación: <?= htmlspecialchars($videojuego['detalles']['clasificacion']) ?></p>
-            <p>Fecha de Lanzamiento: <?= htmlspecialchars($videojuego['detalles']['fecha_de_lanzamiento']) ?></p>
-            <?php if (!empty($videojuego['detalles']['beneficio_preorden'])): ?>
-                <p>Beneficio Preorden: <?= htmlspecialchars($videojuego['detalles']['beneficio_preorden']) ?></p>
-            <?php endif; ?>
-            <ul>
-                <?php foreach ($videojuego['proveedores'] as $nombreProveedor => $precio): ?>
-                    <li><?= htmlspecialchars($nombreProveedor) ?> - Precio: $<?= htmlspecialchars($precio) ?></li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-    <?php endforeach; ?>
-
     <script>
-    document.getElementById('btnJuegos').addEventListener('click', function() {
-        document.getElementById('listaJuegos').style.display = 'block';
-        document.querySelectorAll('.detalles-juego').forEach(function(el) {
-            el.style.display = 'none'; // Corregido aquí
+        document.getElementById('btnJuegos').addEventListener('click', function() {
+            var listaJuegos = document.getElementById('listaJuegos');
+            if (listaJuegos.style.display === 'none') {
+                listaJuegos.style.display = 'block';
+            } else {
+                listaJuegos.style.display = 'none';
+            }
         });
-    });
-
-    document.querySelectorAll('.nombre-juego').forEach(function(element) {
-        element.addEventListener('click', function() {
-            const juegoId = this.getAttribute('data-id');
-            document.getElementById('listaJuegos').style.display = 'none';
-            document.querySelectorAll('.detalles-juego').forEach(function(el) {
-                el.style.display = 'none';
-            });
-            document.getElementById('detalles-juego-' + juegoId).style.display = 'block';
-        });
-    });
-
-    document.querySelectorAll('.regresar').forEach(function(button) {
-        button.addEventListener('click', function() {
-            document.getElementById('listaJuegos').style.display = 'block';
-            document.querySelectorAll('.detalles-juego').forEach(function(el) {
-                el.style.display = 'none';
-            });
-        });
-    });
-</script>
+    </script>
 </body>
 </html>
-
