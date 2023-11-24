@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include('./templates/header.html'); 
+
 require("data/conexion.php");
 
 session_start();
@@ -50,8 +50,67 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $e->getMessage();
     }
 }
+function obtenerTopVisualizaciones($db2, $proveedorId) {
+    // Prepara un array para almacenar los resultados
+    $resultados = [
+        'peliculas' => [],
+        'series' => []
+    ];
 
+    // Consulta para obtener las películas más vistas por proveedor
+    $sqlPeliculas = "SELECT p.pid, p.titulo, COUNT(vp.pid) AS visualizaciones
+                    FROM ProveedoresPeliculas pp
+                    JOIN Peliculas p ON pp.pid = p.pid
+                    LEFT JOIN VisualizacionesPeliculas vp ON p.pid = vp.pid
+                    WHERE pp.pro_id = :proveedorId
+                    GROUP BY p.pid
+                    ORDER BY visualizaciones DESC
+                    LIMIT 3;
+                    ";
+
+    try {
+        $stmtPeliculas = $db2->prepare($sqlPeliculas);
+        $stmtPeliculas->bindParam(':proveedorId', $proveedorId, PDO::PARAM_INT);
+        $stmtPeliculas->execute();
+        $resultados['peliculas'] = $stmtPeliculas->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log("Error al obtener películas más vistas: " . $e->getMessage());
+        // Puedes decidir cómo manejar el error, por ejemplo, devolviendo un mensaje de error específico
+    }
+
+    // Consulta para obtener las series más vistas por proveedor
+    $sqlSeries = "SELECT s.sid, s.nombre, SUM(vc.visualizaciones) AS visualizaciones_totales
+                    FROM ProveedoresSeries ps
+                    JOIN Series s ON ps.sid = s.sid
+                    JOIN Capitulos c ON s.sid = c.sid
+                    LEFT JOIN (SELECT cid, COUNT(*) as visualizaciones FROM VisualizacionesCapitulos GROUP BY cid) vc ON c.cid = vc.cid
+                    WHERE ps.pro_id = :proveedorId
+                    GROUP BY s.sid
+                    ORDER BY visualizaciones_totales DESC
+                    LIMIT 3;
+                    ";
+
+    try {
+        $stmtSeries = $db2->prepare($sqlSeries);
+        $stmtSeries->bindParam(':proveedorId', $proveedorId, PDO::PARAM_INT);
+        $stmtSeries->execute();
+        $resultados['series'] = $stmtSeries->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log("Error al obtener series más vistas: " . $e->getMessage());
+        // Manejo del error
+    }
+
+    // Devolver los resultados en formato JSON
+    return json_encode($resultados);
+}
+if (isset($_GET['accion']) && $_GET['accion'] == 'obtenerTopVisualizaciones' && isset($_GET['proveedorId'])) {
+    header('Content-Type: application/json'); // Establece el tipo de contenido a JSON
+    echo obtenerTopVisualizaciones($db2, $_GET['proveedorId']);
+    exit; // Detiene la ejecución del script para no enviar más salida
+}
+include('./templates/header.html'); 
 ?>
+
 
 <body>
 
@@ -69,6 +128,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <br>
     <br>
+    <h1 align="center"> Videojuegos</h1>
+    <br>
+    <br>
     <h4 align="center"> Suscripciones de Videojuegos</h4>
     <br>
     <!-- Formulario de Búsqueda -->
@@ -79,8 +141,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <input type="submit" class="btn-logout" value="Buscar">
     </form>
-
-
+    <br>
+        <!-- Inicio de la Sección de Proveedores de Videojuegos -->
+    <h4 align="center">Proveedores de Videojuegos</h4>
+    <div class="proveedores-container">
+        <?php
+            try {
+                $sql = "SELECT p.id, p.nombre,
+                            (SELECT COUNT(*) FROM proveedores_videojuegos WHERE proveedores_videojuegos.id = p.id) as totalvideojuegos
+                        FROM proveedores p";
+                $stmt = $db->query($sql);
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<div class='proveedor-bloque-videojuego' data-id='" . htmlspecialchars($row['id']) . "' data-nombre='" . htmlspecialchars($row['nombre']) . "' data-totalvideojuegos='" . htmlspecialchars($row['totalvideojuegos']) . "'>" . htmlspecialchars($row['nombre']). "</div>";
+                }
+            } catch (Exception $e) {
+                echo "Error: " . $e->getMessage();
+            }
+        ?>
+    </div>
+    <br>
+    <br>
+    <h1 align="center"> Películas y Series</h1>
+    <br>
+    <br>       
     <!-- Procesar el formulario y obtener resultados -->
     <h4 align="center"> Suscripciones de Películas y Series</h4>
     <br>
@@ -91,7 +174,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <input type="submit" class="btn-logout" value="Buscar">
     </form>
-
+    <br>   
     <!-- Mostrar cada proveedor en su rectangulo -->
     <h4 align="center"> Proveedores de Películas y Series</h4>
     <div class="proveedores-container">
@@ -115,47 +198,105 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <br>
     <br>
     <br>
-    <br>
-    <br>
-
     <div class="logout-button">
         <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
     </div>
     <!-- FIN DE LA PAGINA -->
 
-    <!-- Modal para detalles del proveedor -->
-    <div id="modalProveedor" style="display:none;">
-        <div id="detallesProveedor"></div>
+        <!-- Modal para detalles del proveedor -->
+        <div id="modalProveedorVideojuegos" style="display:none;">
+        <div id="detallesProveedorVideojuegos"></div>
         <br>
-        <button onclick="cerrarModal()">Cerrar</button>
-    </div>
+        <button onclick="cerrarModalVideojuegos()">Cerrar</button>
+        </div>
+
+        <!-- Modal para detalles del proveedor de películas y series -->
+        <div id="modalProveedorPeliculasSeries" style="display:none;">
+            <div id="detallesProveedorPeliculasSeries"></div>
+            <br>
+            <button onclick="cerrarModalPeliculasSeries()">Cerrar</button>
+        </div>
 
     <!-- Código JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            document.querySelectorAll('.proveedor-bloque').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    var proveedorId = this.getAttribute('data-id');
-                    var proveedorNombre = this.getAttribute('data-nombre');
-                    var proveedorCosto = this.getAttribute('data-costo');
-                    var totalPeliculas = this.getAttribute('data-totalpeliculas');
-                    var totalSeries = this.getAttribute('data-totalseries');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Eventos para proveedores de videojuegos
+            document.querySelectorAll('.proveedor-bloque-videojuego').forEach(item => {
+                item.addEventListener('click', function() {
+                    var idVideojuegoProveedor = this.getAttribute('data-id');
+                    var nombreVideojuegoProveedor = this.getAttribute('data-nombre');
+                    var totalVideojuegos = this.getAttribute('data-totalvideojuegos');
                     
-                    var detallesHTML = "<h3>" + proveedorNombre + "</h3>";
-                    detallesHTML += "<p>Costo: $" + proveedorCosto + "</p>";
-                    detallesHTML += "<p>Total de Películas: " + totalPeliculas + "</p>";
-                    detallesHTML += "<p>Total de Series: " + totalSeries + "</p>";
+                    var detallesHTML2 = "<h3>" + nombreVideojuegoProveedor + "</h3>" +
+                                    "<p>Total de Videojuegos: " + totalVideojuegos + "</p>";
                     
-                    document.getElementById('detallesProveedor').innerHTML = detallesHTML;
-                    document.getElementById('modalProveedor').style.display = 'block';
+                    document.getElementById('detallesProveedorVideojuegos').innerHTML = detallesHTML2;
+                    document.getElementById('modalProveedorVideojuegos').style.display = 'block';
                 });
             });
+
+            // Eventos para proveedores de películas y series
+            document.querySelectorAll('.proveedor-bloque').forEach(item => {
+                item.addEventListener('click', function() {
+                    var idProveedor = this.getAttribute('data-id');
+                    var nombreProveedor = this.getAttribute('data-nombre');
+                    var costoProveedor = this.getAttribute('data-costo');
+                    var peliculasTotal = this.getAttribute('data-totalpeliculas');
+                    var seriesTotal = this.getAttribute('data-totalseries');
+
+                    // Mostrar información básica del proveedor en el modal
+                    var detallesHTML = "<h3>" + nombreProveedor + "</h3>" +
+                                    "<p>Costo: $" + costoProveedor + "</p>" +
+                                    "<p>Total de Películas: " + peliculasTotal + "</p>" +
+                                    "<p>Total de Series: " + seriesTotal + "</p>";
+
+                    // Realizar solicitud AJAX para obtener las películas y series más vistas
+                    fetch(window.location.href + '?accion=obtenerTopVisualizaciones&proveedorId=' + idProveedor)
+                        .then(response => {
+                            if (response.headers.get("content-type").includes("application/json")) {
+                                return response.json();
+                            } else {
+                                throw new Error('No es JSON');
+                            }
+                        })
+                        .then(data => {
+                            // Procesar los datos y agregarlos al HTML del modal
+                            var peliculasHTML = "<h4>Películas más vistas</h4>";
+                            data.peliculas.forEach(function(pelicula) {
+                                peliculasHTML += "<p>" + pelicula.titulo + " - Visualizaciones: " + pelicula.visualizaciones + "</p>";
+                            });
+
+                            var seriesHTML = "<h4>Series más vistas</h4>";
+                            data.series.forEach(function(serie) {
+                                seriesHTML += "<p>" + serie.nombre + " - Visualizaciones Totales: " + serie.visualizaciones_totales + "</p>";
+                            });
+
+                            // Actualizar el contenido del modal con la nueva información
+                            detallesHTML += peliculasHTML + seriesHTML;
+                            document.getElementById('detallesProveedorPeliculasSeries').innerHTML = detallesHTML;
+                            document.getElementById('modalProveedorPeliculasSeries').style.display = 'block';
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            document.getElementById('detallesProveedorPeliculasSeries').innerHTML = detallesHTML + "<p>Error al cargar las visualizaciones.</p>";
+                            document.getElementById('modalProveedorPeliculasSeries').style.display = 'block';
+                        });
+                });
+            });
+
         });
 
-        function cerrarModal() {
-            document.getElementById('modalProveedor').style.display = 'none';
+        function cerrarModalVideojuegos() {
+            document.getElementById('modalProveedorVideojuegos').style.display = 'none';
         }
+
+        function cerrarModalPeliculasSeries() {
+            document.getElementById('modalProveedorPeliculasSeries').style.display = 'none';
+        }
+
     </script>
+
+
 
 
 

@@ -166,17 +166,18 @@ table.center tr:hover {
     color: #e0e0e0;
 }
 
-#modalProveedor {
+#modalProveedorVideojuegos, #modalProveedorPeliculasSeries {
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: #333;
     padding: 20px;
-    border: 1px solid #FFB703;;
+    border: 1px solid #FFB703;
     z-index: 1000;
     display: none;
 }
+
 
 .proveedores-container {
     display: flex;
@@ -196,6 +197,19 @@ table.center tr:hover {
 }
 
 .proveedor-bloque:hover {
+    background-color: #444; /* Cambia el color al pasar el ratón */
+}
+
+.proveedor-bloque-videojuego {
+    background-color: #333; /* Un poco más claro que el negro */
+    color: white;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 10px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+    transition: background-color 0.3s; /* Efecto suave al cambiar de color */
+}
+.proveedor-bloque-videojuego:hover {
     background-color: #444; /* Cambia el color al pasar el ratón */
 }
 
