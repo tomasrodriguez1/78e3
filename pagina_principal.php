@@ -16,40 +16,105 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $proveedor = '%' . $_POST['proveedor'] . '%';
-    $nombre = '%' . $_POST['nombre_videojuego'] . '%';
+    // Verificar si el índice 'formulario' existe en $_POST
+    if (isset($_POST['formulario'])) {
+        $tipoFormulario = $_POST['formulario'];
 
-    try {
-        $sql = "SELECT p.nombre AS nombre_proveedor, 'Película' AS tipo, peli.titulo AS titulo
-                FROM Proveedores AS p
-                LEFT JOIN ProveedoresPeliculas AS pp ON p.id = pp.pro_id
-                LEFT JOIN Peliculas AS peli ON pp.pid = peli.pid
-                WHERE LOWER(p.nombre) LIKE LOWER(:proveedor)
-                AND LOWER(peli.titulo) LIKE LOWER(:nombre)
-                UNION
-                SELECT p.nombre, 'Serie', ser.nombre AS titulo
-                FROM Proveedores AS p
-                LEFT JOIN ProveedoresSeries AS ps ON p.id = ps.pro_id
-                LEFT JOIN Series AS ser ON ps.sid = ser.sid
-                WHERE LOWER(p.nombre) LIKE LOWER(:proveedor)
-                AND LOWER(ser.nombre) LIKE LOWER(:nombre)";
-        $stmt = $db2->prepare($sql);
-        $stmt->bindParam(':proveedor', $proveedor, PDO::PARAM_STR);
-        $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
-        $stmt->execute();
-        $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($tipoFormulario == 'videojuegos') {
+            // Procesar datos para películas y series
+            $proveedor = '%' . $_POST['proveedor'] . '%';
+            $nombre = '%' . $_POST['nombre_videojuego'] . '%'; // Asegúrate de que este es el nombre correcto del campo en tu formulario
+        
+            try {
+                $sql = "SELECT p.nombre AS nombre_proveedor, vj.nombre AS nombre_videojuego,
+                        FROM proveedores AS p
+                        LEFT JOIN  videojuegos AS vj ON p.id = vj.id_proveedor
+                        LEFT JOIN vi  AS peli ON pp.pid = peli.pid
+                        WHERE LOWER(p.nombre) LIKE LOWER(:proveedor)
+                        AND LOWER(peli.titulo) LIKE LOWER(:nombre)";
 
-        foreach ($resultados as $row) {
-            echo "<div>";
-            echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
-            echo " - Tipo: " . htmlspecialchars($row['tipo']);
-            echo " - Título: " . htmlspecialchars($row['titulo']);
-            echo "</div>";
+                $stmt = $db->prepare($sql);
+                $stmt->bindParam(':proveedor', $proveedor, PDO::PARAM_STR);
+                $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+                $stmt->execute();
+                $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+                if (count($resultados) > 0) { // Verifica si hay resultados
+                    foreach ($resultados as $row) {
+                        echo "<div>";
+                        echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
+                        echo " - Tipo: " . htmlspecialchars($row['tipo']);
+                        echo " - Título: " . htmlspecialchars($row['titulo']);
+                        echo " - Estado: Inlcuido";
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<div>";
+                    echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
+                    echo " - Tipo: " . htmlspecialchars($row['tipo']);
+                    echo " - Título: " . htmlspecialchars($row['titulo']);
+                    echo " - Estado: No Inlcuido";
+                    echo "</div>";
+                } 
+            } catch (PDOException $e) {
+                echo "Error: " . $e->getMessage();
+            }
+            } elseif ($tipoFormulario == 'peliculas_series') {
+            // Procesar datos para películas y series
+            $proveedor = '%' . $_POST['proveedor'] . '%';
+            $nombre = '%' . $_POST['nombre_pelicula_serie'] . '%'; // Asegúrate de que este es el nombre correcto del campo en tu formulario
+        
+            try {
+                $sql = "SELECT p.nombre AS nombre_proveedor, 'Película' AS tipo, peli.titulo AS titulo,
+                            CASE WHEN pp.pid IS NOT NULL THEN 'Incluido' ELSE 'No Incluido' END AS estado
+                        FROM Proveedores AS p
+                        LEFT JOIN ProveedoresPeliculas AS pp ON p.id = pp.pro_id
+                        LEFT JOIN Peliculas AS peli ON pp.pid = peli.pid
+                        WHERE LOWER(p.nombre) LIKE LOWER(:proveedor)
+                        AND LOWER(peli.titulo) LIKE LOWER(:nombre)
+                        UNION
+                        SELECT p.nombre, 'Serie', ser.nombre AS titulo,
+                            CASE WHEN ps.sid IS NOT NULL THEN 'Incluido' ELSE 'No Incluido' END AS estado
+                        FROM Proveedores AS p
+                        LEFT JOIN ProveedoresSeries AS ps ON p.id = ps.pro_id
+                        LEFT JOIN Series AS ser ON ps.sid = ser.sid
+                        WHERE LOWER(p.nombre) LIKE LOWER(:proveedor)
+                        AND LOWER(ser.nombre) LIKE LOWER(:nombre)";
+                $stmt = $db2->prepare($sql);
+                $stmt->bindParam(':proveedor', $proveedor, PDO::PARAM_STR);
+                $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+                $stmt->execute();
+                $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+                if (count($resultados) > 0) { // Verifica si hay resultados
+                    foreach ($resultados as $row) {
+                        echo "<div>";
+                        echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
+                        echo " - Tipo: " . htmlspecialchars($row['tipo']);
+                        echo " - Título: " . htmlspecialchars($row['titulo']);
+                        echo " - Estado: Inlcuido";
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<div>";
+                    echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
+                    echo " - Tipo: " . htmlspecialchars($row['tipo']);
+                    echo " - Título: " . htmlspecialchars($row['titulo']);
+                    echo " - Estado: No Inlcuido";
+                    echo "</div>";
+                } 
+            } catch (PDOException $e) {
+                echo "Error: " . $e->getMessage();
+            }
         }
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        
+    } else {
+        // Manejar el caso en el que 'formulario' no está definido
+        // Por ejemplo, mostrar un mensaje o no hacer nada
     }
 }
+
+
 function obtenerTopVisualizaciones($db2, $proveedorId) {
     // Prepara un array para almacenar los resultados
     $resultados = [
@@ -133,14 +198,16 @@ include('./templates/header.html');
     <br>
     <h4 align="center"> Suscripciones de Videojuegos</h4>
     <br>
-    <!-- Formulario de Búsqueda -->
+    <!-- Formulario de Búsqueda para Videojuegos -->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="formulario-busqueda">
         <div class="inputs-container">
             <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
             <input type="text" name="nombre_videojuego" placeholder="Nombre del Videojuego">
         </div>
+        <input type="hidden" name="formulario" value="videojuegos">
         <input type="submit" class="btn-logout" value="Buscar">
     </form>
+
     <br>
         <!-- Inicio de la Sección de Proveedores de Videojuegos -->
     <h4 align="center">Proveedores de Videojuegos</h4>
@@ -167,13 +234,16 @@ include('./templates/header.html');
     <!-- Procesar el formulario y obtener resultados -->
     <h4 align="center"> Suscripciones de Películas y Series</h4>
     <br>
+    <!-- Formulario de Búsqueda para Películas y Series -->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="formulario-busqueda">
         <div class="inputs-container">
             <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
-            <input type="text" name="nombre_videojuego" placeholder="Nombre de la Serie o Película">
+            <input type="text" name="nombre_pelicula_serie" placeholder="Nombre de la Serie o Película">
         </div>
+        <input type="hidden" name="formulario" value="peliculas_series">
         <input type="submit" class="btn-logout" value="Buscar">
     </form>
+
     <br>   
     <!-- Mostrar cada proveedor en su rectangulo -->
     <h4 align="center"> Proveedores de Películas y Series</h4>
