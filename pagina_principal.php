@@ -16,105 +16,45 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verificar si el índice 'formulario' existe en $_POST
-    if (isset($_POST['formulario'])) {
-        $tipoFormulario = $_POST['formulario'];
+    $proveedor = '%' . $_POST['proveedor'] . '%';
+    $nombre = '%' . $_POST['nombre_videojuego'] . '%';
 
-        if ($tipoFormulario == 'videojuegos') {
-            // Procesar datos para películas y series
-            $proveedor = '%' . $_POST['proveedor'] . '%';
-            $nombre = '%' . $_POST['nombre_videojuego'] . '%'; // Asegúrate de que este es el nombre correcto del campo en tu formulario
-        
-            try {
-                $sql = "SELECT p.nombre AS nombre_proveedor, vj.nombre AS nombre_videojuego,
-                        FROM proveedores AS p
-                        LEFT JOIN  videojuegos AS vj ON p.id = vj.id_proveedor
-                        LEFT JOIN vi  AS peli ON pp.pid = peli.pid
-                        WHERE LOWER(p.nombre) LIKE LOWER(:proveedor)
-                        AND LOWER(peli.titulo) LIKE LOWER(:nombre)";
+    try {
+        $sql = "SELECT p.nombre AS nombre_proveedor, 'Película' AS tipo, peli.titulo AS titulo,
+                        CASE WHEN pp.pid IS NOT NULL THEN 'Incluido' ELSE 'No Incluido' END AS estado
+                FROM Proveedores AS p
+                LEFT JOIN ProveedoresPeliculas AS pp ON p.id = pp.pro_id
+                LEFT JOIN Peliculas AS peli ON pp.pid = peli.pid
+                WHERE LOWER(p.nombre) LIKE LOWER(:proveedor)
+                AND LOWER(peli.titulo) LIKE LOWER(:nombre)
+                UNION
+                SELECT p.nombre, 'Serie', ser.nombre AS titulo,
+                        CASE WHEN ps.sid IS NOT NULL THEN 'Incluido' ELSE 'No Incluido' END AS estado
+                FROM Proveedores AS p
+                LEFT JOIN ProveedoresSeries AS ps ON p.id = ps.pro_id
+                LEFT JOIN Series AS ser ON ps.sid = ser.sid
+                WHERE LOWER(p.nombre) LIKE LOWER(:proveedor)
+                AND LOWER(ser.nombre) LIKE LOWER(:nombre)
+                ";
+        $stmt = $db2->prepare($sql);
+        $stmt->bindParam(':proveedor', $proveedor, PDO::PARAM_STR);
+        $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+        $stmt->execute();
+        $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                $stmt = $db->prepare($sql);
-                $stmt->bindParam(':proveedor', $proveedor, PDO::PARAM_STR);
-                $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
-                $stmt->execute();
-                $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-                if (count($resultados) > 0) { // Verifica si hay resultados
-                    foreach ($resultados as $row) {
-                        echo "<div>";
-                        echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
-                        echo " - Tipo: " . htmlspecialchars($row['tipo']);
-                        echo " - Título: " . htmlspecialchars($row['titulo']);
-                        echo " - Estado: Inlcuido";
-                        echo "</div>";
-                    }
-                } else {
-                    echo "<div>";
-                    echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
-                    echo " - Tipo: " . htmlspecialchars($row['tipo']);
-                    echo " - Título: " . htmlspecialchars($row['titulo']);
-                    echo " - Estado: No Inlcuido";
-                    echo "</div>";
-                } 
-            } catch (PDOException $e) {
-                echo "Error: " . $e->getMessage();
-            }
-            } elseif ($tipoFormulario == 'peliculas_series') {
-            // Procesar datos para películas y series
-            $proveedor = '%' . $_POST['proveedor'] . '%';
-            $nombre = '%' . $_POST['nombre_pelicula_serie'] . '%'; // Asegúrate de que este es el nombre correcto del campo en tu formulario
-        
-            try {
-                $sql = "SELECT p.nombre AS nombre_proveedor, 'Película' AS tipo, peli.titulo AS titulo,
-                            CASE WHEN pp.pid IS NOT NULL THEN 'Incluido' ELSE 'No Incluido' END AS estado
-                        FROM Proveedores AS p
-                        LEFT JOIN ProveedoresPeliculas AS pp ON p.id = pp.pro_id
-                        LEFT JOIN Peliculas AS peli ON pp.pid = peli.pid
-                        WHERE LOWER(p.nombre) LIKE LOWER(:proveedor)
-                        AND LOWER(peli.titulo) LIKE LOWER(:nombre)
-                        UNION
-                        SELECT p.nombre, 'Serie', ser.nombre AS titulo,
-                            CASE WHEN ps.sid IS NOT NULL THEN 'Incluido' ELSE 'No Incluido' END AS estado
-                        FROM Proveedores AS p
-                        LEFT JOIN ProveedoresSeries AS ps ON p.id = ps.pro_id
-                        LEFT JOIN Series AS ser ON ps.sid = ser.sid
-                        WHERE LOWER(p.nombre) LIKE LOWER(:proveedor)
-                        AND LOWER(ser.nombre) LIKE LOWER(:nombre)";
-                $stmt = $db2->prepare($sql);
-                $stmt->bindParam(':proveedor', $proveedor, PDO::PARAM_STR);
-                $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
-                $stmt->execute();
-                $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-                if (count($resultados) > 0) { // Verifica si hay resultados
-                    foreach ($resultados as $row) {
-                        echo "<div>";
-                        echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
-                        echo " - Tipo: " . htmlspecialchars($row['tipo']);
-                        echo " - Título: " . htmlspecialchars($row['titulo']);
-                        echo " - Estado: Inlcuido";
-                        echo "</div>";
-                    }
-                } else {
-                    echo "<div>";
-                    echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
-                    echo " - Tipo: " . htmlspecialchars($row['tipo']);
-                    echo " - Título: " . htmlspecialchars($row['titulo']);
-                    echo " - Estado: No Inlcuido";
-                    echo "</div>";
-                } 
-            } catch (PDOException $e) {
-                echo "Error: " . $e->getMessage();
-            }
+        foreach ($resultados as $row) {
+            echo "<div>";
+            echo "Proveedor: " . htmlspecialchars($row['nombre_proveedor']);
+            echo " - Tipo: " . htmlspecialchars($row['tipo']);
+            echo " - Título: " . htmlspecialchars($row['titulo']);
+            echo " - Estado: " . htmlspecialchars($row['estado']);
+            echo "</div>";
         }
         
-    } else {
-        // Manejar el caso en el que 'formulario' no está definido
-        // Por ejemplo, mostrar un mensaje o no hacer nada
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
     }
 }
-
-
 function obtenerTopVisualizaciones($db2, $proveedorId) {
     // Prepara un array para almacenar los resultados
     $resultados = [
@@ -178,198 +118,189 @@ include('./templates/header.html');
 
 
 <body>
+    <div class="content-container">
+        <!-- INICIO DE LA PAGINA -->
 
-    <!-- INICIO DE LA PAGINA -->
-
-    <!-- SECCION: Barra de Navegación -->
-    <div style="text-align: center;"> <!-- Contenedor para centralizar -->
-        <div class="navbar">
-            <a href="paginas/perfil_usuario.php">Mi Perfil</a>
-            <a href="paginas/one_time_purchases.php">One Time Purchases</a>
-            <a href="consulta_inestructurada.php">Consulta Inestructurada</a>
-            <!-- Agrega aquí más enlaces según necesites -->
+        <!-- SECCION: Barra de Navegación -->
+        <div style="text-align: center;"> <!-- Contenedor para centralizar -->
+            <div class="navbar">
+                <a href="paginas/perfil_usuario.php">Mi Perfil</a>
+                <a href="paginas/one_time_purchases.php">One Time Purchases</a>
+                <a href="consulta_inestructurada.php">Consulta Inestructurada</a>
+                <!-- Agrega aquí más enlaces según necesites -->
+            </div>
         </div>
-    </div>
 
-    <br>
-    <br>
-    <h1 align="center"> Videojuegos</h1>
-    <br>
-    <br>
-    <h4 align="center"> Suscripciones de Videojuegos</h4>
-    <br>
-    <!-- Formulario de Búsqueda para Videojuegos -->
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="formulario-busqueda">
-        <div class="inputs-container">
-            <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
-            <input type="text" name="nombre_videojuego" placeholder="Nombre del Videojuego">
-        </div>
-        <input type="hidden" name="formulario" value="videojuegos">
-        <input type="submit" class="btn-logout" value="Buscar">
-    </form>
-
-    <br>
-        <!-- Inicio de la Sección de Proveedores de Videojuegos -->
-    <h4 align="center">Proveedores de Videojuegos</h4>
-    <div class="proveedores-container">
-        <?php
-            try {
-                $sql = "SELECT p.id, p.nombre,
-                            (SELECT COUNT(*) FROM proveedores_videojuegos WHERE proveedores_videojuegos.id = p.id) as totalvideojuegos
-                        FROM proveedores p";
-                $stmt = $db->query($sql);
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<div class='proveedor-bloque-videojuego' data-id='" . htmlspecialchars($row['id']) . "' data-nombre='" . htmlspecialchars($row['nombre']) . "' data-totalvideojuegos='" . htmlspecialchars($row['totalvideojuegos']) . "'>" . htmlspecialchars($row['nombre']). "</div>";
-                }
-            } catch (Exception $e) {
-                echo "Error: " . $e->getMessage();
-            }
-        ?>
-    </div>
-    <br>
-    <br>
-    <h1 align="center"> Películas y Series</h1>
-    <br>
-    <br>       
-    <!-- Procesar el formulario y obtener resultados -->
-    <h4 align="center"> Suscripciones de Películas y Series</h4>
-    <br>
-    <!-- Formulario de Búsqueda para Películas y Series -->
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="formulario-busqueda">
-        <div class="inputs-container">
-            <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
-            <input type="text" name="nombre_pelicula_serie" placeholder="Nombre de la Serie o Película">
-        </div>
-        <input type="hidden" name="formulario" value="peliculas_series">
-        <input type="submit" class="btn-logout" value="Buscar">
-    </form>
-
-    <br>   
-    <!-- Mostrar cada proveedor en su rectangulo -->
-    <h4 align="center"> Proveedores de Películas y Series</h4>
-    <div class="proveedores-container">
-        <?php
-            try {
-                $sql = "SELECT Proveedores.id, Proveedores.nombre, Proveedores.costo, 
-                            (SELECT COUNT(*) FROM ProveedoresPeliculas WHERE ProveedoresPeliculas.pro_id = Proveedores.id) as totalpeliculas,
-                            (SELECT COUNT(*) FROM ProveedoresSeries WHERE ProveedoresSeries.pro_id = Proveedores.id) as totalseries
-                        FROM Proveedores";
-                $stmt = $db2->query($sql);
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<div class='proveedor-bloque' data-id='" . htmlspecialchars($row['id']) . "' data-nombre='" . htmlspecialchars($row['nombre']) . "' data-costo='" . htmlspecialchars($row['costo']) . "' data-totalpeliculas='" . htmlspecialchars($row['totalpeliculas']) . "' data-totalseries='" . htmlspecialchars($row['totalseries']) . "'>" . htmlspecialchars($row['nombre']) . "</div>";
-                }
-            } catch (Exception $e) {
-                echo "Error: " . $e->getMessage();
-            }
-        ?>
-
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="logout-button">
-        <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
-    </div>
-    <!-- FIN DE LA PAGINA -->
-
-        <!-- Modal para detalles del proveedor -->
-        <div id="modalProveedorVideojuegos" style="display:none;">
-        <div id="detallesProveedorVideojuegos"></div>
         <br>
-        <button onclick="cerrarModalVideojuegos()">Cerrar</button>
+        <br>
+        <h1 align="center"> Videojuegos</h1>
+        <br>
+        <br>
+        <h4 align="center"> Suscripciones de Videojuegos</h4>
+        <br>
+        <!-- Formulario de Búsqueda -->
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="formulario-busqueda">
+            <div class="inputs-container">
+                <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
+                <input type="text" name="nombre_videojuego" placeholder="Nombre del Videojuego">
+            </div>
+            <input type="submit" class="btn-logout" value="Buscar">
+        </form>
+        <br>
+            <!-- Inicio de la Sección de Proveedores de Videojuegos -->
+        <h4 align="center">Proveedores de Videojuegos</h4>
+        <div class="proveedores-container">
+            <?php
+                try {
+                    $sql = "SELECT p.id, p.nombre,
+                                (SELECT COUNT(*) FROM proveedores_videojuegos WHERE proveedores_videojuegos.id = p.id) as totalvideojuegos
+                            FROM proveedores p";
+                    $stmt = $db->query($sql);
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        echo "<div class='proveedor-bloque-videojuego' data-id='" . htmlspecialchars($row['id']) . "' data-nombre='" . htmlspecialchars($row['nombre']) . "' data-totalvideojuegos='" . htmlspecialchars($row['totalvideojuegos']) . "'>" . htmlspecialchars($row['nombre']). "</div>";
+                    }
+                } catch (Exception $e) {
+                    echo "Error: " . $e->getMessage();
+                }
+            ?>
         </div>
+        <br>
+        <br>
+        <h1 align="center"> Películas y Series</h1>
+        <br>
+        <br>       
+        <!-- Procesar el formulario y obtener resultados -->
+        <h4 align="center"> Suscripciones de Películas y Series</h4>
+        <br>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="formulario-busqueda">
+            <div class="inputs-container">
+                <input type="text" name="proveedor" placeholder="Nombre del Proveedor">
+                <input type="text" name="nombre_videojuego" placeholder="Nombre de la Serie o Película">
+            </div>
+            <input type="submit" class="btn-logout" value="Buscar">
+        </form>
+        <br>   
+        <!-- Mostrar cada proveedor en su rectangulo -->
+        <h4 align="center"> Proveedores de Películas y Series</h4>
+        <div class="proveedores-container">
+            <?php
+                try {
+                    $sql = "SELECT Proveedores.id, Proveedores.nombre, Proveedores.costo, 
+                                (SELECT COUNT(*) FROM ProveedoresPeliculas WHERE ProveedoresPeliculas.pro_id = Proveedores.id) as totalpeliculas,
+                                (SELECT COUNT(*) FROM ProveedoresSeries WHERE ProveedoresSeries.pro_id = Proveedores.id) as totalseries
+                            FROM Proveedores";
+                    $stmt = $db2->query($sql);
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        echo "<div class='proveedor-bloque' data-id='" . htmlspecialchars($row['id']) . "' data-nombre='" . htmlspecialchars($row['nombre']) . "' data-costo='" . htmlspecialchars($row['costo']) . "' data-totalpeliculas='" . htmlspecialchars($row['totalpeliculas']) . "' data-totalseries='" . htmlspecialchars($row['totalseries']) . "'>" . htmlspecialchars($row['nombre']) . "</div>";
+                    }
+                } catch (Exception $e) {
+                    echo "Error: " . $e->getMessage();
+                }
+            ?>
 
-        <!-- Modal para detalles del proveedor de películas y series -->
-        <div id="modalProveedorPeliculasSeries" style="display:none;">
-            <div id="detallesProveedorPeliculasSeries"></div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="logout-button">
+            <a href="auth/logout.php" class="btn-logout">Cerrar Sesión</a>
+        </div>
+        <!-- FIN DE LA PAGINA -->
+
+            <!-- Modal para detalles del proveedor -->
+            <div id="modalProveedorVideojuegos" style="display:none;">
+            <div id="detallesProveedorVideojuegos"></div>
             <br>
-            <button onclick="cerrarModalPeliculasSeries()">Cerrar</button>
-        </div>
+            <button onclick="cerrarModalVideojuegos()">Cerrar</button>
+            </div>
 
-    <!-- Código JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Eventos para proveedores de videojuegos
-            document.querySelectorAll('.proveedor-bloque-videojuego').forEach(item => {
-                item.addEventListener('click', function() {
-                    var idVideojuegoProveedor = this.getAttribute('data-id');
-                    var nombreVideojuegoProveedor = this.getAttribute('data-nombre');
-                    var totalVideojuegos = this.getAttribute('data-totalvideojuegos');
-                    
-                    var detallesHTML2 = "<h3>" + nombreVideojuegoProveedor + "</h3>" +
-                                    "<p>Total de Videojuegos: " + totalVideojuegos + "</p>";
-                    
-                    document.getElementById('detallesProveedorVideojuegos').innerHTML = detallesHTML2;
-                    document.getElementById('modalProveedorVideojuegos').style.display = 'block';
+            <!-- Modal para detalles del proveedor de películas y series -->
+            <div id="modalProveedorPeliculasSeries" style="display:none;">
+                <div id="detallesProveedorPeliculasSeries"></div>
+                <br>
+                <button onclick="cerrarModalPeliculasSeries()">Cerrar</button>
+            </div>
+
+        <!-- Código JavaScript -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // Eventos para proveedores de videojuegos
+                document.querySelectorAll('.proveedor-bloque-videojuego').forEach(item => {
+                    item.addEventListener('click', function() {
+                        var idVideojuegoProveedor = this.getAttribute('data-id');
+                        var nombreVideojuegoProveedor = this.getAttribute('data-nombre');
+                        var totalVideojuegos = this.getAttribute('data-totalvideojuegos');
+                        
+                        var detallesHTML2 = "<h3>" + nombreVideojuegoProveedor + "</h3>" +
+                                        "<p>Total de Videojuegos: " + totalVideojuegos + "</p>";
+                        
+                        document.getElementById('detallesProveedorVideojuegos').innerHTML = detallesHTML2;
+                        document.getElementById('modalProveedorVideojuegos').style.display = 'block';
+                    });
                 });
+
+                // Eventos para proveedores de películas y series
+                document.querySelectorAll('.proveedor-bloque').forEach(item => {
+                    item.addEventListener('click', function() {
+                        var idProveedor = this.getAttribute('data-id');
+                        var nombreProveedor = this.getAttribute('data-nombre');
+                        var costoProveedor = this.getAttribute('data-costo');
+                        var peliculasTotal = this.getAttribute('data-totalpeliculas');
+                        var seriesTotal = this.getAttribute('data-totalseries');
+
+                        // Mostrar información básica del proveedor en el modal
+                        var detallesHTML = "<h3>" + nombreProveedor + "</h3>" +
+                                        "<p>Costo: $" + costoProveedor + "</p>" +
+                                        "<p>Total de Películas: " + peliculasTotal + "</p>" +
+                                        "<p>Total de Series: " + seriesTotal + "</p>";
+
+                        // Realizar solicitud AJAX para obtener las películas y series más vistas
+                        fetch(window.location.href + '?accion=obtenerTopVisualizaciones&proveedorId=' + idProveedor)
+                            .then(response => {
+                                if (response.headers.get("content-type").includes("application/json")) {
+                                    return response.json();
+                                } else {
+                                    throw new Error('No es JSON');
+                                }
+                            })
+                            .then(data => {
+                                // Procesar los datos y agregarlos al HTML del modal
+                                var peliculasHTML = "<h4>Películas más vistas</h4>";
+                                data.peliculas.forEach(function(pelicula) {
+                                    peliculasHTML += "<p>" + pelicula.titulo + " - Visualizaciones: " + pelicula.visualizaciones + "</p>";
+                                });
+
+                                var seriesHTML = "<h4>Series más vistas</h4>";
+                                data.series.forEach(function(serie) {
+                                    seriesHTML += "<p>" + serie.nombre + " - Visualizaciones Totales: " + serie.visualizaciones_totales + "</p>";
+                                });
+
+                                // Actualizar el contenido del modal con la nueva información
+                                detallesHTML += peliculasHTML + seriesHTML;
+                                document.getElementById('detallesProveedorPeliculasSeries').innerHTML = detallesHTML;
+                                document.getElementById('modalProveedorPeliculasSeries').style.display = 'block';
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                document.getElementById('detallesProveedorPeliculasSeries').innerHTML = detallesHTML + "<p>Error al cargar las visualizaciones.</p>";
+                                document.getElementById('modalProveedorPeliculasSeries').style.display = 'block';
+                            });
+                    });
+                });
+
             });
 
-            // Eventos para proveedores de películas y series
-            document.querySelectorAll('.proveedor-bloque').forEach(item => {
-                item.addEventListener('click', function() {
-                    var idProveedor = this.getAttribute('data-id');
-                    var nombreProveedor = this.getAttribute('data-nombre');
-                    var costoProveedor = this.getAttribute('data-costo');
-                    var peliculasTotal = this.getAttribute('data-totalpeliculas');
-                    var seriesTotal = this.getAttribute('data-totalseries');
+            function cerrarModalVideojuegos() {
+                document.getElementById('modalProveedorVideojuegos').style.display = 'none';
+            }
 
-                    // Mostrar información básica del proveedor en el modal
-                    var detallesHTML = "<h3>" + nombreProveedor + "</h3>" +
-                                    "<p>Costo: $" + costoProveedor + "</p>" +
-                                    "<p>Total de Películas: " + peliculasTotal + "</p>" +
-                                    "<p>Total de Series: " + seriesTotal + "</p>";
+            function cerrarModalPeliculasSeries() {
+                document.getElementById('modalProveedorPeliculasSeries').style.display = 'none';
+            }
 
-                    // Realizar solicitud AJAX para obtener las películas y series más vistas
-                    fetch(window.location.href + '?accion=obtenerTopVisualizaciones&proveedorId=' + idProveedor)
-                        .then(response => {
-                            if (response.headers.get("content-type").includes("application/json")) {
-                                return response.json();
-                            } else {
-                                throw new Error('No es JSON');
-                            }
-                        })
-                        .then(data => {
-                            // Procesar los datos y agregarlos al HTML del modal
-                            var peliculasHTML = "<h4>Películas más vistas</h4>";
-                            data.peliculas.forEach(function(pelicula) {
-                                peliculasHTML += "<p>" + pelicula.titulo + " - Visualizaciones: " + pelicula.visualizaciones + "</p>";
-                            });
-
-                            var seriesHTML = "<h4>Series más vistas</h4>";
-                            data.series.forEach(function(serie) {
-                                seriesHTML += "<p>" + serie.nombre + " - Visualizaciones Totales: " + serie.visualizaciones_totales + "</p>";
-                            });
-
-                            // Actualizar el contenido del modal con la nueva información
-                            detallesHTML += peliculasHTML + seriesHTML;
-                            document.getElementById('detallesProveedorPeliculasSeries').innerHTML = detallesHTML;
-                            document.getElementById('modalProveedorPeliculasSeries').style.display = 'block';
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            document.getElementById('detallesProveedorPeliculasSeries').innerHTML = detallesHTML + "<p>Error al cargar las visualizaciones.</p>";
-                            document.getElementById('modalProveedorPeliculasSeries').style.display = 'block';
-                        });
-                });
-            });
-
-        });
-
-        function cerrarModalVideojuegos() {
-            document.getElementById('modalProveedorVideojuegos').style.display = 'none';
-        }
-
-        function cerrarModalPeliculasSeries() {
-            document.getElementById('modalProveedorPeliculasSeries').style.display = 'none';
-        }
-
-    </script>
-
-
-
-
-
+        </script>
+    </div>
 
 </body>
 </html>

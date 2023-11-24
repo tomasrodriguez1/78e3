@@ -38,8 +38,33 @@ $nombre = $userDetails['nombre'];
 $email = $userDetails['mail'];
 $username = $userDetails['username'];
 
+function obtenerSubscripcionesPeliculas($db2, $id_usuario) {
+    try {
+        $sql = "SELECT 
+                    p.nombre,
+                    s.fecha_inicio,
+                    s.estado
+                FROM subscripciones s
+                JOIN proveedores p ON s.pro_id = p.id
+                WHERE s.estado='activa' AND s.uid=:id_usuario
+                ORDER BY s.fecha_inicio ASC";
 
-?>
+        $stmt = $db2->prepare($sql);
+        $stmt->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
+        $stmt->execute();
+        $subscripciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $subscripciones;
+    } catch (PDOException $e) {
+        echo "Error al obtener las suscripciones activas de peliculas: " . $e->getMessage();
+        return false;
+    }
+}
+
+$suscripciones_peliculas = obtenerSubscripcionesPeliculas($db2, $_SESSION['user_id']);
+
+
 ?>
 
 <html>
@@ -63,7 +88,34 @@ $username = $userDetails['username'];
 
     <h2>Actividades</h2>
     <p>Horas Totales Jugadas en Videojuegos: <?php echo htmlspecialchars($horasJugadas['horas_jugadas']); ?></p>
+
     <h2>Suscripciones Activas</h2>
+    <h3> Suscripciones a proveedores de peliculas: </h3>
+
+    <?php
+    if ($suscripciones_peliculas && count($suscripciones_peliculas) > 0) {
+        echo "<div style='display: flex; justify-content: center;'>";
+        echo "<table border='1' style='border-collapse: collapse;'>";
+        echo "<tr><th>Nombre del Proveedor</th><th>Fecha de Inicio</th><th>Estado</th></tr>";
+
+        // Recorrer cada suscripción y mostrar sus detalles
+        foreach ($suscripciones_peliculas as $suscripcion) {
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($suscripcion['nombre']) . "</td>";
+            echo "<td>" . htmlspecialchars($suscripcion['fecha_inicio']) . "</td>";
+            echo "<td>" . htmlspecialchars($suscripcion['estado']) . "</td>";
+            echo "</tr>";
+        }
+
+        echo "</table>";
+        echo "</div>";
+    } else {
+        echo "<p style='text-align: center;'>No hay suscripciones activas de películas.</p>";
+    }
+    ?>
+
+    <h3> Suscripciones a proveedores de Videojuegos: </h3>
+
     <?php if (!empty($suscripciones)): ?>
         <ul>
             <?php foreach ($suscripciones as $suscripcion): ?>
