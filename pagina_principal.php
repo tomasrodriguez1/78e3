@@ -121,7 +121,7 @@ include('./templates/header.html');
             <div class="navbar">
                 <a href="paginas/perfil_usuario.php">Mi Perfil</a>
                 <a href="paginas/one_time_purchases.php">One Time Purchases</a>
-                <a href="consulta_inestructurada.php">Consulta Inestructurada</a>
+                <a href="paginas/consulta_inestructurada.php">Consulta Inestructurada</a>
             </div>
         </div>
 
