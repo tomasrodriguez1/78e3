@@ -62,9 +62,35 @@ function obtenerSubscripcionesPeliculas($db2, $id_usuario) {
     }
 }
 
+function obtenerSubscripcionesVideojuegos($db, $id_usuario) {
+    try {
+        $sql = "SELECT 
+                    s.fecha_inicio,
+                    s.estado,
+                    s.fecha_termino,
+                    v.titulo,
+                    s.mensualidad
+                FROM suscripciones s
+                JOIN videojuegos v ON s.id_videojuego = v.id_videojuego
+                WHERE s.estado = 'active' AND s.id_usuario = :id_usuario
+                ORDER BY s.fecha_inicio ASC";
+
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
+        $stmt->execute();
+        $subscripciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+
+        return $subscripciones;
+    } catch (PDOException $e) {
+        echo "Error al obtener las suscripciones activas de videojuegos: " . $e->getMessage();
+        return false;
+    }
+}
+
+
 $suscripciones_peliculas = obtenerSubscripcionesPeliculas($db2, $_SESSION['user_id']);
-
-
+$suscripciones_videojuegos = obtenerSubscripcionesVideojuegos($db, $_SESSION['user_id']);
 ?>
 
 <html>
@@ -91,7 +117,6 @@ $suscripciones_peliculas = obtenerSubscripcionesPeliculas($db2, $_SESSION['user_
 
     <h2>Suscripciones Activas</h2>
     <h3> Suscripciones a proveedores de peliculas: </h3>
-
     <?php
     if ($suscripciones_peliculas && count($suscripciones_peliculas) > 0) {
         echo "<div style='display: flex; justify-content: center;'>";
@@ -114,24 +139,32 @@ $suscripciones_peliculas = obtenerSubscripcionesPeliculas($db2, $_SESSION['user_
     }
     ?>
 
+
     <h3> Suscripciones a proveedores de Videojuegos: </h3>
+    <?php
+    if ($suscripciones_videojuegos && count($suscripciones_videojuegos) > 0) {
+        echo "<div style='display: flex; justify-content: center;'>";
+        echo "<table border='1' style='border-collapse: collapse;'>";
+        echo "<tr><th>Nombre del Videojuego</th><th>Fecha de Inicio</th><th>Estado</th><th>Fecha de Termino</th><th>Mensualidad</th></tr>";
 
-    <?php if (!empty($suscripciones)): ?>
-        <ul>
-            <?php foreach ($suscripciones as $suscripcion): ?>
-                <li>
-                    Estados de Suscripción: <?php echo is_array($suscripcion['estados_subscripciones']) ? implode(", ", $suscripcion['estados_subscripciones']) : $suscripcion['estados_subscripciones']; ?>
-                    <br>
-                    Fechas de Inicio: <?php echo is_array($suscripcion['fechas_inicio']) ? implode(", ", $suscripcion['fechas_inicio']) : $suscripcion['fechas_inicio']; ?>
-                    <br>
-                    Fechas de Término: <?php echo is_array($suscripcion['fechas_termino']) ? implode(", ", $suscripcion['fechas_termino']) : $suscripcion['fechas_termino']; ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    <?php else: ?>
-        <p>No hay suscripciones activas.</p>
-    <?php endif; ?>
+        // Recorrer cada suscripción y mostrar sus detalles
+        foreach ($suscripciones_videojuegos as $suscripcion) {
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($suscripcion['titulo']) . "</td>";
+            echo "<td>" . htmlspecialchars($suscripcion['fecha_inicio']) . "</td>";
+            echo "<td>" . htmlspecialchars($suscripcion['estado']) . "</td>";
+            echo "<td>" . htmlspecialchars($suscripcion['fecha_termino']) . "</td>";
+            echo "<td>" . htmlspecialchars($suscripcion['mensualidad']) . "</td>";
+            echo "</tr>";
+        }
 
+        echo "</table>";
+        echo "</div>";
+    } else {
+        echo "<p style='text-align: center;'>No hay suscripciones activas de videojuegos.</p>";
+    }
+
+    ?>
     <div class="logout-button">
         <a href="../auth/logout.php" class="btn-logout">Cerrar Sesión</a>
     </div>
