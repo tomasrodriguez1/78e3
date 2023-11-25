@@ -37,17 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($row) {
         // Usuario encontrado, verificar contraseña
         if (password_verify($password, $row['password'])) {
-            // La contraseña es correcta, iniciar sesión
-            $_SESSION['user_id'] = $row['id_usuario']; // Asumiendo que la tabla tiene un campo 'id'
+            $_SESSION['user_id'] = $row['id_usuario']; 
             $_SESSION['username'] = $username;
             header("Location: pagina_principal.php");
             exit;
         } else {
-            // La contraseña no coincide
             $errorPassword = "Contraseña incorrecta.";
         }
     } else {
-        // Usuario no encontrado
         $errorUsername = "Nombre de usuario no encontrado.";
     }
 }

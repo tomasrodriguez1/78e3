@@ -12,7 +12,7 @@ session_start();
 
 // Verificar si el usuario ya está logueado
 if (!isset($_SESSION['user_id'])) {
-    header('Location: index.php'); // Redirigir al login si no está logueado
+    header('Location: index.php'); 
     exit;
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -56,7 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 function obtenerTopVisualizaciones($db2, $proveedorId) {
-    // Prepara un array para almacenar los resultados
     $resultados = [
         'peliculas' => [],
         'series' => []
@@ -80,7 +79,6 @@ function obtenerTopVisualizaciones($db2, $proveedorId) {
         $resultados['peliculas'] = $stmtPeliculas->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         error_log("Error al obtener películas más vistas: " . $e->getMessage());
-        // Puedes decidir cómo manejar el error, por ejemplo, devolviendo un mensaje de error específico
     }
 
     // Consulta para obtener las series más vistas por proveedor
@@ -102,16 +100,13 @@ function obtenerTopVisualizaciones($db2, $proveedorId) {
         $resultados['series'] = $stmtSeries->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         error_log("Error al obtener series más vistas: " . $e->getMessage());
-        // Manejo del error
     }
-
-    // Devolver los resultados en formato JSON
     return json_encode($resultados);
 }
 if (isset($_GET['accion']) && $_GET['accion'] == 'obtenerTopVisualizaciones' && isset($_GET['proveedorId'])) {
-    header('Content-Type: application/json'); // Establece el tipo de contenido a JSON
+    header('Content-Type: application/json');
     echo obtenerTopVisualizaciones($db2, $_GET['proveedorId']);
-    exit; // Detiene la ejecución del script para no enviar más salida
+    exit; 
 }
 include('./templates/header.html'); 
 ?>
@@ -127,7 +122,6 @@ include('./templates/header.html');
                 <a href="paginas/perfil_usuario.php">Mi Perfil</a>
                 <a href="paginas/one_time_purchases.php">One Time Purchases</a>
                 <a href="consulta_inestructurada.php">Consulta Inestructurada</a>
-                <!-- Agrega aquí más enlaces según necesites -->
             </div>
         </div>
 
@@ -255,7 +249,6 @@ include('./templates/header.html');
                                         "<p>Total de Películas: " + peliculasTotal + "</p>" +
                                         "<p>Total de Series: " + seriesTotal + "</p>";
 
-                        // Realizar solicitud AJAX para obtener las películas y series más vistas
                         fetch(window.location.href + '?accion=obtenerTopVisualizaciones&proveedorId=' + idProveedor)
                             .then(response => {
                                 if (response.headers.get("content-type").includes("application/json")) {
@@ -265,7 +258,6 @@ include('./templates/header.html');
                                 }
                             })
                             .then(data => {
-                                // Procesar los datos y agregarlos al HTML del modal
                                 var peliculasHTML = "<h4>Películas más vistas</h4>";
                                 data.peliculas.forEach(function(pelicula) {
                                     peliculasHTML += "<p>" + pelicula.titulo + " - Visualizaciones: " + pelicula.visualizaciones + "</p>";
@@ -276,7 +268,6 @@ include('./templates/header.html');
                                     seriesHTML += "<p>" + serie.nombre + " - Visualizaciones Totales: " + serie.visualizaciones_totales + "</p>";
                                 });
 
-                                // Actualizar el contenido del modal con la nueva información
                                 detallesHTML += peliculasHTML + seriesHTML;
                                 document.getElementById('detallesProveedorPeliculasSeries').innerHTML = detallesHTML;
                                 document.getElementById('modalProveedorPeliculasSeries').style.display = 'block';
